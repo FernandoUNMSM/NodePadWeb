@@ -1,0 +1,9 @@
+.header {
+    height: calc(100vh + 40px);
+    width: 100%;
+    /* background-image: url(./../../assets/img/header-background2.jpg);
+    background-position: center;
+    background-size: cover; */
+    background-color: rgb(24, 20, 20);
+    /* padding-bottom: 20px; */
+}

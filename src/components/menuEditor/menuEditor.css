@@ -1,0 +1,21 @@
+.menuEditor {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 40px;
+    /* background-color: #fff; */
+    background-color: var(--baseBackground);
+    color: var(--baseColor);
+    border-right: 2px solid var(--cardGray);
+    transition: .3s;
+}
+.menuEditor .burguerMenu {
+    font-size: 25px;
+    text-align: center;
+    margin-top: 5px;
+    cursor: pointer;
+}
+.menuActive {
+    width: 200px;
+}

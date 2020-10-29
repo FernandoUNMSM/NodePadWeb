@@ -1,0 +1,40 @@
+.menu-container{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 30px;
+}
+.menu-container .logo {
+    margin: 0 40px;
+    font-family: 'Poppins', sans-serif;
+}
+.menu-container .logo h1{
+    color: white;
+}
+.menu-container .menu {
+    text-align: right;
+    margin-right: 60px;
+    /* padding-top: 50px; */
+}
+.menu-container .menu .listItem {
+    display: inline-block;
+    padding: 10px 0;
+    border-radius: 15px;
+    margin: 0 10px;
+    /* margin: 20px; */
+}
+.menu-container .menu .listItem:nth-of-type(1) {
+    background-color: rgb(237, 191, 107);
+}
+.menu-container .menu .listItem:nth-of-type(2) {
+    background-color: rgb(116, 235, 139);
+}
+.menu-container .menu .listItem a{
+    color: #fff;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    padding: 10px 20px;
+    font-size: 1em;
+}
