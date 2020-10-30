@@ -1,39 +1,75 @@
 * {
-    /* color: black; */
     background-color: transparent;
+    /* transition: .3s; */
 }
 .editor {
     height: 100vh;
     display: flex;
-    width: calc(100% - 40px);
-    margin-left: 40px;
+    width: calc(100% - 45px);
+    margin-left: 45px;
     background-color: var(--baseBackground);
-    /* color: var(--cardTitle); */
-
+    display: grid;
+    transition: .3s;
+}
+.editor.vertical {
+    grid-template-columns: 40% 1fr;
+}
+.editor.horizontal {
+    grid-template-rows: repeat(2, 1fr);
+}
+.editor.verticalInverso {
+    grid-template-columns: 1fr 40% ;
+}
+.editor.horizontalInverso .codeArea {
+    grid-row: 2;
 }
 .codeArea {
     display: flex;
-    flex-direction: column;
-    width: 50%;
-    height: 100%;
+    justify-content: space-evenly;
+    align-items: center;
+    transition: .3s;
     border-right: 2px solid var(--cardGray);
+}
+.editor.verticalInverso .codeArea {
+    grid-column: 2;
+    grid-row: 1;
+}
+.editor.vertical .codeArea,
+.editor.verticalInverso .codeArea {
+    flex-direction: column;
+}
+.editor.horizontal .codeArea,
+.editor.horizontalInverso .codeArea {
+    flex-direction: row;
 }
 .codeArea textarea {
     resize: none;
     outline: none;
-    width: 100%;
-    height: 33.33%;
-    font-size: 1.7em;
+    background-color: var(--cardGray);
+    font-size: 1.2em;
+    border-radius: 10px;
     padding: 10px;
     border: none;
     border-bottom: 2px solid var(--cardGray);
+    transition: .3s;
     color: var(--cardTitle);
 }
-.previewArea {
-    width: 50%;
+.editor.vertical .codeArea textarea,
+.editor.verticalInverso .codeArea textarea {
+    width: 90%;
+    height: 30%;
 }
-.previewArea iframe {
+.editor.horizontal .codeArea textarea,
+.editor.horizontalInverso .codeArea textarea {
+    height: 80%;
+    width: 32%;
+}
+.previewArea {
     width: 100%;
     height: 100%;
+}
+.previewArea iframe{
+    height: 100%;
+    width: 100%;
     border: none;
 }

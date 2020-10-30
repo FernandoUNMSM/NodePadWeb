@@ -2,6 +2,8 @@ import './App.css';
 import { Route } from 'wouter';
 import Home from './pages/home/home'
 import EditorHome from './pages/editor/editor'
+import Login from './pages/login/login'
+import Register from './pages/register/register'
 function App() {
   return (
     <>
@@ -11,7 +13,15 @@ function App() {
       />
       <Route
         component={Home}
-        path="/home"
+        path="/"
+      />
+      <Route
+        component={Login}
+        path="/login"
+      />
+      <Route
+        component={Register}
+        path="/register"
       />
     </>
   );

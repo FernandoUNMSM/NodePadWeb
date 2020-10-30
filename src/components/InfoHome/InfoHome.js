@@ -1,48 +1,15 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
+import './infoHome.css'
 
-import './InfoHome.css'
+import InfoHome1 from './../infoHome1/infoHome1'
+import InfoHome2 from './../infoHome2/InfoHome2'
 
-function InfoHome() {
-
-	return (
-		<>
-			<section className="section2">
-				<h1>seccion 2</h1>
-				<img src="./../assets/img/efecto1.png" alt=""/>
-			</section>
-			<section className="section1">
-				<div className="info infos1">
-					<h1>Lorem ipsum dolor sit amet.</h1>
-					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt facilis impedit earum? Repellendus accusantium quibusdam corrupti debitis eos officia quam minima. Velit possimus, repudiandae aut veniam maiores optio iusto vel sunt provident deserunt aperiam quis ad fuga cum magni est.</p>
-				</div>
-			</section>
-		</>
-	)
+function InfoHome(){
+    return (
+        <>
+            <InfoHome1/>
+            <InfoHome2/>
+        </>
+    )
 }
-export default function LazyInfoHome() {
-	const [show, setShow] = useState(false)
-
-	useEffect(()=>{
-		const onChange = (entries)=> {
-			const el = entries[0]
-			if(el.isIntersecting){
-				setShow(true)
-			}
-		}
-
-		const observer = new IntersectionObserver(onChange, {
-			rootMargin: '10px'
-		})
-		observer.observe(document.getElementById('lazyInfo'))
-	})
-
-	return(
-		<div id="lazyInfo">
-			{
-				show
-				? <InfoHome/>
-				: null
-			}
-		</div>
-	)
-}
+export default InfoHome

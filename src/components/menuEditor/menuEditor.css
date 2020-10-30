@@ -3,19 +3,45 @@
     top: 0;
     bottom: 0;
     left: 0;
-    width: 40px;
-    /* background-color: #fff; */
+    width: 45px;
     background-color: var(--baseBackground);
     color: var(--baseColor);
     border-right: 2px solid var(--cardGray);
     transition: .3s;
+    padding-top: 10px;
 }
-.menuEditor .burguerMenu {
+.menuContent ul {
+    list-style: circle;
+}
+.menuEditor .icon {
     font-size: 25px;
-    text-align: center;
+    text-align: left;
     margin-top: 5px;
+    margin-left: 10px;
     cursor: pointer;
+    margin-bottom: 20px;
 }
-.menuActive {
+
+.theme, .layout {
+    position: relative;
+}
+.theme .menuItemContent {
     width: 200px;
+    height: 100px;
+    padding: 20px;
+    align-items: center;
+}
+.menuItemContent {
+    display: none;
+}
+.menuIcon ~ .menuItemContent {
+    position: absolute;
+    top: 0;
+    left: 100%;
+    background-color: var(--baseBackground);
+    border-radius: 10px;
+    border: 2px solid var(--cardGray);
+}
+.menuIcon:hover ~ .menuItemContent, .menuItemContent:hover {
+    display: flex;
 }

@@ -1,5 +1,6 @@
 import React from 'react'
 import './MenuHeader.css'
+import {Link} from 'wouter'
 
 function MenuHeader() {
 
@@ -11,10 +12,10 @@ function MenuHeader() {
 				</div>
 				<ul className="menu">
 					<li className="listItem">
-						<a href="#d">Registrate</a>
+						<Link to={`/register`}>Registrate</Link>
 					</li>
 					<li className="listItem">
-						<a href="#d">Iniciar Sesion</a>
+						<Link to={`/login`}>Iniciar Sesion</Link>
 					</li>
 				</ul>
 			</div>

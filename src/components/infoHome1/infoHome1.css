@@ -1,0 +1,43 @@
+.section1 {
+    /* padding-top: 100px; */
+    background-color: var(--baseBlack);
+    height: 700px;
+    color: white;
+}
+.section1InfoContainer {
+    transform: translateY(0);
+    animation: section1 2s ease;
+    opacity: 1;
+}
+.infoContent {
+    text-align: center;
+    margin-bottom: 50px;
+    /* border-top: 2px solid #fff; */
+}
+.infoContent h1{
+    font-size: 2.4em;
+    margin-bottom: 20px;
+}
+.iconsContainer {
+    margin-top: 70px;
+}
+.icons {
+    max-width: 600px;
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+    font-size: 4em;
+}
+@keyframes section1 {
+    from {
+        transform: translateY(80%);
+        opacity: 0;
+    }to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+#lazyInfo1 {
+    height: 400px;
+    background-color:  var(--baseBlack);
+}

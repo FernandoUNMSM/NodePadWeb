@@ -1,30 +1,42 @@
-import React, { useRef } from 'react'
+import React, { useEffect, useRef } from 'react'
 import './editor.css'
 
-function Editor() {
+function Editor({ layout }) {
+	const frame = useRef(null)
+	const editor = useRef(null)
+	let html = ''
+	let css = ''
+	let js = ''
 
-	const html = useRef(null)
-	const css = useRef(null)
-	const js = useRef(null)
-
-	const showPreview = evt => {
+	const showPreview = (evt) => {
 		let code = '';
 		code = evt.target.value
-		if(evt.target.name === 'HTML'){
-			console.log("HTML")
-			html.current.innerHTML = code
-		}else if(evt.target.name === 'CSS'){
-			console.log("CSS")
-			css.current.innerHTML = code
-		}else{
-			console.log("JS")
-			js.current.innerHTML = code
+		if (evt.target.name === 'HTML') {
+			html = code
+		} else if (evt.target.name === 'CSS') {
+			css = `<style>${code}</style>`
+		} else {
+			js = `<script>${code}</script>`
 		}
+		frame.current.contentWindow.document.open()
+		frame.current.contentWindow.document.write(html + css + js)
+		frame.current.contentWindow.document.close()
 	}
-
+	useEffect(() => {
+		console.log(layout)
+		if(layout === 'vertical'){
+			editor.current.className = "editor vertical"
+		}else if(layout === 'horizontal'){
+			editor.current.className = "editor horizontal"
+		}else if(layout === 'verticalInverso'){
+			editor.current.className = "editor verticalInverso"
+		}else if(layout === 'horizontalInverso'){
+			editor.current.className = "editor horizontalInverso"
+		}
+	}, [layout])
 	return (
 		<>
-			<div className="editor">
+			<div className="editor vertical" ref={editor}>
 				<div className="codeArea">
 					<textarea
 						name="HTML"
@@ -43,11 +55,8 @@ function Editor() {
 					</textarea>
 				</div>
 				<div className="previewArea">
-					<div id="preview" title="preview">
-						<body ref={html} className="content"></body>
-						<style ref={css} className="styles"></style>
-						<script ref={js} className="scripts"></script>
-					</div>
+					<iframe id="preview" title="preview" src="./iframe.html" ref={frame}>
+					</iframe>
 				</div>
 			</div>
 		</>

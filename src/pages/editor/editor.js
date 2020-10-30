@@ -1,13 +1,16 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './editor.css'
 import Editor from './../../components/editor/editor'
 import MenuEditor from './../../components/menuEditor/menuEditor'
-function editorHome() {
+
+function EditorHome() {
+    const [layout, setLayout] = useState(false)
+    const manejarLayout = (al) => { setLayout(al) }
     return (
         <>
-            <MenuEditor />
-            <Editor />
+            <MenuEditor setLayout={manejarLayout} layout={layout} />
+            <Editor layout={layout} />
         </>
     )
 }
-export default editorHome
+export default EditorHome
