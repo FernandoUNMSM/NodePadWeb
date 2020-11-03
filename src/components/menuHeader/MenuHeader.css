@@ -8,6 +8,11 @@
 .menu-container .logo {
     margin: 0 40px;
     font-family: 'Poppins', sans-serif;
+    display: flex;
+    align-items: center;
+}
+.menu-container .logo img{
+    margin-right: 10px;
 }
 .menu-container .logo h1{
     color: white;

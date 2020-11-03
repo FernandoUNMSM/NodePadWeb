@@ -23,7 +23,7 @@ function Editor({ layout }) {
 		frame.current.contentWindow.document.close()
 	}
 	useEffect(() => {
-		console.log(layout)
+		// console.log(layout)
 		if(layout === 'vertical'){
 			editor.current.className = "editor vertical"
 		}else if(layout === 'horizontal'){

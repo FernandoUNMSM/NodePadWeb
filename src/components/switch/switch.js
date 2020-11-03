@@ -19,7 +19,7 @@ function Switch() {
 			Body.classList.remove('is-dark-mode')
 			Body.classList.add('is-light-mode')
 		}
-		console.log(checked)
+		// console.log(checked)
 	}
 
 	function changeMedia(mq) {

@@ -5,15 +5,10 @@ import Switch from './../switch/switch'
 import SelectLayout from './../selectLayout/selectLayout'
 import './menuEditor.css'
 
-function MenuEditor({setLayout, layout}) {
-	// const menu = useRef(null)
-
-	// const menuActive = () => {
-	// 	menu.current.classList.add('menuActive')
-	// }
-	// const menuLock = () => {
-	// 	menu.current.classList.remove('menuActive')
-	// }
+function MenuEditor({setLayout, layout, setPreferences, preferences}) {
+	const mostrarPreferences = ()=> {
+		setPreferences(!preferences)
+	}
 	return (
 		<>
 			<div className="menuEditor">
@@ -39,7 +34,9 @@ function MenuEditor({setLayout, layout}) {
 					</div>
 					<div className="preferences">
 						<div className="menuIcon">
-							<FontAwesomeIcon icon={faCog} className="icon"/>
+							<FontAwesomeIcon icon={faCog} className="icon"
+								onClick={mostrarPreferences}
+							/>
 						</div>
 					</div>
 				</div>
