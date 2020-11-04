@@ -83,7 +83,7 @@ function Register() {
 								</div>
 								<div className="col">
 									<div className="inputBox">
-										<input type="password" name="password" required="required" autoComplete="off" />
+										<input type="password"  required="required" autoComplete="off" />
 										<span className="text">
 											<FontAwesomeIcon icon={faLock} /> Confirmar Contraseña</span>
 										<span className="line"></span>
