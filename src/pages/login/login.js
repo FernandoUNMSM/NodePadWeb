@@ -1,27 +1,44 @@
-import { faLock, faUser } from '@fortawesome/free-solid-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import React, { useEffect, useState } from 'react'
 import {Link, useLocation} from 'wouter'
-import React from 'react'
-import './login.css'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faLock, faUser } from '@fortawesome/free-solid-svg-icons'
+import Loader from './../../components/loader/loader'
 import sendUser from './../../services/getUsers'
-
+import './login.css'
 
 function Login() {
 	const [location, setLocation] = useLocation(); //eslint-disable-line
+	const [validateUser, setValidate] = useState(false)
+	const [loader, setLoader] = useState(false)
 
 	const sumbitForm = (event) => {
+		setLoader(true)
 		const formData = new FormData(event.target)
 		event.preventDefault();
-		sendUser({formData: formData})
-    setLocation("/editor");
-	}
+		sendUser({formData: formData, loader: loader})
+			.then(({validate, loader}) => {
+				console.log(validate)
+				setValidate(validate)
+				setLoader(loader)
+			})
+		}
+		useEffect(()=> {
+			if(validateUser){
+				setLocation("/editor");
+			}
+	},[validateUser])
 
 	return (
 		<>
+			{
+				(loader)
+				? <Loader/>
+				: null
+			}
 			<div className="loginContainer">
 				<div className="login">
 					<h1>Iniciar Sesion</h1>
-					<form id="form" action="" onSubmit={sumbitForm} encType="multipart/form-data">
+					<form id="form" action="POST" onSubmit={sumbitForm} encType="multipart/form-data">
 						<div className="row100">
 							<div className="col">
 								<div className="inputBox">
