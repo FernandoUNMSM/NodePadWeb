@@ -1,7 +1,7 @@
 import { faEnvelope, faLock, faUser } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {Link, useLocation} from 'wouter'
-import React, { useEffect } from 'react'
+import React from 'react'
 
 import aadUser from './../../services/addUser'
 import './register.css'

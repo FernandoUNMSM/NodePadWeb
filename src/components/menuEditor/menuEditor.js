@@ -1,6 +1,6 @@
 import { faAdjust, faBars, faBorderAll, faCog } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import React, { useRef } from 'react'
+import React from 'react'
 import Switch from './../switch/switch'
 import SelectLayout from './../selectLayout/selectLayout'
 import './menuEditor.css'
