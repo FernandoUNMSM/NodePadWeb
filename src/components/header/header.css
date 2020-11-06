@@ -4,6 +4,6 @@
     /* background-image: url(./../../assets/img/header-background2.jpg);
     background-position: center;
     background-size: cover; */
-    background-color: rgb(24, 20, 20);
+    background-color: var(--baseBlack);;
     /* padding-bottom: 20px; */
 }

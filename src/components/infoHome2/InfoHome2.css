@@ -6,8 +6,14 @@
     background-attachment: fixed;
     display: flex;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: space-evenly;
     color: #fff;
+}
+.section2Box {
+    width: 400px;
+    height: 250px;
+    background-color: rgb(37, 33, 33);
+    border-radius: 15px;
 }
 .infos2 {
     text-align: right;
@@ -23,7 +29,7 @@
 }
 #lazyInfo {
     height: 400px;
-    background-color:  rgb(24, 20, 20);
+    background-color:  var(--baseBlack);
     /* background-image: url(./../../assets/img/header-background2.jpg); */
     background-position: center 0;
     background-size: cover;
