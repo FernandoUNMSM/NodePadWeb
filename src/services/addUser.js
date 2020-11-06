@@ -7,13 +7,7 @@ function aadUser({ formData = {}, loader = false } = {}) {
     body: formData
   })
     .then(res => res.json())
-    .then(response =>{
-      console.log(response)
-      // const validate = response.data
-      // loader = false
-      // return {validate, loader}
-      // return validate
-    })
+    .then(response => response.message)
 }
 
 export default aadUser

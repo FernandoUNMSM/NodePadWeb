@@ -1,27 +1,31 @@
 import { faEnvelope, faLock, faUser } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {Link, useLocation} from 'wouter'
-import React from 'react'
-
+import React, {useState} from 'react'
+import Loader from './../../components/loader/loader'
 import aadUser from './../../services/addUser'
 import './register.css'
 
-
 function Register() {
 	const [location, setLocation] = useLocation(); //eslint-disable-line
-	// const [loader, setLoader] = useState(false)
+	const [loader, setLoader] = useState(false)
 
 	const sumbitForm = (event) => {
-		// setLoader(true)
+		setLoader(true)
 		const formData = new FormData(event.target)
 		event.preventDefault();
 		aadUser({formData: formData})
-			// .then(({validate, loader}) => {
-				// console.log(validate)
-				// setValidate(validate)
-				// setLoader(loader)
-			// })
-		}
+			.then(response => {
+				setLoader(false)
+				if(response === 'user created'){
+					setLocation('/editor')
+				}
+			})
+	}
+	// const validatePassword = (event) => {
+	// 	event.preventDefault()
+	// 	console.log(event.target)
+	// }
 	// 	useEffect(()=> {
 	// 		if(validateUser){
 	// 			setLocation("/editor");
@@ -31,11 +35,16 @@ function Register() {
 
 	return (
 		<>
+			{
+				(loader)
+				? <Loader/>
+				: null
+			}
 			<div className="containerConvenience">
 				<div className="registerContainer">
 					<div className="login">
 						<h1>Registrate</h1>
-						<form id="form" action="POST" onSubmit={sumbitForm} encType="multipart/form-data">
+						<form id="form" action="" onSubmit={sumbitForm} encType="multipart/form-data">
 							<div className="row100">
 								<div className="col">
 									<div className="inputBox">
@@ -83,7 +92,7 @@ function Register() {
 								</div>
 								<div className="col">
 									<div className="inputBox">
-										<input type="password"  required="required" autoComplete="off" />
+										<input type="password" required="required" autoComplete="off" />
 										<span className="text">
 											<FontAwesomeIcon icon={faLock} /> Confirmar Contraseña</span>
 										<span className="line"></span>
