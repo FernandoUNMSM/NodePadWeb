@@ -1,29 +1,16 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import './editor.css'
+import WriteBox from './../writeBox/writeBox'
 
-function Editor({ layout }) {
+function Editor({ layout, setCode }) {
 	const frame = useRef(null)
 	const editor = useRef(null)
-	let html = ''
-	let css = ''
-	let js = ''
 
-	const showPreview = (evt) => {
-		let code = '';
-		code = evt.target.value
-		if (evt.target.name === 'HTML') {
-			html = code
-		} else if (evt.target.name === 'CSS') {
-			css = `<style>${code}</style>`
-		} else {
-			js = `<script>${code}</script>`
-		}
-		frame.current.contentWindow.document.open()
-		frame.current.contentWindow.document.write(html + css + js)
-		frame.current.contentWindow.document.close()
-	}
+	const [html, setHTML] = useState('')
+	const [css, setCSS] = useState('')
+	const [js, setJS] = useState('')
+
 	useEffect(() => {
-		// console.log(layout)
 		if(layout === 'vertical'){
 			editor.current.className = "editor vertical"
 		}else if(layout === 'horizontal'){
@@ -34,25 +21,24 @@ function Editor({ layout }) {
 			editor.current.className = "editor horizontalInverso"
 		}
 	}, [layout])
+
+	useEffect(() => {
+		setCode({
+			'html': html,
+			'css': css,
+			'js': js
+		})
+		frame.current.contentWindow.document.open()
+		frame.current.contentWindow.document.write(html + `<style>${css}</style>` + `<script>${js}</script>`)
+		frame.current.contentWindow.document.close()
+	},[html,css,js]) //eslint-disable-line
 	return (
 		<>
 			<div className="editor vertical" ref={editor}>
 				<div className="codeArea">
-					<textarea
-						name="HTML"
-						placeholder="HTML Code"
-						onChange={showPreview}>
-					</textarea>
-					<textarea
-						name="CSS"
-						placeholder="CSS Code"
-						onChange={showPreview}>
-					</textarea>
-					<textarea
-						name="JS"
-						placeholder="JS Code"
-						onChange={showPreview}>
-					</textarea>
+					<WriteBox lan="HTML" setCode={setHTML} />
+					<WriteBox lan="CSS" setCode={setCSS} />
+					<WriteBox lan="JS" setCode={setJS} />
 				</div>
 				<div className="previewArea">
 					<iframe id="preview" title="preview" src="./iframe.html" ref={frame}>

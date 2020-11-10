@@ -48,7 +48,7 @@ function Register() {
 							<div className="row100">
 								<div className="col">
 									<div className="inputBox">
-										<input type="text" name="Nombre" required="required" autoComplete="off" />
+										<input type="text" name="nombre" required="required" autoComplete="off" />
 										<span className="text">
 											<FontAwesomeIcon icon={faUser} /> Nombre
 										</span>
@@ -57,7 +57,7 @@ function Register() {
 								</div>
 								<div className="col">
 									<div className="inputBox">
-										<input type="text" name="Apellido" required="required" autoComplete="off" />
+										<input type="text" name="apellido" required="required" autoComplete="off" />
 										<span className="text">
 											<FontAwesomeIcon icon={faUser} /> Apellido
 										</span>
@@ -66,7 +66,7 @@ function Register() {
 								</div>
 								<div className="col">
 									<div className="inputBox">
-										<input type="text" name="Usuario" required="required" autoComplete="off" />
+										<input type="text" name="usuario" required="required" autoComplete="off" />
 										<span className="text">
 											<FontAwesomeIcon icon={faUser} /> Nombre de usuario
 										</span>

@@ -29,6 +29,7 @@
     align-items: center;
     transition: .3s;
     border-right: 2px solid var(--cardGray);
+    padding: 10px;
 }
 .editor.verticalInverso .codeArea {
     grid-column: 2;
@@ -42,28 +43,7 @@
 .editor.horizontalInverso .codeArea {
     flex-direction: row;
 }
-.codeArea textarea {
-    resize: none;
-    outline: none;
-    background-color: var(--cardGray);
-    font-size: 1.2em;
-    border-radius: 10px;
-    padding: 10px;
-    border: none;
-    border-bottom: 2px solid var(--cardGray);
-    transition: .3s;
-    color: var(--cardTitle);
-}
-.editor.vertical .codeArea textarea,
-.editor.verticalInverso .codeArea textarea {
-    width: 90%;
-    height: 30%;
-}
-.editor.horizontal .codeArea textarea,
-.editor.horizontalInverso .codeArea textarea {
-    height: 80%;
-    width: 32%;
-}
+
 .previewArea {
     width: 100%;
     height: 100%;

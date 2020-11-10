@@ -1,0 +1,45 @@
+.codeArea .textarea .menuTextarea{
+  background-color: var(--cardGray);
+  border-radius: 10px 10px 0 0;
+  /* padding-left: 10px; */
+  /* padding-top: 5px; */
+  padding: 5px 10px;
+  border-bottom: 1px solid #000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: .3s;
+  color: var(--cardTitle);
+}
+.codeArea .textarea .menuTextarea .iconsTextarea .icon{
+  margin: 0 10px;
+  cursor: pointer;
+}
+.codeArea .textarea {
+  display: flex;
+  flex-direction: column;
+}
+.codeArea .textarea textarea {
+  resize: none;
+  outline: none;
+  background-color: var(--cardGray);
+  font-size: 1.2em;
+  border-radius: 0 0 10px 10px;
+  padding: 10px;
+  border: none;
+  border-bottom: 2px solid var(--cardGray);
+  transition: .3s;
+  color: var(--cardTitle);
+  width: 100%;
+  height: -webkit-fill-available;
+}
+.editor.vertical .codeArea .textarea ,
+.editor.verticalInverso .codeArea .textarea  {
+  width: 90%;
+  height: 30%;
+}
+.editor.horizontal .codeArea .textarea ,
+.editor.horizontalInverso .codeArea .textarea  {
+  height: 80%;
+  width: 32%;
+}

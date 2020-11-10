@@ -5,17 +5,23 @@ import MenuEditor from './../../components/menuEditor/menuEditor'
 import Preferences from './../../components/preferences/preferences'
 
 function EditorHome() {
-    const [layout, setLayout] = useState(false)
-    const manejarLayout = (al) => { setLayout(al) }
-
-    const [preferences, setPreferences] = useState(false)
-    return (
-        <>
-            <MenuEditor setLayout={manejarLayout} layout={layout} setPreferences={setPreferences} preferences={preferences}/>
-            <Editor layout={layout} />
-            <Preferences preferences={preferences}/>
-        </>
-    )
+	const [layout, setLayout] = useState(false)
+	const manejarLayout = (al) => { setLayout(al) }
+	const [preferences, setPreferences] = useState(false)
+	const [code, setCode] = useState(false)
+	return (
+		<>
+			<MenuEditor
+				setLayout={manejarLayout}
+				layout={layout}
+				setPreferences={setPreferences}
+				preferences={preferences}
+				code={code}
+				/>
+			<Editor layout={layout} setCode={setCode}/>
+			<Preferences preferences={preferences} />
+		</>
+	)
 }
 
 export default EditorHome
