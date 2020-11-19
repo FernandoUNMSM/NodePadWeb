@@ -9,9 +9,24 @@ import JSZip from 'jszip'
 import { saveAs } from 'file-saver';
 
 function MenuEditor({ setLayout, layout, setPreferences, preferences, code }) {
+	let down = `
+		<!DOCTYPE html>
+		<html lang="es">
+			<head>
+				<meta charset="utf-8" />
+				<meta name="viewport" content="width=device-width, initial-scale=1" />
+				<link src="styles.css"/>
+				<title>Project NodePadWeb</title>
+			</head>
+			<body>
+				${code.html}
+				<script src="index.js"></script>
+			</body>
+		</html>
+	`
 	var zip = new JSZip()
-	zip.file("index.html", code.html)
-	zip.file("index.css", code.css)
+	zip.file("index.html", down)
+	zip.file("styles.css", code.css)
 	zip.file("index.js", code.js)
 
 	const download = () => {
@@ -19,7 +34,7 @@ function MenuEditor({ setLayout, layout, setPreferences, preferences, code }) {
 		zip.generateAsync({ type: "blob" })
 			.then(function (content) {
 				// see FileSaver.js
-				saveAs(content, "example.zip");
+				saveAs(content, "project.zip");
 			});
 	}
 	const mostrarPreferences = () => {
@@ -37,18 +52,18 @@ function MenuEditor({ setLayout, layout, setPreferences, preferences, code }) {
 							<FontAwesomeIcon icon={faUserCircle} className="icon" />
 						</div>
 					</div>
-					{/* <div className="backHome">
+					<div className="backHome">
 						<div className="menuIcon">
 							<Link to="/">
 								<FontAwesomeIcon icon={faHome} className="icon" />
 							</Link>
 						</div>
-					</div> */}
+					</div>
 					<div className="theme">
 						<div className="menuIcon">
 							<FontAwesomeIcon icon={faAdjust} className="icon" />
 						</div>
-						<div className="menuItemContent ">
+						<div className="menuItemContent">
 							<Switch />
 						</div>
 					</div>
@@ -67,11 +82,11 @@ function MenuEditor({ setLayout, layout, setPreferences, preferences, code }) {
 							/>
 						</div>
 					</div>
-					{/* <div className="download">
+					<div className="download">
 						<div className="menuIcon" >
 							<FontAwesomeIcon icon={faDownload} className="icon" onClick={download}/>
 						</div>
-					</div> */}
+					</div>
 				</div>
 			</div>
 		</>

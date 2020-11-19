@@ -27,6 +27,9 @@
 
 .theme, .layout {
     position: relative;
+    align-items: center;
+    display: flex;
+    justify-content: center;
 }
 .theme .menuItemContent {
     width: 200px;
@@ -39,14 +42,16 @@
 }
 .menuIcon, .burguerMenu  {
     text-align: center;
+    width: 100%;
 }
 .menuIcon ~ .menuItemContent {
     position: absolute;
-    top: 0;
+    /* top: 0; */
     left: 100%;
     background-color: var(--baseBackground);
     border-radius: 10px;
     border: 2px solid var(--cardGray);
+    /* transform: translateY(-50%); */
 }
 .menuIcon:hover ~ .menuItemContent, .menuItemContent:hover {
     display: flex;
