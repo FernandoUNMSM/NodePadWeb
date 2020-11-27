@@ -20,6 +20,7 @@ function WriteBox({ lan, setCode }) {
       setCode(code)
     }
   }
+
   const download = () => {
     let file;
     let textareaContent = document.querySelector(`#${lan}`).value;
