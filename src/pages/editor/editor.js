@@ -17,18 +17,20 @@ function EditorHome() {
 	// },[perfil])
 	return (
 		<>
-			<MenuEditor
-				setLayout={manejarLayout}
-				layout={layout}
-				setPreferences={setPreferences}
-				preferences={preferences}
-				code={code}
-				setPerfil={setPerfil}
-				perfil={perfil}
-				/>
-			<Perfil state={perfil}/>
-			<Editor layout={layout} setCode={setCode}/>
-			<Preferences preferences={preferences} />
+			<div className="editorContainer">
+				<MenuEditor
+					setLayout={manejarLayout}
+					layout={layout}
+					setPreferences={setPreferences}
+					preferences={preferences}
+					code={code}
+					setPerfil={setPerfil}
+					perfil={perfil}
+					/>
+				<Perfil state={perfil}/>
+				<Editor layout={layout} setCode={setCode}/>
+				<Preferences preferences={preferences} />
+			</div>
 		</>
 	)
 }

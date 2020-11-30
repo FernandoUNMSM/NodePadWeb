@@ -48,6 +48,7 @@
   --switchSpinner: white;
   --switch: #5f616d;
 }
-body {
+.editorContainer {
   overflow: hidden;
+  position: relative;
 }
