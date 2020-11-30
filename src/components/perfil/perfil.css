@@ -1,0 +1,54 @@
+.perfilContainer {
+  width: 400px;
+  height: 100vh;
+  background-color: var(--baseBackground);
+  position: absolute;
+  right: 0;
+  border-left: 2px solid var(--cardTitle);
+  transition: .5s;
+  transform: translateX(100%);
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly
+}
+.perfilOn {
+  /* right: 0; */
+  transform: translateX(0);
+}
+.perfilContainer .foto {
+  height: 200px;
+  /* margin-top: 30px; */
+  /* margin-bottom: 50px; */
+}
+.perfilContainer .foto .userPhoto {
+  height: 100%;
+  width: 100%;
+}
+.perfilContainer .infoUser p {
+  font-family: 'Poppins', sans-serif;
+  margin-bottom: 20px;
+  color: var(--baseColor);
+  /* vertical-align: middle */
+  /* display: flex; */
+  /* align-items: center; */
+}
+.perfilContainer .infoUser p span{
+  font-weight: bold;
+  font-size: 1.2em;
+  margin-right: 10px;
+}
+.perfilContainer .buttonsPerfil {
+  display: flex;
+  justify-content: space-between;
+}
+.perfilContainer .buttonsPerfil button {
+  border: none;
+  outline: none;
+  background-color: var(--cardTitle);
+  /* height: 40px; */
+  padding: 15px 30px;
+  font-family: 'Poppins', sans-serif;
+  color: #fff;
+  cursor: pointer;
+}

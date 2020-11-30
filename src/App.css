@@ -48,3 +48,6 @@
   --switchSpinner: white;
   --switch: #5f616d;
 }
+body {
+  overflow: hidden;
+}
