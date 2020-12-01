@@ -4,6 +4,7 @@ import Home from './pages/home/home'
 import EditorHome from './pages/editor/editor'
 import Login from './pages/login/login'
 import Register from './pages/register/register'
+import Entrada from './pages/entrada/entrada'
 function App() {
   return (
     <>
@@ -22,6 +23,10 @@ function App() {
       <Route
         component={Register}
         path="/register"
+      />
+      <Route
+        component={Entrada}
+        path="/entrada"
       />
     </>
   );
