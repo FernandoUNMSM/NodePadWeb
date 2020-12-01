@@ -1,56 +1,46 @@
-body {
-    margin: 0;
-    padding: 0;
-  }
-  
-  .menu-principal {
-    display: flex;
-  }
-  
-  .menu {
-    margin: 0;
-    padding: 0;
+.Tprincipal{
+    background: #000;
+    font-size: 30px;
+    color: #ccc;
+}
+.menu{
+    width: 100%;
+    background: #ccc;
     list-style: none;
-    background-color: steelblue;
-  }
-  
-  .menu__item {
-    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+.menu li{
+    display: inline-block;
+    padding: 10px 20px;
+}
+.menu li a{
+    display: inline-block;
+    color: #fff;
+}
+.menu li a:hover{
+    background: #ccc;
+    color: #000;
+}
+.html{
     position: relative;
-    white-space: nowrap;
-    width: 100%;
-  }
-  
-  .menu__item > .menu {
-    position: absolute;
-    display: none;
-    width: 100%;
-  }
-  
-  .menu__item > .menu .menu {
-    left: 100%;
-    top: 0;
-  }
-  
-  .menu__item:hover > .menu {
-    display: block;
-  }
-  
-  .menu__link {
-    padding: 1em;
-    display: block;
-    color: white;
-    text-decoration: none;
-  }
-  
-  @media screen and (max-width: 700px) {
-    .menu__item > .menu .menu  {
-      width: auto;
-    }
-  }
-  
-  @media screen and (max-width: 550px) {
-    .menu__item > .menu {
-      width: auto;
-    }
-  }
+    bottom: 150px;
+    width: 300px;
+    height: 600px;
+    
+}
+h2{
+    font-size: 80px;
+}
+.htmlt{
+    width: 100px;
+    position: relative;
+    left: 400px;
+    bottom: 650px;
+}
+p{
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif ;
+    font-size: 20px;
+    width: 800px;
+}
+
