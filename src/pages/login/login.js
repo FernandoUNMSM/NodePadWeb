@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import {Link, useLocation} from 'wouter'
+import { Link, useLocation } from 'wouter'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLock, faUser } from '@fortawesome/free-solid-svg-icons'
 import Loader from './../../components/loader/loader'
@@ -15,25 +15,27 @@ function Login() {
 		setLoader(true)
 		const formData = new FormData(event.target)
 		event.preventDefault();
-		sendUser({formData: formData, loader: loader})
-			.then(({validate, loader}) => {
+		console.log(formData)
+		sendUser({ formData: formData, loader: loader })
+			.then(({ validate, loader }) => {
 				console.log(validate)
 				setValidate(validate)
 				setLoader(loader)
 			})
+	}
+
+	useEffect(() => {
+		if (validateUser) {
+			setLocation("/editor");
 		}
-		useEffect(()=> {
-			if(validateUser){
-				setLocation("/editor");
-			}
-	},[validateUser])
+	}, [validateUser])
 
 	return (
 		<>
 			{
 				(loader)
-				? <Loader/>
-				: null
+					? <Loader />
+					: null
 			}
 			<div className="loginContainer">
 				<div className="login">
@@ -42,7 +44,7 @@ function Login() {
 						<div className="row100">
 							<div className="col">
 								<div className="inputBox">
-									<input type="text" name="nombre" required="required" autoComplete="off"/>
+									<input type="text" name="nombre" required="required" autoComplete="off" />
 									<span className="text">
 										<FontAwesomeIcon icon={faUser} /> Usuario
 									</span>
@@ -51,7 +53,7 @@ function Login() {
 							</div>
 							<div className="col">
 								<div className="inputBox">
-									<input type="password" name="password" required="required" autoComplete="off"/>
+									<input type="password" name="password" required="required" autoComplete="off" />
 									<span className="text">
 										<FontAwesomeIcon icon={faLock} /> Contraseña
 									</span>
@@ -62,8 +64,8 @@ function Login() {
 						</div>
 						<div className="row100">
 							<div className="col">
-							<button className="sumbit">
-								Iniciar Sesion
+								<button className="sumbit">
+									Iniciar Sesion
 							</button>
 							</div>
 						</div>

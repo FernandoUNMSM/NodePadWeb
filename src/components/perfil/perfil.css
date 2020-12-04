@@ -27,6 +27,12 @@
   height: 100%;
   width: 100%;
 }
+.perfilContainer .infoUser {
+  /* height: 40%; */
+  /* display: flex; */
+  /* flex-direction: column; */
+  /* justify-content: space-around; */
+}
 .perfilContainer .infoUser p {
   font-family: 'Poppins', sans-serif;
   margin-bottom: 20px;

@@ -3,15 +3,11 @@ import './perfil.css'
 import { useEffect, useRef, useState } from 'react'
 import { faUserCircle } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import updateUser from './../../services/updateUser'
 
 function Perfil({ state }) {
   const [modificar, setModificar] = useState(true)
-
-  let usuarioActual = JSON.parse(localStorage.getItem("usuarioActual"))
-  // useEffect(() => {
-  //   console.log(modificar)
-  // }, [modificar])
-
+  const [usuarioActual, setUsuarioActual] = useState(JSON.parse(localStorage.getItem("usuarioActual")))
   const perfil = useRef(null)
 
   useEffect(() => {
@@ -21,8 +17,20 @@ function Perfil({ state }) {
   }, [state])
 
   const modoCambiar = () => {
-    setModificar(!modificar)
+    setTimeout(() => {
+      setModificar(!modificar)
+    }, 1)
   }
+
+  const enviarUpdate = (event) => {
+    const formData = new FormData(event.target)
+    event.preventDefault();
+    updateUser(formData)
+      .then(res => {
+        console.log(res)
+        setUsuarioActual(JSON.parse(localStorage.getItem("usuarioActual")))
+      })
+    }
 
   return (
     <>
@@ -42,7 +50,7 @@ function Perfil({ state }) {
               </>
               :
               <>
-                <form action="">
+                <form id="update" action="POST" onSubmit={enviarUpdate} encType="multipart/form-data">
                   <p>
                     <span>Nombre: </span>
                     <input type="text" name="nombre" defaultValue={usuarioActual.nombre} />
@@ -63,13 +71,14 @@ function Perfil({ state }) {
               </>
           }
         </div>
+
         <div className="buttonsPerfil">
           {
             (modificar)
               ?
               <button onClick={modoCambiar}>Modificar Datos</button>
               :
-              <button onClick={modoCambiar}>Guardar Cambios</button>
+              <button form="update" onClick={modoCambiar}>Guardar Cambios</button>
           }
           <button>Cerrar Sesion</button>
         </div>
