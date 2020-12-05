@@ -11,37 +11,23 @@
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  /* display: none; */
 }
 .perfilOn {
-  /* right: 0; */
   transform: translateX(0);
-  /* display: flex; */
 }
 .perfilContainer .foto {
   height: 200px;
-  /* margin-top: 30px; */
-  /* margin-bottom: 50px; */
 }
 .perfilContainer .foto .userPhoto {
   height: 100%;
   width: 100%;
 }
-.perfilContainer .infoUser {
-  /* height: 40%; */
-  /* display: flex; */
-  /* flex-direction: column; */
-  /* justify-content: space-around; */
-}
+
 .perfilContainer .infoUser p {
   font-family: 'Poppins', sans-serif;
   margin-bottom: 20px;
   color: var(--baseColor);
   display: flex;
-  /* justify-content: space-between; */
-  /* vertical-align: middle */
-  /* display: flex; */
-  /* align-items: center; */
 }
 .perfilContainer .infoUser p input {
   width: -webkit-fill-available;
@@ -56,7 +42,6 @@
   font-size: 1.2em;
   margin-right: 10px;
   white-space: nowrap;
-  /* width: fit-content; */
 }
 .perfilContainer .buttonsPerfil {
   display: flex;
@@ -66,7 +51,6 @@
   border: none;
   outline: none;
   background-color: var(--cardTitle);
-  /* height: 40px; */
   padding: 15px 0;
   font-family: 'Poppins', sans-serif;
   color: #fff;

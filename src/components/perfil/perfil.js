@@ -4,8 +4,10 @@ import { useEffect, useRef, useState } from 'react'
 import { faUserCircle } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import updateUser from './../../services/updateUser'
+import { Link, useLocation } from 'wouter'
 
 function Perfil({ state }) {
+	const [location, setLocation] = useLocation(); //eslint-disable-line
   const [modificar, setModificar] = useState(true)
   const [usuarioActual, setUsuarioActual] = useState(JSON.parse(localStorage.getItem("usuarioActual")))
   const perfil = useRef(null)
@@ -26,11 +28,13 @@ function Perfil({ state }) {
     const formData = new FormData(event.target)
     event.preventDefault();
     updateUser(formData)
-      .then(res => {
-        console.log(res)
-        setUsuarioActual(JSON.parse(localStorage.getItem("usuarioActual")))
-      })
-    }
+      .then(() => setUsuarioActual(JSON.parse(localStorage.getItem("usuarioActual"))))
+  }
+
+  const cerrarSesion = () =>{
+    localStorage.setItem("usuarioActual", "{}")
+    setLocation("/");
+  }
 
   return (
     <>
@@ -80,7 +84,7 @@ function Perfil({ state }) {
               :
               <button form="update" onClick={modoCambiar}>Guardar Cambios</button>
           }
-          <button>Cerrar Sesion</button>
+          <button onClick={cerrarSesion}>Cerrar Sesion</button>
         </div>
       </div>
     </>
