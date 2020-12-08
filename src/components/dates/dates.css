@@ -1,0 +1,147 @@
+.fondo{
+    width: 1020px;
+    height: 550px;
+    box-sizing: border-box;
+    display: flex;
+    position: absolute;
+    top: 0;
+    justify-content: center;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/*Margenes*/
+.margeni{
+    background-color: #EFF1F4;
+    margin-left: 10px;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    width: 700px;
+    height: 500px;
+    border: solid 2px #999BA1;
+    box-sizing: border-box;
+}
+
+.margenis{
+    background-color: #EFF1F4;
+    width: 700px;
+    height: 80px;
+    display: flex;
+    margin: auto 0;
+    box-sizing: border-box;
+}
+
+.margenis1{
+    background-color: #EFF1F4;
+    width: 538px;
+    height: 80px;
+    border-right: 2px solid #999BA1;
+    box-sizing: border-box;
+}
+
+.margenis2{
+    background-color: #EFF1F4;
+    width: 80px;
+    height: 80px;
+    border-right: 2px solid #999BA1;
+    box-sizing: border-box;
+}
+
+.margenim{
+    background-color: #EFF1F4;
+    width: 696px;
+    height: 82px;
+    border-top: 2px solid #999BA1;
+    display: flex;
+    box-sizing: border-box;
+}
+
+.margenim1{
+    width: 79px;
+    height: 80px;
+    background-color: #EFF1F4;
+    box-sizing: border-box;
+}
+
+.margenim2{
+    width: 459px;
+    height: 80px;
+    background-color: #EFF1F4;
+    box-sizing: border-box;
+}
+
+.margenim3{
+    width: 79px;
+    height: 80px;
+    background-color: #EFF1F4;
+    box-sizing: border-box;
+}
+
+.margend{
+    background-color: #EFF1F4;
+    margin-left: 40px;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    margin-right: 20px;
+    width: 250px;
+    height: 500px;
+    border: solid 2px #999BA1;
+    box-sizing: border-box;
+}
+
+.marginaream{
+    width: 696px;
+    height: 206px;
+    background-color: #EFF1F4;
+    display: flex;
+    border-top: 2px solid #999BA1;
+}
+
+.area{
+    background-color: #EFF1F4;
+    display: flex;
+    width: 348px;
+    height: 206px;
+}
+
+.area1{
+    background-color: #EFF1F4;
+}
+
+.area2{
+    background-color: #EFF1F4;
+}
+
+/*Margen izquierdo*/*
+.clasea{
+    background-color: #EFF1F4;
+}
+
+.claseh1{
+    background-color: #EFF1F4;
+    margin-left: 20px;
+    font-size: 30px;
+    color: #999BA1;
+    letter-spacing: 1px;
+    word-spacing: 1px;
+}
+
+.claseh2{
+    background-color: #EFF1F4;
+    color: #999BA1;
+}
+
+.far,
+.fas{
+    font-size: 30px;
+    background-color: #EFF1F4;
+    color: #999BA1;
+    margin-left: 26px;
+    margin-top: 22px;
+}
+
+.far:hover,
+.fas:hover{
+    color: black;
+}
+

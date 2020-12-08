@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react'
 import './editor.css'
 import WriteBox from './../writeBox/writeBox'
 
-function Editor({ layout, setCode }) {
+function Editor({ layout, setCode, setDates, dates }) {
 	const frame = useRef(null)
 	const editor = useRef(null)
 
@@ -36,9 +36,9 @@ function Editor({ layout, setCode }) {
 		<>
 			<div className="editor vertical" ref={editor}>
 				<div className="codeArea">
-					<WriteBox lan="HTML" setCode={setHTML} />
-					<WriteBox lan="CSS" setCode={setCSS} />
-					<WriteBox lan="JS" setCode={setJS} />
+					<WriteBox lan="HTML" setCode={setHTML} setDates={setDates} dates={dates}/>
+					<WriteBox lan="CSS" setCode={setCSS} setDates={setDates} dates={dates}/>
+					<WriteBox lan="JS" setCode={setJS} setDates={setDates} dates={dates}/>
 				</div>
 				<div className="previewArea">
 					<iframe id="preview" title="preview" src="./iframe.html" ref={frame}>

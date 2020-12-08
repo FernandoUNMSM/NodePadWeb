@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { saveAs } from 'file-saver';
 import './writeBox.css'
 
-function WriteBox({ lan, setCode }) {
+function WriteBox({ lan, setCode, setDates, dates }) {
 
   const showPreview = (evt) => {
     let code = '';
@@ -56,6 +56,10 @@ function WriteBox({ lan, setCode }) {
     saveAs(file)
   }
 
+  const mostrarDatos = () => {
+    setDates (!dates)
+  }
+
   return (
     <>
       <div className="textarea">
@@ -63,7 +67,7 @@ function WriteBox({ lan, setCode }) {
           <p>{lan}</p>
           <div className="iconsTextarea">
             <FontAwesomeIcon icon={faDownload} className="icon" onClick={download}/>
-            <FontAwesomeIcon icon={faUpload} className="icon"/>
+            <FontAwesomeIcon icon={faUpload} className="icon" onClick={mostrarDatos}/>
           </div>
         </div>
         <textarea
