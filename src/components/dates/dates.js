@@ -1,12 +1,14 @@
 import React, { useEffect } from 'react'
 import './dates.css'
-import { faGripHorizontal, faList } from '@fortawesome/free-solid-svg-icons'
+import { faGripHorizontal, faTimesCircle, faFileCode, faTrash, faFileDownload, faFileUpload } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faHtml5 } from '@fortawesome/free-brands-svg-icons'
 
 function Dates({ dates }) {
     useEffect(() => {
-        console.log("Hola")
+        console.log("Mostrar")
     }, [dates])
+
     return (
         <>
             {(dates)
@@ -15,94 +17,70 @@ function Dates({ dates }) {
                     <div className="margeni">
                         <div className="margenis">
                             <div className="margenis1">
-                                <h1 className="claseh1">Documentos</h1>
+                                <FontAwesomeIcon icon={faHtml5} className="iconsi" />
+                                <h1 className="claseh1">Documentos HTML5</h1>
                             </div>
                             <div className="margenis2">
-                                <a className="clasea" href="/index-2.html">
-                                    {/* Para los iconos */}
-                                    <FontAwesomeIcon icon={faGripHorizontal} />
-                                </a>
-                            </div>
-                            <div className="margenis2">
-                                <a className="clasea" href="/index-1.html">
-                                    <i className="fas fa-list"></i>
-                                </a>
+                                <FontAwesomeIcon icon={faTimesCircle} className="iconsi" />
                             </div>
                         </div>
                         <div className="margenim">
                             <div className="margenim1">
-                                <i className="far fa-file"></i>
-                            </div>
-                            <div className="margenim2">
                                 <h2 className="claseh2">Nombre del documento</h2>
                             </div>
-                            <div className="margenim3">
-                                <i className="fas fa-trash"></i>
+                            <div className="margenim2">
+                                <FontAwesomeIcon icon={faFileCode} className="iconii" />
                             </div>
-                            <div className="margenim3">
-                                <i className="far fa-file"></i>
+                            <div className="margenim2">
+                                <FontAwesomeIcon icon={faTrash} className="iconii" />
                             </div>
                         </div>
                         <div className="margenim">
                             <div className="margenim1">
-                                <i className="far fa-file"></i>
-                            </div>
-                            <div className="margenim2">
                                 <h2 className="claseh2">Nombre del documento</h2>
                             </div>
-                            <div className="margenim3">
-                                <i className="fas fa-trash"></i>
+                            <div className="margenim2">
+                                <FontAwesomeIcon icon={faFileCode} className="iconii" />
                             </div>
-                            <div className="margenim3">
-                                <i className="far fa-file"></i>
+                            <div className="margenim2">
+                                <FontAwesomeIcon icon={faTrash} className="iconii" />
                             </div>
                         </div>
                         <div className="margenim">
                             <div className="margenim1">
-                                <i className="far fa-file"></i>
-                            </div>
-                            <div className="margenim2">
                                 <h2 className="claseh2">Nombre del documento</h2>
                             </div>
-                            <div className="margenim3">
-                                <i className="fas fa-trash"></i>
+                            <div className="margenim2">
+                                <FontAwesomeIcon icon={faFileCode} className="iconii" />
                             </div>
-                            <div className="margenim3">
-                                <i className="far fa-file"></i>
+                            <div className="margenim2">
+                                <FontAwesomeIcon icon={faTrash} className="iconii" />
                             </div>
                         </div>
                         <div className="margenim">
                             <div className="margenim1">
-                                <i className="far fa-file"></i>
-                            </div>
-                            <div className="margenim2">
                                 <h2 className="claseh2">Nombre del documento</h2>
                             </div>
-                            <div className="margenim3">
-                                <i className="fas fa-trash"></i>
+                            <div className="margenim2">
+                                <FontAwesomeIcon icon={faFileCode} className="iconii" />
                             </div>
-                            <div className="margenim3">
-                                <i className="far fa-file"></i>
+                            <div className="margenim2">
+                                <FontAwesomeIcon icon={faTrash} className="iconii" />
                             </div>
                         </div>
                         <div className="margenim">
                             <div className="margenim1">
-                                <i className="far fa-file"></i>
-                            </div>
-                            <div className="margenim2">
                                 <h2 className="claseh2">Nombre del documento</h2>
                             </div>
-                            <div className="margenim3">
-                                <i className="fas fa-trash"></i>
+                            <div className="margenim2">
+                                <FontAwesomeIcon icon={faFileCode} className="iconii" />
                             </div>
-                            <div className="margenim3">
-                                <i className="far fa-file"></i>
+                            <div className="margenim2">
+                                <FontAwesomeIcon icon={faTrash} className="iconii" />
                             </div>
                         </div>
                     </div>
                     <div className="margend">
-                        <i className="fas fa-file-upload"></i>
-                        <i className="fas fa-file-download"></i>
                     </div>
                 </div>
                 : null

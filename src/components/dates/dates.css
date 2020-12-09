@@ -8,22 +8,23 @@
     justify-content: center;
     left: 50%;
     transform: translateX(-50%);
+    margin-top: 50px;
 }
 
-/*Margenes*/
+/*Bloques izquierdos*/
 .margeni{
-    background-color: #EFF1F4;
+    background-color: white;
     margin-left: 10px;
     margin-top: 30px;
     margin-bottom: 10px;
     width: 700px;
     height: 500px;
-    border: solid 2px #999BA1;
+    border: solid 1px rgb(56, 52, 52);
     box-sizing: border-box;
 }
 
 .margenis{
-    background-color: #EFF1F4;
+    background-color: white;
     width: 700px;
     height: 80px;
     display: flex;
@@ -32,116 +33,87 @@
 }
 
 .margenis1{
-    background-color: #EFF1F4;
-    width: 538px;
+    display: flex;
+    background-color: white;
+    width: 618px;
     height: 80px;
-    border-right: 2px solid #999BA1;
+    border-right: 1px solid rgb(56, 52, 52);
     box-sizing: border-box;
 }
 
 .margenis2{
-    background-color: #EFF1F4;
+    background-color: white;
     width: 80px;
     height: 80px;
-    border-right: 2px solid #999BA1;
+    border-right: 1px solid rgb(56, 52, 52);
     box-sizing: border-box;
 }
 
 .margenim{
-    background-color: #EFF1F4;
+    background-color: white;
     width: 696px;
     height: 82px;
-    border-top: 2px solid #999BA1;
+    border-top: 1px solid rgb(56, 52, 52);
     display: flex;
     box-sizing: border-box;
 }
 
 .margenim1{
-    width: 79px;
+    width: 600px;
     height: 80px;
-    background-color: #EFF1F4;
+    margin-left: 20px;
+    background-color: white;
     box-sizing: border-box;
 }
 
 .margenim2{
-    width: 459px;
-    height: 80px;
-    background-color: #EFF1F4;
-    box-sizing: border-box;
-}
-
-.margenim3{
     width: 79px;
     height: 80px;
-    background-color: #EFF1F4;
+    background-color: white;
     box-sizing: border-box;
 }
 
+/*Bloques Derechos*/
 .margend{
-    background-color: #EFF1F4;
+    background-color: white;
     margin-left: 40px;
     margin-top: 30px;
     margin-bottom: 10px;
     margin-right: 20px;
     width: 250px;
     height: 500px;
-    border: solid 2px #999BA1;
+    border: solid 1px rgb(56, 52, 52);
     box-sizing: border-box;
 }
 
-.marginaream{
-    width: 696px;
-    height: 206px;
-    background-color: #EFF1F4;
-    display: flex;
-    border-top: 2px solid #999BA1;
-}
-
-.area{
-    background-color: #EFF1F4;
-    display: flex;
-    width: 348px;
-    height: 206px;
-}
-
-.area1{
-    background-color: #EFF1F4;
-}
-
-.area2{
-    background-color: #EFF1F4;
-}
-
-/*Margen izquierdo*/*
-.clasea{
-    background-color: #EFF1F4;
-}
-
+/*Clases de etiquetas*/
 .claseh1{
-    background-color: #EFF1F4;
+    font-style: none;
+    background-color: white;
     margin-left: 20px;
+    margin-top: 15px;
     font-size: 30px;
-    color: #999BA1;
+    color: rgb(104, 101, 101);
     letter-spacing: 1px;
     word-spacing: 1px;
 }
 
 .claseh2{
-    background-color: #EFF1F4;
-    color: #999BA1;
+    margin-top: 20px;
+    background-color: white;
+    color: rgb(104, 101, 101);
 }
 
-.far,
-.fas{
+.iconsi,
+.iconii{
     font-size: 30px;
-    background-color: #EFF1F4;
-    color: #999BA1;
+    background-color: white;
+    color: rgb(104, 101, 101);
     margin-left: 26px;
     margin-top: 22px;
 }
 
-.far:hover,
-.fas:hover{
-    color: black;
+.iconsi:hover,
+.iconii:hover{
+    color: rgb(56, 52, 52);
 }
-
