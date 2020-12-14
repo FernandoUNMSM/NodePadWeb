@@ -1,119 +1,178 @@
-.fondo{
-    width: 1020px;
-    height: 550px;
+.datesContainer{
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    /*top: 0;
+    left: 50%;*/
+    background: var(--baseBackground);
+    transform: translate(50%, -50%);
+    transition: .3s;
+    overflow: hidden;
+    width: 990px;
+    height: 500px;
     box-sizing: border-box;
     display: flex;
-    position: absolute;
-    top: 0;
     justify-content: center;
-    left: 50%;
-    transform: translateX(-50%);
-    margin-top: 50px;
 }
 
 /*Bloques izquierdos*/
-.margeni{
-    background-color: white;
-    margin-left: 10px;
-    margin-top: 30px;
-    margin-bottom: 10px;
+.datesLeft{
+    background: var(--baseBackground);
     width: 700px;
     height: 500px;
-    border: solid 1px rgb(56, 52, 52);
+    border: solid 2px var(--gray);
     box-sizing: border-box;
 }
 
-.margenis{
-    background-color: white;
-    width: 700px;
+.datesLeftSup{
+    width: 697px;
     height: 80px;
     display: flex;
     margin: auto 0;
     box-sizing: border-box;
 }
 
-.margenis1{
+.datesLeftSup1{
     display: flex;
-    background-color: white;
+    background: var(--baseBackground);
+    transition: .5s;
     width: 618px;
     height: 80px;
-    border-right: 1px solid rgb(56, 52, 52);
+    border-right: 1px solid var(--gray);
+    border-bottom: 1px solid var(--gray);
     box-sizing: border-box;
 }
 
-.margenis2{
-    background-color: white;
+.datesLeftSup2{
+    background: var(--baseBackground);
+    transition: .5s;
     width: 80px;
     height: 80px;
-    border-right: 1px solid rgb(56, 52, 52);
+    border-right: 1px solid var(--gray);
+    border-bottom: 1px solid var(--gray);
     box-sizing: border-box;
 }
 
-.margenim{
-    background-color: white;
+.datesLeftMed{
     width: 696px;
-    height: 82px;
-    border-top: 1px solid rgb(56, 52, 52);
+    height: 83px;
     display: flex;
     box-sizing: border-box;
 }
 
-.margenim1{
+.datesLeftMed1{
     width: 600px;
-    height: 80px;
-    margin-left: 20px;
-    background-color: white;
+    height: 83px;
+    background: var(--baseBackground);
+    transition: .5s;
     box-sizing: border-box;
+    border-bottom: 1px solid var(--gray);
 }
 
-.margenim2{
+.datesLeftMed2{
     width: 79px;
-    height: 80px;
-    background-color: white;
+    height: 83px;
+    background: var(--baseBackground);
+    transition: .5s;
     box-sizing: border-box;
+    border-bottom: 1px solid var(--gray);
 }
 
 /*Bloques Derechos*/
-.margend{
+.datesRight{
     background-color: white;
+    /*background: var(--baseBackground);
+    transition: .5s;*/
     margin-left: 40px;
-    margin-top: 30px;
-    margin-bottom: 10px;
-    margin-right: 20px;
     width: 250px;
     height: 500px;
-    border: solid 1px rgb(56, 52, 52);
+    border: solid 2px var(--gray);
+    box-sizing: border-box;
+}
+
+.datesRightS{
+    background: var(--baseBackground);
+    transition: .5s;
+    height: 200px;
+    border-bottom: 1px solid var(--gray);
+}
+
+.datesRightI{
+    background: var(--baseBackground);
+    transition: .5s;
+    height: 296px;
     box-sizing: border-box;
 }
 
 /*Clases de etiquetas*/
-.claseh1{
-    font-style: none;
-    background-color: white;
+.datesH1{
+    background: var(--baseBackground);
+    transition: .5s;
     margin-left: 20px;
     margin-top: 15px;
     font-size: 30px;
-    color: rgb(104, 101, 101);
+    color: var(--baseColor);
     letter-spacing: 1px;
     word-spacing: 1px;
 }
 
-.claseh2{
+.datesH2{
+    margin-left: 25px;
     margin-top: 20px;
-    background-color: white;
-    color: rgb(104, 101, 101);
+    background: var(--baseBackground);
+    transition: .5s;
+    color: var(--baseColor);
 }
 
-.iconsi,
-.iconii{
+.datesH3{
+    margin-left: 18%;
+    margin-bottom: 10%;
+    font-size: 18px;
+    background: var(--baseBackground);
+    transition: .5s;
+    color: var(--baseColor);
+}
+
+.datesP{
+    margin-left: 10px;
+    font-size: 18px;
+    background: var(--baseBackground);
+    transition: .5s;
+    color: var(--baseColor);
+}
+
+.datesField{
+    font-size: 16px;
+    margin-left: 10px;
+    background: var(--baseBackground);
+    transition: .5s;
+    color: var(--baseColor);
+    border-style: double;
+}
+
+.datesIconS,
+.datesIconS2,
+.datesIconM{
     font-size: 30px;
-    background-color: white;
-    color: rgb(104, 101, 101);
+    background: var(--baseBackground);
+    transition: .5s;
+    color: var(--baseColor);
     margin-left: 26px;
     margin-top: 22px;
 }
 
-.iconsi:hover,
-.iconii:hover{
-    color: rgb(56, 52, 52);
+.datesIconM:hover{
+    color: var(--gray);
+}
+
+.datesIconS2:hover{
+    color: red;
+}
+
+.datesIconR{
+    font-size: 190px;
+    margin-left: 20%;
+    background: var(--baseBackground);
+    transition: .5s;
+    color: var(--baseColor);
 }

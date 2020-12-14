@@ -13,74 +13,83 @@ function Dates({ dates }) {
         <>
             {(dates)
                 ?
-                <div className="fondo">
-                    <div className="margeni">
-                        <div className="margenis">
-                            <div className="margenis1">
-                                <FontAwesomeIcon icon={faHtml5} className="iconsi" />
-                                <h1 className="claseh1">Documentos HTML5</h1>
+                <div className="datesContainer">
+                    <div className="datesLeft">
+                        <div className="datesLeftSup">
+                            <div className="datesLeftSup1">
+                                <FontAwesomeIcon icon={faHtml5} className="datesIconS" />
+                                <h1 className="datesH1">Documentos HTML5</h1>
                             </div>
-                            <div className="margenis2">
-                                <FontAwesomeIcon icon={faTimesCircle} className="iconsi" />
-                            </div>
-                        </div>
-                        <div className="margenim">
-                            <div className="margenim1">
-                                <h2 className="claseh2">Nombre del documento</h2>
-                            </div>
-                            <div className="margenim2">
-                                <FontAwesomeIcon icon={faFileCode} className="iconii" />
-                            </div>
-                            <div className="margenim2">
-                                <FontAwesomeIcon icon={faTrash} className="iconii" />
+                            <div className="datesLeftSup2">
+                                <FontAwesomeIcon icon={faTimesCircle} className="datesIconS2" />
                             </div>
                         </div>
-                        <div className="margenim">
-                            <div className="margenim1">
-                                <h2 className="claseh2">Nombre del documento</h2>
+                        <div className="datesLeftMed">
+                            <div className="datesLeftMed1">
+                                <h2 className="datesH2">Nombre del documento</h2>
                             </div>
-                            <div className="margenim2">
-                                <FontAwesomeIcon icon={faFileCode} className="iconii" />
+                            <div className="datesLeftMed2">
+                                <FontAwesomeIcon icon={faFileCode} className="datesIconM" />
                             </div>
-                            <div className="margenim2">
-                                <FontAwesomeIcon icon={faTrash} className="iconii" />
-                            </div>
-                        </div>
-                        <div className="margenim">
-                            <div className="margenim1">
-                                <h2 className="claseh2">Nombre del documento</h2>
-                            </div>
-                            <div className="margenim2">
-                                <FontAwesomeIcon icon={faFileCode} className="iconii" />
-                            </div>
-                            <div className="margenim2">
-                                <FontAwesomeIcon icon={faTrash} className="iconii" />
+                            <div className="datesLeftMed2">
+                                <FontAwesomeIcon icon={faTrash} className="datesIconM" />
                             </div>
                         </div>
-                        <div className="margenim">
-                            <div className="margenim1">
-                                <h2 className="claseh2">Nombre del documento</h2>
+                        <div className="datesLeftMed">
+                            <div className="datesLeftMed1">
+                                <h2 className="datesH2">Nombre del documento</h2>
                             </div>
-                            <div className="margenim2">
-                                <FontAwesomeIcon icon={faFileCode} className="iconii" />
+                            <div className="datesLeftMed2">
+                                <FontAwesomeIcon icon={faFileCode} className="datesIconM" />
                             </div>
-                            <div className="margenim2">
-                                <FontAwesomeIcon icon={faTrash} className="iconii" />
+                            <div className="datesLeftMed2">
+                                <FontAwesomeIcon icon={faTrash} className="datesIconM" />
                             </div>
                         </div>
-                        <div className="margenim">
-                            <div className="margenim1">
-                                <h2 className="claseh2">Nombre del documento</h2>
+                        <div className="datesLeftMed">
+                            <div className="datesLeftMed1">
+                                <h2 className="datesH2">Nombre del documento</h2>
                             </div>
-                            <div className="margenim2">
-                                <FontAwesomeIcon icon={faFileCode} className="iconii" />
+                            <div className="datesLeftMed2">
+                                <FontAwesomeIcon icon={faFileCode} className="datesIconM" />
                             </div>
-                            <div className="margenim2">
-                                <FontAwesomeIcon icon={faTrash} className="iconii" />
+                            <div className="datesLeftMed2">
+                                <FontAwesomeIcon icon={faTrash} className="datesIconM" />
+                            </div>
+                        </div>
+                        <div className="datesLeftMed">
+                            <div className="datesLeftMed1">
+                                <h2 className="datesH2">Nombre del documento</h2>
+                            </div>
+                            <div className="datesLeftMed2">
+                                <FontAwesomeIcon icon={faFileCode} className="datesIconM" />
+                            </div>
+                            <div className="datesLeftMed2">
+                                <FontAwesomeIcon icon={faTrash} className="datesIconM" />
+                            </div>
+                        </div>
+                        <div className="datesLeftMed">
+                            <div className="datesLeftMed1">
+                                <h2 className="datesH2">Nombre del documento</h2>
+                            </div>
+                            <div className="datesLeftMed2">
+                                <FontAwesomeIcon icon={faFileCode} className="datesIconM" />
+                            </div>
+                            <div className="datesLeftMed2">
+                                <FontAwesomeIcon icon={faTrash} className="datesIconM" />
                             </div>
                         </div>
                     </div>
-                    <div className="margend">
+                    <div className="datesRight">
+                        <div className="datesRightS">
+                            <FontAwesomeIcon icon={faHtml5} className="datesIconR" />
+                        </div>
+                        <div className="datesRightI">
+                            <h3 className="datesH3">Documento Actual</h3>
+                            <p className="datesP">Nombre:</p>
+                            <br />
+                            <input type="text" id="namedoc" className="datesField"></input>
+                        </div>
                     </div>
                 </div>
                 : null
