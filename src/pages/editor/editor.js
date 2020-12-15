@@ -11,6 +11,8 @@ function EditorHome() {
 	const [preferences, setPreferences] = useState(false)
 	const [code, setCode] = useState(false)
 	const [dates, setDates] = useState(false)
+	const [lenguaje, setLenguaje] = useState("")
+
 	return (
 		<>
 			<MenuEditor
@@ -20,9 +22,9 @@ function EditorHome() {
 				preferences={preferences}
 				code={code}
 				/>
-			<Editor layout={layout} setCode={setCode} setDates={setDates} dates={dates}/>
+			<Editor layout={layout} setCode={setCode} setDates={setDates} dates={dates} setLenguaje={setLenguaje}/>
 			<Preferences preferences={preferences} />
-			<Dates dates={dates}/>
+			<Dates dates={dates} setDates={setDates} lenguaje={lenguaje}/>
 		</>
 	)
 }

@@ -4,10 +4,33 @@ import { faGripHorizontal, faTimesCircle, faFileCode, faTrash, faFileDownload, f
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHtml5 } from '@fortawesome/free-brands-svg-icons'
 
-function Dates({ dates }) {
-    useEffect(() => {
-        console.log("Mostrar")
-    }, [dates])
+function Dates({ dates, setDates, lenguaje }) {
+    // var iconi = "Html5"
+
+    // const mostrarIcono = () => {
+    //     switch (lenguaje) {
+    //         case 'HTML':
+    //             iconi = "Html5"
+    //             console.log(iconi)
+    //             break;
+    //         case 'CSS':
+    //             iconi = "TimesCircle"
+    //             console.log(iconi)
+    //             break;
+    //         case 'JS':
+    //             iconi = "GripHorizontal"
+    //             console.log(iconi)
+    //             break;
+    //     }
+    // }
+
+    // useEffect(() => {
+    //     mostrarIcono()
+    // }, [lenguaje])
+
+    const mostrarDatos = () => {
+        setDates(!dates)
+    }
 
     return (
         <>
@@ -18,10 +41,10 @@ function Dates({ dates }) {
                         <div className="datesLeftSup">
                             <div className="datesLeftSup1">
                                 <FontAwesomeIcon icon={faHtml5} className="datesIconS" />
-                                <h1 className="datesH1">Documentos HTML5</h1>
+                                <h1 className="datesH1">Documentos {lenguaje}</h1>
                             </div>
                             <div className="datesLeftSup2">
-                                <FontAwesomeIcon icon={faTimesCircle} className="datesIconS2" />
+                                <FontAwesomeIcon icon={faTimesCircle} className="datesIconS2" onClick={mostrarDatos} />
                             </div>
                         </div>
                         <div className="datesLeftMed">
