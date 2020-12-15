@@ -24,9 +24,7 @@
 }
 .html{
     position: relative;
-    bottom: 150px;
     width: 300px;
-    height: 600px;
     
 }
 h2{
@@ -35,12 +33,40 @@ h2{
 .htmlt{
     width: 100px;
     position: relative;
-    left: 400px;
-    bottom: 650px;
+    left: 40px;
+    top: 50px;
 }
 p{
     font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif ;
     font-size: 20px;
+    text-align: left;
     width: 800px;
 }
-
+.css{
+    position: relative;
+    right: 105px;
+}
+article{
+    display: flex;
+}
+.h2html{
+    position: relative;
+    left: 40px;
+    
+}
+.csst{
+    position: relative;
+    top: 100px;
+    right: 160px;
+}
+.h2css{
+    position: relative;
+    left: 50px;
+}
+.JST {
+    position: relative;
+    top: 100px;
+}
+.menutentrada {
+    position: fixed;
+}
