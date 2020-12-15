@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from 'react'
+import React, {useRef} from 'react'
+import useLazy from './../../hooks/useLazy'
 
 import './InfoHome2.css'
 
@@ -8,7 +9,6 @@ function InfoHome2() {
 		<>
 			<section className="section2">
 				<div className="section2Box">
-					
 				</div>
 				<div className="info infos2">
 					<h1>Lorem ipsum dolor sit amet.</h1>
@@ -19,26 +19,14 @@ function InfoHome2() {
 	)
 }
 export default function LazyInfoHome2() {
-	const [show, setShow] = useState(false)
-
-	useEffect(()=>{
-		const onChange = (entries)=> {
-			const el = entries[0]
-			if(el.isIntersecting){
-				setShow(true)
-			}
-		}
-
-		const observer2 = new IntersectionObserver(onChange, {
-			rootMargin: '0px'
-		})
-		observer2.observe(document.getElementById('lazyInfo'))
-	})
+  const fromRef = useRef()
+	const isIntersected = useLazy({distance: '0px', fromRef})
+	console.log(isIntersected)
 
 	return(
-		<div id="lazyInfo">
+		<div ref={fromRef} id="lazyInfo2">
 			{
-				show
+				isIntersected
 				? <InfoHome2/>
 				: null
 			}

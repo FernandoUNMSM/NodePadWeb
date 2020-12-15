@@ -8,6 +8,7 @@
     align-items: center;
     justify-content: space-evenly;
     color: #fff;
+    background-color:  var(--baseBlack);
 }
 .section2Box {
     width: 400px;
@@ -27,7 +28,7 @@
 .infos2 p {
     font-size: 1.3em;
 }
-#lazyInfo {
+#lazyInfo2 {
     height: 400px;
     background-color:  var(--baseBlack);
     /* background-image: url(./../../assets/img/header-background2.jpg); */

@@ -15,7 +15,7 @@ function Login() {
 		setLoader(true)
 		const formData = new FormData(event.target)
 		event.preventDefault();
-		console.log(formData)
+		// console.log(formData)
 		sendUser({ formData: formData, loader: loader })
 			.then(({ validate, loader }) => {
 				console.log(validate)

@@ -1,7 +1,7 @@
 .section1 {
     /* padding-top: 100px; */
     background-color: var(--baseBlack);
-    height: 700px;
+    height: 500px;
     color: white;
 }
 .section1InfoContainer {
@@ -37,7 +37,7 @@
         opacity: 1;
     }
 }
-#lazyInfo1 {
-    height: 400px;
+#lazyInfo {
+    height: 500px;
     background-color:  var(--baseBlack);
 }
