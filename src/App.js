@@ -5,6 +5,9 @@ import EditorHome from './pages/editor/editor'
 import Login from './pages/login/login'
 import Register from './pages/register/register'
 import Entrada from './pages/entrada/entrada'
+import Vision from './pages/vision/vision'
+import Mision from './pages/mision/mision'
+import Proposito from './pages/proposito/proposito'
 function App() {
   return (
     <>
@@ -27,6 +30,18 @@ function App() {
       <Route
         component={Entrada}
         path="/entrada"
+      />
+      <Route
+        component={Mision}
+        path="/mision"
+      />
+      <Route
+        component={Vision}
+        path="/vision"
+      />
+      <Route
+        component={Proposito}
+        path="/proposito"
       />
     </>
   );

@@ -16,7 +16,7 @@ function Entrada() {
 						<ul>
 							<li><a target="_blank" href="#">Misión</a></li>
 							<li><a target="_blank" href="#">Visión</a></li>
-							<li><a target="_blank" href="#">Valores</a></li>
+							<li><a target="_blank" href="#">Proposito</a></li>
 						</ul>
 					</li>
 					<li><a href="#">HTML</a></li>
