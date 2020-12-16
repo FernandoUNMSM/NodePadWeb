@@ -8,6 +8,7 @@ function sendUser({ formData = {}, loader = false } = {}) {
   })
     .then(res => res.json())
     .then(response =>{
+      console.log(response);
       localStorage.setItem("usuarioActual", JSON.stringify(response.data.validate[0]));
       // console.log(response.data.validate);
       const validate = response.data.valid
