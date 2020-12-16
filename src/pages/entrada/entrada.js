@@ -11,12 +11,12 @@ function Entrada() {
 			</header>		
 		<nav>
 				<ul className="menu">
-					<li><a href="#">Inicio</a></li>
-					<li><a href="#">Nosotros</a>
+					<li><a target="_blank" href="#">Inicio</a></li>
+					<li><a target="_blank" href="#">Nosotros</a>
 						<ul>
-							<li><a href="#">Misión</a></li>
-							<li><a href="#">Visión</a></li>
-							<li><a href="#">Valores</a></li>
+							<li><a target="_blank" href="#">Misión</a></li>
+							<li><a target="_blank" href="#">Visión</a></li>
+							<li><a target="_blank" href="#">Valores</a></li>
 						</ul>
 					</li>
 					<li><a href="#">HTML</a></li>
