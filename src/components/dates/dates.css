@@ -125,9 +125,10 @@
 }
 
 .datesH3{
-    margin-left: 18%;
+    margin-left: 12%;
     margin-bottom: 10%;
-    font-size: 18px;
+    padding-top: 10px;
+    font-size: 22px;
     background: var(--baseBackground);
     transition: .5s;
     color: var(--baseColor);
@@ -139,15 +140,35 @@
     background: var(--baseBackground);
     transition: .5s;
     color: var(--baseColor);
+    padding-bottom: 15px;
 }
 
 .datesField{
     font-size: 16px;
-    margin-left: 10px;
+    margin-left: 12%;
     background: var(--baseBackground);
     transition: .5s;
     color: var(--baseColor);
-    border-style: double;
+    border-radius: 200px;
+    padding: 2%;
+    margin-bottom: 15px;
+}
+
+.datesButton{
+    font-size: 25px;
+    font-weight: 300;
+    margin-left: 25%;
+    background: var(--baseBackground);
+    transition: .5s;
+    color: var(--baseColor);
+    border: 2px solid;
+    padding: 5%;
+    border-radius: 200px;
+    margin-top: 15px;
+}
+
+.datesButton:hover{
+    background: red;
 }
 
 .datesIconS,
@@ -171,7 +192,7 @@
 
 .datesIconR{
     font-size: 190px;
-    margin-left: 20%;
+    margin-left: 19%;
     background: var(--baseBackground);
     transition: .5s;
     color: var(--baseColor);

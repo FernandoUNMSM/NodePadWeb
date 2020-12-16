@@ -1,24 +1,40 @@
 import React, { useEffect } from 'react'
 import './dates.css'
-import { faGripHorizontal, faTimesCircle, faFileCode, faTrash, faFileDownload, faFileUpload } from '@fortawesome/free-solid-svg-icons'
+import { faGripHorizontal, faTimesCircle, faFileCode, faTrash, faFileDownload, faFileUpload, prefix } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faHtml5 } from '@fortawesome/free-brands-svg-icons'
+import { faHtml5, faCss3Alt, faNodeJs } from '@fortawesome/free-brands-svg-icons'
 
 function Dates({ dates, setDates, lenguaje }) {
-    // var iconi = "Html5"
+    var iconi
+
+    switch (lenguaje) {
+        case "HTML":
+            iconi = faHtml5
+            console.log(iconi)
+            break;
+        case "CSS":
+            iconi = faCss3Alt
+            console.log(iconi)
+            break;
+        case "JS":
+            iconi = faNodeJs
+            console.log(iconi)
+            break;
+    }
 
     // const mostrarIcono = () => {
+    //     var iconi
     //     switch (lenguaje) {
-    //         case 'HTML':
-    //             iconi = "Html5"
+    //         case "HTML":
+    //             iconi = faHtml5
     //             console.log(iconi)
     //             break;
-    //         case 'CSS':
-    //             iconi = "TimesCircle"
+    //         case "CSS":
+    //             iconi = faCss3Alt
     //             console.log(iconi)
     //             break;
-    //         case 'JS':
-    //             iconi = "GripHorizontal"
+    //         case "JS":
+    //             iconi = faJs
     //             console.log(iconi)
     //             break;
     //     }
@@ -40,7 +56,7 @@ function Dates({ dates, setDates, lenguaje }) {
                     <div className="datesLeft">
                         <div className="datesLeftSup">
                             <div className="datesLeftSup1">
-                                <FontAwesomeIcon icon={faHtml5} className="datesIconS" />
+                                <FontAwesomeIcon icon={iconi} className="datesIconS" />
                                 <h1 className="datesH1">Documentos {lenguaje}</h1>
                             </div>
                             <div className="datesLeftSup2">
@@ -105,13 +121,19 @@ function Dates({ dates, setDates, lenguaje }) {
                     </div>
                     <div className="datesRight">
                         <div className="datesRightS">
-                            <FontAwesomeIcon icon={faHtml5} className="datesIconR" />
+                            <FontAwesomeIcon icon={iconi} className="datesIconR" />
                         </div>
                         <div className="datesRightI">
                             <h3 className="datesH3">Documento Actual</h3>
-                            <p className="datesP">Nombre:</p>
-                            <br />
+                            <p className="datesP">
+                                Nombre:</p>
                             <input type="text" id="namedoc" className="datesField"></input>
+                            <p className="datesP">
+                                Tamaño: 0 KB
+                            </p>
+                            <button className="datesButton">
+                                Guardar
+                            </button>
                         </div>
                     </div>
                 </div>
