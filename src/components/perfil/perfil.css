@@ -1,0 +1,59 @@
+.perfilContainer {
+  width: 450px;
+  height: 100vh;
+  background-color: var(--baseBackground);
+  position: absolute;
+  right: 0;
+  border-left: 2px solid var(--cardTitle);
+  transition: .5s;
+  transform: translateX(100%);
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.perfilOn {
+  transform: translateX(0);
+}
+.perfilContainer .foto {
+  height: 200px;
+}
+.perfilContainer .foto .userPhoto {
+  height: 100%;
+  width: 100%;
+}
+
+.perfilContainer .infoUser p {
+  font-family: 'Poppins', sans-serif;
+  margin-bottom: 20px;
+  color: var(--baseColor);
+  display: flex;
+}
+.perfilContainer .infoUser p input {
+  width: -webkit-fill-available;
+  padding: 0 10px;
+  font-family: 'Poppins', sans-serif;
+  outline: none;
+  border: 1px solid var(--cardTitle);
+  color: var(--baseColor);
+}
+.perfilContainer .infoUser p span{
+  font-weight: bold;
+  font-size: 1.2em;
+  margin-right: 10px;
+  white-space: nowrap;
+}
+.perfilContainer .buttonsPerfil {
+  display: flex;
+  justify-content: space-between;
+}
+.perfilContainer .buttonsPerfil button {
+  border: none;
+  outline: none;
+  background-color: var(--cardTitle);
+  padding: 15px 0;
+  font-family: 'Poppins', sans-serif;
+  color: #fff;
+  cursor: pointer;
+  width: 40%;
+}

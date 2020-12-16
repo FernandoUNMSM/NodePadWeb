@@ -1,7 +1,8 @@
+import React, {useRef} from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCss3Alt, faJs } from '@fortawesome/free-brands-svg-icons'
 import { faCode } from '@fortawesome/free-solid-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import React, { useEffect, useState } from 'react'
+import useLazy from './../../hooks/useLazy'
 import './infoHome1.css'
 
 function InfoHome1() {
@@ -25,27 +26,16 @@ function InfoHome1() {
 		</>
 	)
 }
+
 export default function LazyInfoHome1() {
-	const [show, setShow] = useState(false)
-
-	useEffect(()=>{
-		const onChange = (entries)=> {
-			const el = entries[0]
-			if(el.isIntersecting){
-				setShow(true)
-			}
-		}
-
-		const observer = new IntersectionObserver(onChange, {
-			rootMargin: '0px'
-		})
-		observer.observe(document.getElementById('lazyInfo1'))
-	})
+  const fromRef = useRef()
+	const isIntersected = useLazy({distance: '0px', fromRef})
+	// console.log(isIntersected)
 
 	return(
-		<div id="lazyInfo1">
+		<div ref={fromRef} id="lazyInfo">
 			{
-				show
+				isIntersected
 				? <InfoHome1/>
 				: null
 			}

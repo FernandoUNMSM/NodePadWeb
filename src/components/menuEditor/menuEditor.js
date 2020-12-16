@@ -8,7 +8,7 @@ import { Link } from 'wouter'
 import JSZip from 'jszip'
 import { saveAs } from 'file-saver';
 
-function MenuEditor({ setLayout, layout, setPreferences, preferences, code }) {
+function MenuEditor({ setLayout, layout, setPreferences, preferences, code, setPerfil, perfil }) {
 	let down = `
 		<!DOCTYPE html>
 		<html lang="es">
@@ -40,6 +40,9 @@ function MenuEditor({ setLayout, layout, setPreferences, preferences, code }) {
 	const mostrarPreferences = () => {
 		setPreferences(!preferences)
 	}
+	const mostrarPerfil = () => {
+		setPerfil(!perfil)
+	}
 	return (
 		<>
 			<div className="menuEditor">
@@ -49,7 +52,7 @@ function MenuEditor({ setLayout, layout, setPreferences, preferences, code }) {
 					</div>
 					<div className="perfil">
 						<div className="menuIcon">
-							<FontAwesomeIcon icon={faUserCircle} className="icon" />
+							<FontAwesomeIcon icon={faUserCircle} className="icon" onClick={mostrarPerfil}/>
 						</div>
 					</div>
 					<div className="backHome">
