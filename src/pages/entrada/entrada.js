@@ -10,13 +10,13 @@ function Entrada() {
 				</div>
 			</header>		
 		<nav>
-				<ul className="menu">
+				<ul className="menuentrada">
 					<li><a target="_blank" href="#">Inicio</a></li>
 					<li><a target="_blank" href="#">Nosotros</a>
 						<ul>
-							<li><a target="_blank" href="#">Misión</a></li>
-							<li><a target="_blank" href="#">Visión</a></li>
-							<li><a target="_blank" href="#">Proposito</a></li>
+							<li><a target="_blank" href="http://localhost:3000/mision">Misión</a></li>
+							<li><a target="_blank" href="http://localhost:3000/vision">Visión</a></li>
+							<li><a target="_blank" href="http://localhost:3000/proposito">Proposito</a></li>
 						</ul>
 					</li>
 					<li><a href="#">HTML</a></li>

@@ -3,22 +3,22 @@
     font-size: 30px;
     color: #ccc;
 }
-.menu{
+.menuentrada{
     width: 100%;
     background: #ccc;
     list-style: none;
     margin: 0;
     padding: 0;
 }
-.menu li{
+.menuentrada li{
     display: inline-block;
     padding: 10px 20px;
 }
-.menu li a{
+.menuentrada li a{
     display: inline-block;
     color: #fff;
 }
-.menu li a:hover{
+.menuentrada li a:hover{
     background: #ccc;
     color: #000;
 }
@@ -67,6 +67,6 @@ article{
     position: relative;
     top: 100px;
 }
-.menutentrada {
+.menuentrada {
     position: fixed;
 }

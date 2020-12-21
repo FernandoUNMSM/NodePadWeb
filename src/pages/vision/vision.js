@@ -10,13 +10,13 @@ function Vision() {
 				</div>
 			</header>		
 		<nav>
-				<ul className="menu">
+				<ul className="menuentrada">
 					<li><a href="#">Inicio</a></li>
 					<li><a href="#">Nosotros</a>
 						<ul>
-							<li><a href="#">Misión</a></li>
-							<li><a href="#">Visión</a></li>
-							<li><a href="#">Valores</a></li>
+							<li><a target="_blank" href="http://localhost:3000/mision">Misión</a></li>
+							<li><a target="_blank" href="http://localhost:3000/vision">Visión</a></li>
+							<li><a target="_blank" href="http://localhost:3000/proposito">Proposito</a></li>
 						</ul>
 					</li>
 					<li><a href="#">HTML</a></li>
