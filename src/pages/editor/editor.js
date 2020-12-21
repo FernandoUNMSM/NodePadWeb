@@ -5,6 +5,7 @@ import MenuEditor from './../../components/menuEditor/menuEditor'
 import Preferences from './../../components/preferences/preferences'
 import Perfil from './../../components/perfil/perfil'
 // import {useEffect} from 'react'
+import Dates from './../../components/dates/dates'
 
 function EditorHome() {
 	const [layout, setLayout] = useState(false)
@@ -12,6 +13,8 @@ function EditorHome() {
 	const [preferences, setPreferences] = useState(false)
 	const [code, setCode] = useState(false)
 	const [perfil, setPerfil] = useState(false)
+	const [dates, setDates] = useState(false)
+	const [lenguaje, setLenguaje] = useState("")
 	// useEffect(() => {
 	// 	console.log(perfil)
 	// },[perfil])
@@ -28,8 +31,9 @@ function EditorHome() {
 					perfil={perfil}
 					/>
 				<Perfil state={perfil}/>
-				<Editor layout={layout} setCode={setCode}/>
+				<Editor layout={layout} setCode={setCode} setDates={setDates} dates={dates} setLenguaje={setLenguaje}/>
 				<Preferences preferences={preferences} />
+				<Dates dates={dates} setDates={setDates} lenguaje={lenguaje}/>
 			</div>
 		</>
 	)
