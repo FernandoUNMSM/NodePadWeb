@@ -1,0 +1,199 @@
+.datesContainer{
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    /*top: 0;
+    left: 50%;*/
+    background: var(--baseBackground);
+    transform: translate(50%, -50%);
+    transition: .3s;
+    overflow: hidden;
+    width: 990px;
+    height: 500px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+}
+
+/*Bloques izquierdos*/
+.datesLeft{
+    background: var(--baseBackground);
+    width: 700px;
+    height: 500px;
+    border: solid 2px var(--gray);
+    box-sizing: border-box;
+}
+
+.datesLeftSup{
+    width: 697px;
+    height: 80px;
+    display: flex;
+    margin: auto 0;
+    box-sizing: border-box;
+}
+
+.datesLeftSup1{
+    display: flex;
+    background: var(--baseBackground);
+    transition: .5s;
+    width: 618px;
+    height: 80px;
+    border-right: 1px solid var(--gray);
+    border-bottom: 1px solid var(--gray);
+    box-sizing: border-box;
+}
+
+.datesLeftSup2{
+    background: var(--baseBackground);
+    transition: .5s;
+    width: 80px;
+    height: 80px;
+    border-right: 1px solid var(--gray);
+    border-bottom: 1px solid var(--gray);
+    box-sizing: border-box;
+}
+
+.datesLeftMed{
+    width: 696px;
+    height: 83px;
+    display: flex;
+    box-sizing: border-box;
+}
+
+.datesLeftMed1{
+    width: 600px;
+    height: 83px;
+    background: var(--baseBackground);
+    transition: .5s;
+    box-sizing: border-box;
+    border-bottom: 1px solid var(--gray);
+}
+
+.datesLeftMed2{
+    width: 79px;
+    height: 83px;
+    background: var(--baseBackground);
+    transition: .5s;
+    box-sizing: border-box;
+    border-bottom: 1px solid var(--gray);
+}
+
+/*Bloques Derechos*/
+.datesRight{
+    background-color: white;
+    /*background: var(--baseBackground);
+    transition: .5s;*/
+    margin-left: 40px;
+    width: 250px;
+    height: 500px;
+    border: solid 2px var(--gray);
+    box-sizing: border-box;
+}
+
+.datesRightS{
+    background: var(--baseBackground);
+    transition: .5s;
+    height: 200px;
+    border-bottom: 1px solid var(--gray);
+}
+
+.datesRightI{
+    background: var(--baseBackground);
+    transition: .5s;
+    height: 296px;
+    box-sizing: border-box;
+}
+
+/*Clases de etiquetas*/
+.datesH1{
+    background: var(--baseBackground);
+    transition: .5s;
+    margin-left: 20px;
+    margin-top: 15px;
+    font-size: 30px;
+    color: var(--baseColor);
+    letter-spacing: 1px;
+    word-spacing: 1px;
+}
+
+.datesH2{
+    margin-left: 25px;
+    margin-top: 20px;
+    background: var(--baseBackground);
+    transition: .5s;
+    color: var(--baseColor);
+}
+
+.datesH3{
+    margin-left: 12%;
+    margin-bottom: 10%;
+    padding-top: 10px;
+    font-size: 22px;
+    background: var(--baseBackground);
+    transition: .5s;
+    color: var(--baseColor);
+}
+
+.datesP{
+    margin-left: 10px;
+    font-size: 18px;
+    background: var(--baseBackground);
+    transition: .5s;
+    color: var(--baseColor);
+    padding-bottom: 15px;
+}
+
+.datesField{
+    font-size: 16px;
+    margin-left: 12%;
+    background: var(--baseBackground);
+    transition: .5s;
+    color: var(--baseColor);
+    border-radius: 200px;
+    padding: 2%;
+    margin-bottom: 15px;
+}
+
+.datesButton{
+    font-size: 25px;
+    font-weight: 300;
+    margin-left: 25%;
+    background: var(--baseBackground);
+    transition: .5s;
+    color: var(--baseColor);
+    border: 2px solid;
+    padding: 5%;
+    border-radius: 200px;
+    margin-top: 15px;
+}
+
+.datesButton:hover{
+    background: red;
+}
+
+.datesIconS,
+.datesIconS2,
+.datesIconM{
+    font-size: 30px;
+    background: var(--baseBackground);
+    transition: .5s;
+    color: var(--baseColor);
+    margin-left: 26px;
+    margin-top: 22px;
+}
+
+.datesIconM:hover{
+    color: var(--gray);
+}
+
+.datesIconS2:hover{
+    color: red;
+}
+
+.datesIconR{
+    font-size: 190px;
+    margin-left: 19%;
+    background: var(--baseBackground);
+    transition: .5s;
+    color: var(--baseColor);
+}
