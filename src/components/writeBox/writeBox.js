@@ -57,8 +57,8 @@ function WriteBox({ lan, setCode, setDates, dates, setLenguaje }) {
   }
 
   const mostrarDatos = () => {
-    setLenguaje (lan)
-    setDates (!dates)
+    setLenguaje(lan)
+    setDates(!dates)
   }
 
   return (

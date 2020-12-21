@@ -18,6 +18,7 @@ function EditorHome() {
 	// useEffect(() => {
 	// 	console.log(perfil)
 	// },[perfil])
+	
 	return (
 		<>
 			<div className="editorContainer">
