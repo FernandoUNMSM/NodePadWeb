@@ -1,0 +1,72 @@
+.Tprincipal{
+    background: #000;
+    font-size: 30px;
+    color:#000;
+}
+
+.menuentrada{
+    width: 100%;
+    background:red;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menuentrada li{
+    display: inline-block;
+    padding: 10px 20px;
+}
+.menuentrada li a{
+    display: inline-block;
+    color:red;
+}
+.menuentrada li a:hover{
+    background: #ccc;
+    color: #000;
+}
+
+.html{
+    position: relative;
+    width: 300px;
+    
+}
+.h2entrada{
+    font-size: 80px;
+}
+.htmlt{
+    width: 100px;
+    position: relative;
+    left: 40px;
+    top: 50px;
+}
+.pentrada{
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif ;
+    font-size: 20px;
+    text-align: left;
+    width: 800px;
+}
+.css{
+    position: relative;
+    right: 105px;
+}
+article{
+    display: flex;
+}
+.h2html{
+    position: relative;
+    left: 40px;
+    
+}
+.csst{
+    position: relative;
+    top: 100px;
+    right: 160px;
+}
+.h2css{
+    position: relative;
+    left: 50px;
+}
+.JST {
+    position: relative;
+    top: 100px;
+}
