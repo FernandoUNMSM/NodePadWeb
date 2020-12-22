@@ -33,7 +33,7 @@ function Proposito() {
 			</nav>	
 
             <div>
-                <h2 className="h2proposito">Proposito</h2>
+                <h2 className="h2entrada">Proposito</h2>
                 <p>
                     La finalidad de este proyecto es obtener experiencia con respecto al desarrollo web y simular cómo se desenvuelven las metodologías ágiles dentro de su estructura, desarrollando los pasos específicos del plan SCRUM y logrando un resultado aceptable.
                 </p>

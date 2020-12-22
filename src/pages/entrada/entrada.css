@@ -1,33 +1,36 @@
 .Tprincipal{
     background: #000;
     font-size: 30px;
-    color: #ccc;
+    color:#000;
 }
+
 .menuentrada{
     width: 100%;
-    background: #ccc;
+    background:red;
     list-style: none;
     margin: 0;
     padding: 0;
 }
+
 .menuentrada li{
     display: inline-block;
     padding: 10px 20px;
 }
 .menuentrada li a{
     display: inline-block;
-    color: #fff;
+    color:red;
 }
 .menuentrada li a:hover{
     background: #ccc;
     color: #000;
 }
+
 .html{
     position: relative;
     width: 300px;
     
 }
-h2{
+.h2entrada{
     font-size: 80px;
 }
 .htmlt{
@@ -36,7 +39,7 @@ h2{
     left: 40px;
     top: 50px;
 }
-p{
+.pentrada{
     font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif ;
     font-size: 20px;
     text-align: left;
@@ -66,7 +69,4 @@ article{
 .JST {
     position: relative;
     top: 100px;
-}
-.menuentrada {
-    position: fixed;
 }

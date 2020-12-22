@@ -33,7 +33,7 @@ function Mision() {
 			</nav>	
 
             <div>
-                <h2 className="h2mision">Mision</h2>
+                <h2 className="h2entrada">Mision</h2>
                 <p>
                 Permitir a los usuarios la simulación para el desarrollo de páginas web de manera online sin la necesidad de programas externos, por medio de una interfaz sencilla e intuitiva que facilite su uso.
                 </p>

@@ -33,7 +33,7 @@ function Vision() {
 			</nav>	
 
             <div>
-                <h2 className="h2vision">Vision</h2>
+                <h2 className="h2entrada">Vision</h2>
                 <p>
                 Llegar a desarrollar un entorno online a gustos de nuestros usuarios para que aprovechen al máximo las herramientas de desarrollo web que tenemos y lograr incentivar su uso para más personas.
                 </p>
