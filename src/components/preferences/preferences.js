@@ -12,7 +12,7 @@ function Preferences({preferences}){
   const renderPreferences = () => {
     switch (preference) {
       case '1':
-        return <div className="preference 1">1</div>
+        return <div className="preference 1">Formato letra</div>
       case '2':
         return <div className="preference 2">2</div>
       case '3':
