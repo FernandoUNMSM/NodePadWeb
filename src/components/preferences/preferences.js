@@ -1,5 +1,6 @@
 import React, { useRef, useState } from 'react'
 import './preferences.css'
+import Formato from './../formatoletra/formato'
 
 function Preferences({preferences}){
   const preferencesContainer = useRef(null)
@@ -12,7 +13,9 @@ function Preferences({preferences}){
   const renderPreferences = () => {
     switch (preference) {
       case '1':
-        return <div className="preference 1">Formato letra</div>
+        return <div className="preference 1">
+          <Formato/>
+        </div>
       case '2':
         return <div className="preference 2">kjhkjhjk</div>
       case '3':
