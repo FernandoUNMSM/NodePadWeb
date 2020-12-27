@@ -14,7 +14,7 @@ function Preferences({preferences}){
       case '1':
         return <div className="preference 1">Formato letra</div>
       case '2':
-        return <div className="preference 2">2</div>
+        return <div className="preference 2">kjhkjhjk</div>
       case '3':
         return <div className="preference 3">3</div>
       case '4':

@@ -24,6 +24,7 @@ function MenuEditor({ setLayout, layout, setPreferences, preferences, code, setP
 			</body>
 		</html>
 	`
+
 	var zip = new JSZip()
 	zip.file("index.html", down)
 	zip.file("styles.css", code.css)
