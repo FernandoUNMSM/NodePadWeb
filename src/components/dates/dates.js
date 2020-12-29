@@ -1,42 +1,64 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import './dates.css'
-import { faGripHorizontal, faTimesCircle, faFileCode, faTrash, faFileDownload, faFileUpload, prefix } from '@fortawesome/free-solid-svg-icons'
+import { faTimesCircle, faFileCode, faTrash } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHtml5, faCss3Alt, faNodeJs } from '@fortawesome/free-brands-svg-icons'
 import sendFile from './../../services/sendFile'
+import useGetListFiles from './../../hooks/useGetListFiles'
+import listFiles from './../../services/listFiles'
+import Loader from './../../components/loader/loader'
 
+function Dates({ dates, setDates, lenguaje, bodyfile }) {
+	let leng = lenguaje.toLowerCase()
+	let iduser = JSON.parse(localStorage.getItem("usuarioActual")).id;
 
-function Dates({ dates, setDates, lenguaje }) {
+	const [loader, setLoader] = useState(true)
+	const [list, setList] = useState([])
+
+	var nameDoc = useRef(null)
+
 	var iconi
-
 	switch (lenguaje) {
 		case "HTML":
 			iconi = faHtml5
-			// console.log(iconi)
 			break;
 		case "CSS":
 			iconi = faCss3Alt
-			// console.log(iconi)
 			break;
 		case "JS":
 			iconi = faNodeJs
-			// console.log(iconi)
 			break;
-	} 
+		default: break;
+	}
 
 	const mostrarDatos = () => {
 		setDates(!dates)
 	}
 
 	const enviarFile = () => {
+		let nombre = nameDoc.current.value;
 		let jsonFile = {
-			nombre: 'nyan-nyan-chan-chan',
-			cuerpo: 'gawr gura',
-			iduser: 191,
-			tipo: 'css'
+			nombre: nombre,
+			cuerpo: bodyfile,
+			iduser: iduser,
+			tipo: leng
 		}
-		sendFile({jsonFile})
+		sendFile({ jsonFile })
 	}
+	useEffect(() => {
+		setLoader(true)
+		if(dates){
+			listFiles({ leng: leng, id: iduser })
+			// listFiles({ leng: leng})
+				.then(res => {
+					console.log(res)
+					setLoader(false)
+					setList(res.data)
+				})
+		}else{
+			setList([])
+		}
+	}, [dates])
 
 	return (
 		<>
@@ -53,61 +75,29 @@ function Dates({ dates, setDates, lenguaje }) {
 								<FontAwesomeIcon icon={faTimesCircle} className="datesIconS2" onClick={mostrarDatos} />
 							</div>
 						</div>
-						<div className="datesLeftMed">
-							<div className="datesLeftMed1">
-								<h2 className="datesH2">Nombre del documento</h2>
-							</div>
-							<div className="datesLeftMed2">
-								<FontAwesomeIcon icon={faFileCode} className="datesIconM" />
-							</div>
-							<div className="datesLeftMed2">
-								<FontAwesomeIcon icon={faTrash} className="datesIconM" />
-							</div>
-						</div>
-						<div className="datesLeftMed">
-							<div className="datesLeftMed1">
-								<h2 className="datesH2">Nombre del documento</h2>
-							</div>
-							<div className="datesLeftMed2">
-								<FontAwesomeIcon icon={faFileCode} className="datesIconM" />
-							</div>
-							<div className="datesLeftMed2">
-								<FontAwesomeIcon icon={faTrash} className="datesIconM" />
-							</div>
-						</div>
-						<div className="datesLeftMed">
-							<div className="datesLeftMed1">
-								<h2 className="datesH2">Nombre del documento</h2>
-							</div>
-							<div className="datesLeftMed2">
-								<FontAwesomeIcon icon={faFileCode} className="datesIconM" />
-							</div>
-							<div className="datesLeftMed2">
-								<FontAwesomeIcon icon={faTrash} className="datesIconM" />
-							</div>
-						</div>
-						<div className="datesLeftMed">
-							<div className="datesLeftMed1">
-								<h2 className="datesH2">Nombre del documento</h2>
-							</div>
-							<div className="datesLeftMed2">
-								<FontAwesomeIcon icon={faFileCode} className="datesIconM" />
-							</div>
-							<div className="datesLeftMed2">
-								<FontAwesomeIcon icon={faTrash} className="datesIconM" />
-							</div>
-						</div>
-						<div className="datesLeftMed">
-							<div className="datesLeftMed1">
-								<h2 className="datesH2">Nombre del documento</h2>
-							</div>
-							<div className="datesLeftMed2">
-								<FontAwesomeIcon icon={faFileCode} className="datesIconM" />
-							</div>
-							<div className="datesLeftMed2">
-								<FontAwesomeIcon icon={faTrash} className="datesIconM" />
-							</div>
-						</div>
+						{
+							(loader)
+								?
+								<div className="spinnerContainer">
+									<div className="spinner"></div>
+								</div>
+								:
+								list.map((value, index) => {
+									return (
+										<div className="datesLeftMed" key={index}>
+											<div className="datesLeftMed1">
+												<h2 className="datesH2">{value.nombre}</h2>
+											</div>
+											<div className="datesLeftMed2">
+												<FontAwesomeIcon icon={faFileCode} className="datesIconM" />
+											</div>
+											<div className="datesLeftMed2">
+												<FontAwesomeIcon icon={faTrash} className="datesIconM" />
+											</div>
+										</div>
+									)
+								})
+						}
 					</div>
 					<div className="datesRight">
 						<div className="datesRightS">
@@ -117,7 +107,7 @@ function Dates({ dates, setDates, lenguaje }) {
 							<h3 className="datesH3">Documento Actual</h3>
 							<p className="datesP">
 								Nombre:</p>
-							<input type="text" id="namedoc" className="datesField"></input>
+							<input type="text" id="namedoc" className="datesField" ref={nameDoc}></input>
 							<p className="datesP">
 								Tamaño: 0 KB
               </p>

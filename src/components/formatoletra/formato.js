@@ -5,7 +5,7 @@ const Formato = () => {
 
   return (
     <>
-    <h1>Formato</h1>
+      <h1>Formato</h1>
     </>
   )
 }

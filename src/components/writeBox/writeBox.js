@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { saveAs } from 'file-saver';
 import './writeBox.css'
 
-function WriteBox({ lan, setCode, setDates, dates, setLenguaje }) {
+function WriteBox({ lan, setCode, setDates, dates, setLenguaje, setBodyfile }) {
   const showPreview = (evt) => {
     let code = '';
     code = evt.target.value
@@ -59,6 +59,8 @@ function WriteBox({ lan, setCode, setDates, dates, setLenguaje }) {
   const mostrarDatos = () => {
     setLenguaje(lan)
     setDates(!dates)
+    var body = document.getElementById(lan).value
+    setBodyfile(body)
   }
 
   return (

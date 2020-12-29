@@ -15,10 +15,8 @@ function EditorHome() {
 	const [perfil, setPerfil] = useState(false)
 	const [dates, setDates] = useState(false)
 	const [lenguaje, setLenguaje] = useState("")
-	// useEffect(() => {
-	// 	console.log(perfil)
-	// },[perfil])
-	
+	const [bodyfile, setBodyfile] = useState("")
+
 	return (
 		<>
 			<div className="editorContainer">
@@ -32,9 +30,14 @@ function EditorHome() {
 					perfil={perfil}
 					/>
 				<Perfil state={perfil}/>
-				<Editor layout={layout} setCode={setCode} setDates={setDates} dates={dates} setLenguaje={setLenguaje}/>
+				<Editor layout={layout} setCode={setCode} setDates={setDates} dates={dates} setLenguaje={setLenguaje} setBodyfile={setBodyfile}/>
 				<Preferences preferences={preferences} />
-				<Dates dates={dates} setDates={setDates} lenguaje={lenguaje}/>
+				{
+					(lenguaje !== "")
+					?
+					<Dates dates={dates} setDates={setDates} lenguaje={lenguaje} bodyfile={bodyfile}/>
+					: null
+				}
 			</div>
 		</>
 	)
