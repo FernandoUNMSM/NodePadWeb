@@ -29,7 +29,7 @@ function Editor({ layout, setCode, setDates, dates, setLenguaje, setBodyfile }) 
 			'js': js
 		})
 		frame.current.contentWindow.document.open()
-		frame.current.contentWindow.document.write(html + `<style>${css}</style>` + `<script>${js}</script>`)
+		frame.current.contentWindow.document.write(html + `<style>${css}</style>` + `<script>${js}</script>`)//eslint-disable-line
 		frame.current.contentWindow.document.close()
 	},[html,css,js]) //eslint-disable-line
 	return (

@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react'
 import './dates.css'
-import { faTimesCircle, faFileCode, faTrash } from '@fortawesome/free-solid-svg-icons'
+import { faTimes, faFileCode, faTrash } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHtml5, faCss3Alt, faNodeJs } from '@fortawesome/free-brands-svg-icons'
 import sendFile from './../../services/sendFile'
@@ -14,6 +14,8 @@ function Dates({ dates, setDates, lenguaje, bodyfile }) {
 
 	const [loader, setLoader] = useState(true)
 	const [list, setList] = useState([])
+
+	const [accion, setAccion] = useState("Reciente")
 
 	var nameDoc = useRef(null)
 
@@ -35,7 +37,8 @@ function Dates({ dates, setDates, lenguaje, bodyfile }) {
 		setDates(!dates)
 	}
 
-	const enviarFile = () => {
+	const enviarFile = (evt) => {
+		evt.preventDefault()
 		let nombre = nameDoc.current.value;
 		let jsonFile = {
 			nombre: nombre,
@@ -43,19 +46,26 @@ function Dates({ dates, setDates, lenguaje, bodyfile }) {
 			iduser: iduser,
 			tipo: leng
 		}
+		// console.log(jsonFile)
 		sendFile({ jsonFile })
 	}
+
+	const changeAccion = (evt) => {
+		let accion = evt.target.textContent;
+		setAccion(accion);
+	}
+
 	useEffect(() => {
 		setLoader(true)
-		if(dates){
+		if (dates) {
 			listFiles({ leng: leng, id: iduser })
-			// listFiles({ leng: leng})
+				// listFiles({ leng: leng})
 				.then(res => {
 					console.log(res)
 					setLoader(false)
 					setList(res.data)
 				})
-		}else{
+		} else {
 			setList([])
 		}
 	}, [dates])
@@ -64,56 +74,95 @@ function Dates({ dates, setDates, lenguaje, bodyfile }) {
 		<>
 			{(dates)
 				?
-				<div className="datesContainer">
-					<div className="datesLeft">
-						<div className="datesLeftSup">
-							<div className="datesLeftSup1">
-								<FontAwesomeIcon icon={iconi} className="datesIconS" />
-								<h1 className="datesH1">Documentos {lenguaje}</h1>
-							</div>
-							<div className="datesLeftSup2">
-								<FontAwesomeIcon icon={faTimesCircle} className="datesIconS2" onClick={mostrarDatos} />
-							</div>
-						</div>
-						{
-							(loader)
-								?
-								<div className="spinnerContainer">
-									<div className="spinner"></div>
+				<div className="grayContainer">
+					<div className="datesContainer">
+						<div className="datesLeft">
+							<div className="datesLeftSup">
+								<div className="datesLeftSup1">
+									<FontAwesomeIcon icon={iconi} className="datesIconS" />
+									<h1 className="datesH1">Documentos {lenguaje}</h1>
 								</div>
-								:
-								list.map((value, index) => {
-									return (
-										<div className="datesLeftMed" key={index}>
-											<div className="datesLeftMed1">
-												<h2 className="datesH2">{value.nombre}</h2>
+								<div className="datesLeftSup2">
+									<FontAwesomeIcon icon={faTimes} className="datesIconS2" onClick={mostrarDatos} />
+								</div>
+							</div>
+							<div className="datestabs">
+								<div className="reciente" onClick={changeAccion}><p>Reciente</p></div>
+								<div className="guardar" onClick={changeAccion}><p>Guardar</p></div>
+								<div className="cargar" onClick={changeAccion}><p>Cargar</p></div>
+							</div>
+							<div className="tabsContainer">
+								{
+									(accion === "Reciente")
+										?
+										<>
+											<div className="recienteSup">
+												<p>Reciente</p>
 											</div>
-											<div className="datesLeftMed2">
-												<FontAwesomeIcon icon={faFileCode} className="datesIconM" />
+											{(loader)
+												?
+												<div className="spinnerContainer">
+													<div className="spinner"></div>
+												</div>
+												:
+												<div className="filesContainer">
+													{list.map((value, index) => {
+														return (
+															<div className="datesLeftMed" key={index}>
+																<div className="datesLeftMed1">
+																	<FontAwesomeIcon icon={iconi} className="datesIconS" />
+																	<h2 className="datesH2">{value.nombre}</h2>
+																</div>
+																<div className="datesIcons">
+																	<div className="datesLeftMed2">
+																		<FontAwesomeIcon icon={faFileCode} className="datesIconM" />
+																	</div>
+																	<div className="datesLeftMed2">
+																		<FontAwesomeIcon icon={faTrash} className="datesIconM" />
+																	</div>
+																</div>
+															</div>
+														)
+													})}
+												</div>
+											}
+										</>
+										: null
+								}
+								{
+									(accion === "Guardar")
+										? <>
+											<div className="guardarContainer">
+												<div className="datesPreview">
+													<p>preview</p>
+												</div>
+												<div className="datesRight">
+													<div className="datesSave">
+														<p className="datesP">Nombre:</p>
+														<div className="col">
+															<div className="inputBox">
+																<form action="" id="file" onSubmit={enviarFile}>
+																	<input type="text" name="namedoc" required="required" autoComplete="off" ref={nameDoc} />
+																	<span className="line"></span>
+																</form>
+															</div>
+														</div>
+													</div>
+													<button className="datesButton" form="file">
+														Guardar
+              						</button>
+												</div>
 											</div>
-											<div className="datesLeftMed2">
-												<FontAwesomeIcon icon={faTrash} className="datesIconM" />
-											</div>
-										</div>
-									)
-								})
-						}
-					</div>
-					<div className="datesRight">
-						<div className="datesRightS">
-							<FontAwesomeIcon icon={iconi} className="datesIconR" />
-						</div>
-						<div className="datesRightI">
-							<h3 className="datesH3">Documento Actual</h3>
-							<p className="datesP">
-								Nombre:</p>
-							<input type="text" id="namedoc" className="datesField" ref={nameDoc}></input>
-							<p className="datesP">
-								Tamaño: 0 KB
-              </p>
-							<button className="datesButton" onClick={enviarFile}>
-								Guardar
-              </button>
+										</>
+										: null
+								}
+								{
+									(accion === "Cargar")
+										?
+										<h1>Cargar</h1>
+										: null
+								}
+							</div>
 						</div>
 					</div>
 				</div>

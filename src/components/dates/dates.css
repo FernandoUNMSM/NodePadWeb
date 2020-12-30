@@ -1,137 +1,166 @@
-.datesContainer{
+.grayContainer {
+    background-color: rgba(0, 0, 0, .3);
+    height: 100vh;
+    width: 100%;
     position: absolute;
-    top: 50%;
-    right: 50%;
-    /*top: 0;
-    left: 50%;*/
-    background: var(--baseBackground);
-    transform: translate(50%, -50%);
-    transition: .3s;
-    overflow: hidden;
-    /* width: 990px; */
-    height: 500px;
-    box-sizing: border-box;
+    top: 0;
+    right: 0;
     display: flex;
     justify-content: center;
+    align-items: center;
+}
+.datesContainer{
+    background: var(--baseBackground);
+    margin: 0 20px;
+    transition: .3s;
+    overflow: hidden;
+    width: 1000px;
+    height: 550px;
+    display: flex;
+    justify-content: space-between;
+    box-sizing: content-box;
 }
 
 /*Bloques izquierdos*/
 .datesLeft{
     background: var(--baseBackground);
-    height: 500px;
-    border: solid 2px var(--gray);
-    box-sizing: border-box;
     display: flex;
     flex-direction: column;
     justify-content: start;
     overflow: auto;
-    /* align-items: center; */
+    width: 100%;
+    overflow: hidden;
 }
 
 .datesLeftSup{
-    width: 697px;
-    height: 80px;
+    width: 100%;
     display: flex;
-    /* margin: auto 0; */
-    box-sizing: border-box;
+    height: 50px;
+    padding: 10px 0 0;
+    justify-content: space-between;
+    box-sizing: content-box;
 }
 
 .datesLeftSup1{
     display: flex;
     background: var(--baseBackground);
     transition: .5s;
-    width: 618px;
-    height: 80px;
-    border-right: 1px solid var(--gray);
-    border-bottom: 1px solid var(--gray);
-    box-sizing: border-box;
+    justify-content: end;
+    align-items: center;
 }
-
+.datesIconS {
+    margin: 0 20px;
+    font-size: 2em;
+}
 .datesLeftSup2{
     background: var(--baseBackground);
     transition: .5s;
-    width: 80px;
-    height: 80px;
-    /* border-right: 1px solid var(--gray); */
-    border-bottom: 1px solid var(--gray);
-    box-sizing: border-box;
-}
-
-.datesLeftMed{
-    width: 696px;
-    height: 83px;
     display: flex;
-    box-sizing: border-box;
+    justify-content: center;
+    align-items: center;
+    margin: 0 20px;
+}
+.datestabs {
+    display: flex;
+    border-bottom: 1px solid #ccc;
+    padding-left: 30px;
+}
+.datestabs > div {
+    font-size: 1em;
+    font-family: 'Poppins', sans-serif;
+    padding: 20px 15px;
+    color: rgb(146, 142, 142);
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: .3s;
+}
+.datestabs > div:hover {
+    border-bottom: 1px solid  var(--verdeEditor);
+    color: var(--verdeEditor);
+}
+.datesLeftMed{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+    border-top: 1px solid #ccc;
 }
 
 .datesLeftMed1{
-    width: 600px;
-    height: 83px;
-    background: var(--baseBackground);
+    display: flex;
     transition: .5s;
-    box-sizing: border-box;
-    border-bottom: 1px solid var(--gray);
+    align-items: center;
+    cursor: pointer;
 }
-
+.datesLeftMed1 > .datesIconS {
+    font-size: 1.3em;
+    margin: 0 15px 0 0;
+}
 .datesLeftMed2{
-    width: 79px;
-    height: 83px;
-    background: var(--baseBackground);
     transition: .5s;
-    box-sizing: border-box;
-    border-bottom: 1px solid var(--gray);
 }
-
+.datesIcons {
+    display: flex;
+}
+.tabsContainer {
+    height: calc(100% - 125px);
+    flex-direction: column;
+    display: flex;
+}
+.filesContainer {
+    display: grid;
+    overflow: auto;
+}
+.guardarContainer {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    height: 100%;
+}
 /*Bloques Derechos*/
 .datesRight{
-    background-color: white;
-    /*background: var(--baseBackground);
-    transition: .5s;*/
-    margin-left: 40px;
-    width: 250px;
-    height: 500px;
-    border: solid 2px var(--gray);
-    box-sizing: border-box;
+    justify-self: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    border-left: 1px solid #ccc;
 }
-
+.datesSave {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: inherit;
+}
 .datesRightS{
-    background: var(--baseBackground);
     transition: .5s;
-    height: 200px;
-    border-bottom: 1px solid var(--gray);
 }
 
 .datesRightI{
-    background: var(--baseBackground);
     transition: .5s;
-    height: 296px;
-    box-sizing: border-box;
 }
 
 /*Clases de etiquetas*/
 .datesH1{
     background: var(--baseBackground);
     transition: .5s;
-    margin-left: 20px;
-    margin-top: 15px;
-    font-size: 30px;
+    font-size: 1.7em;
     color: var(--baseColor);
     letter-spacing: 1px;
     word-spacing: 1px;
 }
 
 .datesH2{
-    margin-left: 25px;
-    margin-top: 20px;
-    background: var(--baseBackground);
+    font-size: .8em;
+    font-weight: 500;
     transition: .5s;
     color: var(--baseColor);
 }
 
 .datesH3{
-    margin-left: 12%;
-    margin-bottom: 10%;
-    padding-top: 10px;
+    /* margin-left: 12%; */
+    /* margin-bottom: 10%; */
+    /* padding-top: 10px; */
     font-size: 22px;
     background: var(--baseBackground);
     transition: .5s;
@@ -139,59 +168,57 @@
 }
 
 .datesP{
-    margin-left: 10px;
+    /* margin-left: 10px; */
     font-size: 18px;
     background: var(--baseBackground);
     transition: .5s;
     color: var(--baseColor);
-    padding-bottom: 15px;
+    /* padding-bottom: 15px; */
 }
 
 .datesField{
     font-size: 16px;
-    margin-left: 12%;
-    background: var(--baseBackground);
     transition: .5s;
     color: var(--baseColor);
-    border-radius: 200px;
-    padding: 2%;
-    margin-bottom: 15px;
 }
 
 .datesButton{
-    font-size: 25px;
-    font-weight: 300;
-    margin-left: 25%;
-    background: var(--baseBackground);
+    font-size: 1.2em;
+    font-weight: 500;
+    cursor: pointer;
+    outline: none;
+    font-family: 'Poppins', sans-serif;
+    background: var(--verdeEditor);
     transition: .5s;
     color: var(--baseColor);
-    border: 2px solid;
-    padding: 5%;
-    border-radius: 200px;
-    margin-top: 15px;
+    border: 2px solid var(--verdeEditor);
+    width: 200px;
+    padding: 10px 25px;
 }
 
 .datesButton:hover{
-    background: red;
+    background: #fff;
 }
 
 .datesIconS,
 .datesIconS2,
 .datesIconM{
-    font-size: 30px;
-    background: var(--baseBackground);
-    transition: .5s;
+    transition: .3s;
     color: var(--baseColor);
-    margin-left: 26px;
-    margin-top: 22px;
 }
 
-.datesIconM:hover{
-    color: var(--gray);
+.datesIconS2,
+.datesIconM{
+    font-size: 25px;
+    margin: 0 10px;
+    cursor: pointer;
+}
+.datesIconS2 {
+    margin-right: 10px;
 }
 
-.datesIconS2:hover{
-    color: red;
+.datesIconS2:hover, .datesIconM:hover{
+    color: var(--verdeEditor);
 }
 
 .datesIconR{
@@ -224,4 +251,64 @@
     100%{
         transform: rotate(360deg);
     }
+}
+/* dddddddddddddddddddddddddd */
+.col {
+    position: relative;
+    width: 50%;
+    transition: .5s;
+}
+.inputBox {
+    position: relative;
+    width: 100%;
+    height: 40px;
+    color: var(--verdeEditor);
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+}
+.inputBox input{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    box-shadow: none;
+    border: none;
+    outline: none;
+    font-size: 18px;
+    padding: 0 10px;
+    z-index: 1;
+    color: #000;
+}
+.inputBox .text{
+    position: absolute;
+    top: 0;
+    left: 0;
+    line-height: 40px;
+    font-size: 18px;
+    padding: 0 10px;
+    display: block;
+    transition: .5s;
+    pointer-events: none;
+    font-family: 'Poppins', sans-serif;
+    white-space: pre-wrap;
+}
+.inputBox input:focus + .text,
+.inputBox input:valid + .text{
+    top: -35px;
+    left: -10px;
+}
+.inputBox .line{
+    position: absolute;
+    bottom: 0;
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: var(--verdeEditor);
+    transition: .5s;
+    border-radius: 2px;
+    pointer-events: none;
+}
+.inputBox input:focus ~ .line,
+.inputBox input:valid ~ .line{
+    height: 100%;
 }
