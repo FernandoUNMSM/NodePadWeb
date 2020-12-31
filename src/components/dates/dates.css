@@ -1,5 +1,5 @@
 .grayContainer {
-    background-color: rgba(0, 0, 0, .3);
+    background-color: var(--fondoTransparent);
     height: 100vh;
     width: 100%;
     position: absolute;
@@ -68,14 +68,17 @@
 .datestabs > div {
     font-size: 1em;
     font-family: 'Poppins', sans-serif;
-    padding: 20px 15px;
     color: rgb(146, 142, 142);
     cursor: pointer;
     text-transform: uppercase;
     transition: .3s;
 }
+.datestabs > div p{
+    padding: 20px 15px;
+    /* border: 1px solid transparent; */
+}
 .datestabs > div:hover {
-    border-bottom: 1px solid  var(--verdeEditor);
+    /* border-bottom: 1px solid  var(--verdeEditor); */
     color: var(--verdeEditor);
 }
 .datesLeftMed{
@@ -115,7 +118,34 @@
     display: grid;
     grid-template-columns: repeat(2,1fr);
     height: 100%;
+    /* overflow: auto; */
 }
+.recienteSup {
+    margin: 5px 20px;
+    display: flex;
+    justify-content: space-between;
+}
+.recienteSup .recienteIcons .recienteLayout{
+    margin: 0 10px;
+    cursor: pointer;
+    transition: .3s;
+    color: var(--baseColor);
+}
+.recienteSup .recienteIcons .recienteLayout:hover {
+    color: var(--verdeEditor);
+}
+.recienteSup p {
+    color: rgb(146, 142, 142);
+}
+.datesPreview {
+    color: var(--baseColor);
+    padding: 10px;
+    overflow: auto;
+}
+.datesPreview p{
+    white-space: pre-wrap;
+}
+
 /*Bloques Derechos*/
 .datesRight{
     justify-self: center;
@@ -209,7 +239,7 @@
 
 .datesIconS2,
 .datesIconM{
-    font-size: 25px;
+    font-size: 20px;
     margin: 0 10px;
     cursor: pointer;
 }
@@ -311,4 +341,8 @@
 .inputBox input:focus ~ .line,
 .inputBox input:valid ~ .line{
     height: 100%;
+}
+.focus {
+    color: var(--verdeEditor);
+    border-bottom: 1px solid  var(--verdeEditor);
 }

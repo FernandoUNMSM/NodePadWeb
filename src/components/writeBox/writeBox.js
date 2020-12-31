@@ -1,10 +1,13 @@
-import React from 'react'
+import React, {useContext, useEffect} from 'react'
 import { faDownload, faUpload } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { saveAs } from 'file-saver';
 import './writeBox.css'
+import FileContext from './../../context/fileContext'
+import { file } from 'jszip';
 
 function WriteBox({ lan, setCode, setDates, dates, setLenguaje, setBodyfile }) {
+	const {fileContent,setFileContent} = useContext(FileContext)
   const showPreview = (evt) => {
     let code = '';
     code = evt.target.value
@@ -61,7 +64,16 @@ function WriteBox({ lan, setCode, setDates, dates, setLenguaje, setBodyfile }) {
     setDates(!dates)
     var body = document.getElementById(lan).value
     setBodyfile(body)
+    console.log(body)
+    setFileContent({file: {cuerpo: body}, len: lan.toLowerCase()})
   }
+  useEffect(() => {
+    if(fileContent.len === lan.toLowerCase()){
+      let textareaContent = document.querySelector(`#${lan}`);
+      textareaContent.value = fileContent.file.cuerpo;
+      console.log(fileContent)
+    }
+  },[fileContent])
 
   return (
     <>

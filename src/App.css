@@ -37,6 +37,7 @@
   --cardTitle: #8088ad;
   --switchSpinner: #282943;
   --switch: linear-gradient(to right, #4796d2 0%, #37ce8f 100%);
+  --fondoTransparent: rgba(255, 255, 255, 0.3);
 }
 
 .is-light-mode {
@@ -48,6 +49,7 @@
   --baseColor: #1d2029;
   --switchSpinner: white;
   --switch: #5f616d;
+  --fondoTransparent: rgba(0, 0, 0, .3);
 }
 .editorContainer {
   overflow: hidden;
