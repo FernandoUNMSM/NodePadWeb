@@ -1,5 +1,5 @@
 import React, {useContext, useEffect} from 'react'
-import { faDownload, faUpload } from '@fortawesome/free-solid-svg-icons'
+import { faChevronDown, faDownload, faUpload } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { saveAs } from 'file-saver';
 import './writeBox.css'
@@ -64,14 +64,14 @@ function WriteBox({ lan, setCode, setDates, dates, setLenguaje, setBodyfile }) {
     setDates(!dates)
     var body = document.getElementById(lan).value
     setBodyfile(body)
-    console.log(body)
+    // console.log(body)
     setFileContent({file: {cuerpo: body}, len: lan.toLowerCase()})
   }
   useEffect(() => {
     if(fileContent.len === lan.toLowerCase()){
       let textareaContent = document.querySelector(`#${lan}`);
       textareaContent.value = fileContent.file.cuerpo;
-      console.log(fileContent)
+      // console.log(fileContent)
     }
   },[fileContent])
 
@@ -79,7 +79,11 @@ function WriteBox({ lan, setCode, setDates, dates, setLenguaje, setBodyfile }) {
     <>
       <div className="textarea">
         <div className="menuTextarea">
+          <div className="leftTextarea">
           <p>{lan}</p>
+          <FontAwesomeIcon icon={faChevronDown} className="icon"/>
+
+          </div>
           <div className="iconsTextarea">
             <FontAwesomeIcon icon={faDownload} className="icon" onClick={download}/>
             <FontAwesomeIcon icon={faUpload} className="icon" onClick={mostrarDatos} />

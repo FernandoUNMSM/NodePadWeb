@@ -6,6 +6,8 @@ import { faHtml5, faCss3Alt, faNodeJs } from '@fortawesome/free-brands-svg-icons
 import sendFile from './../../services/sendFile'
 import listFiles from './../../services/listFiles'
 import FileContext from './../../context/fileContext'
+import PerfectScrollbar from 'react-perfect-scrollbar'
+import 'react-perfect-scrollbar/dist/css/styles.css';
 
 function Dates({ dates, setDates, lenguaje, bodyfile }) {
 	let leng = lenguaje.toLowerCase()
@@ -17,6 +19,8 @@ function Dates({ dates, setDates, lenguaje, bodyfile }) {
 	const [list, setList] = useState([])
 
 	const [accion, setAccion] = useState("Reciente")
+	const [layout, setLayout] = useState(true)
+	//true = lines, false = grid
 
 	var nameDoc = useRef(null)
 
@@ -63,18 +67,15 @@ function Dates({ dates, setDates, lenguaje, bodyfile }) {
 	const changeFileState = (evt) => {
 		const idfile = evt.target.parentNode.id;
 		mostrarDatos();
-		setFileContent({file: list[idfile], len: leng})
+		setFileContent({ file: list[idfile], len: leng })
 	}
 
 	useEffect(() => {
-		if (dates) {
-			console.log(fileContent)
-		}
 		setLoader(true)
 		if (dates) {
 			listFiles({ leng: leng, id: iduser })
 				.then(res => {
-					console.log(res)
+					// console.log(res)
 					setLoader(false)
 					setList(res.data)
 				})
@@ -83,9 +84,12 @@ function Dates({ dates, setDates, lenguaje, bodyfile }) {
 		}
 	}, [dates]) //eslint-disable-line
 
-	useEffect(() => {
-
-	},[accion])
+	const cambiarlayout1 = () => {
+		setLayout(true)
+	}
+	const cambiarlayout2 = () => {
+		setLayout(false)
+	}
 
 	return (
 		<>
@@ -116,8 +120,8 @@ function Dates({ dates, setDates, lenguaje, bodyfile }) {
 											<div className="recienteSup">
 												<p>Reciente</p>
 												<div className="recienteIcons">
-													<FontAwesomeIcon icon={faGripLines} className="recienteLayout" />
-													<FontAwesomeIcon icon={faTh} className="recienteLayout" />
+													<FontAwesomeIcon icon={faGripLines} className={(layout) ? 'recienteLayout focusL' : 'recienteLayout'} onClick={cambiarlayout1} />
+													<FontAwesomeIcon icon={faTh} className={(!layout) ? 'recienteLayout focusL' : 'recienteLayout'} onClick={cambiarlayout2} />
 												</div>
 											</div>
 											{(loader)
@@ -125,27 +129,32 @@ function Dates({ dates, setDates, lenguaje, bodyfile }) {
 												<div className="spinnerContainer">
 													<div className="spinner"></div>
 												</div>
-												:
-												<div className="filesContainer">
-													{list.map((value, index) => {
-														return (
-															<div className="datesLeftMed" key={index}>
-																<div className="datesLeftMed1" id={index} >
-																	<FontAwesomeIcon icon={iconi} className="datesIconS" />
-																	<h2 className="datesH2" id={index} onClick={changeFileState} >{value.nombre}</h2>
-																</div>
-																<div className="datesIcons">
-																	<div className="datesLeftMed2" id={index}>
-																		<FontAwesomeIcon icon={faFileCode} className="datesIconM" onClick={changeFileState} id={index} />
-																	</div>
-																	<div className="datesLeftMed2">
-																		<FontAwesomeIcon icon={faTrash} className="datesIconM" />
-																	</div>
-																</div>
+												: <>
+													<div className="filesContainerSup">
+														<PerfectScrollbar>
+															<div className={(layout) ? 'filesContainer' : ' filesContainer grid'}>
+																{list.map((value, index) => {
+																	return (
+																		<div className="datesLeftMed" key={index}>
+																			<div className="datesLeftMed1" id={index} >
+																				<FontAwesomeIcon icon={iconi} className="datesIconS" />
+																				<h2 className="datesH2" id={index} onClick={changeFileState} >{value.nombre}</h2>
+																			</div>
+																			<div className="datesIcons">
+																				<div className="datesLeftMed2" id={index}>
+																					<FontAwesomeIcon icon={faFileCode} className="datesIconM" onClick={changeFileState} id={index} />
+																				</div>
+																				<div className="datesLeftMed2">
+																					<FontAwesomeIcon icon={faTrash} className="datesIconM" />
+																				</div>
+																			</div>
+																		</div>
+																	)
+																})}
 															</div>
-														)
-													})}
-												</div>
+														</PerfectScrollbar>
+													</div>
+												</>
 											}
 										</>
 										: null
@@ -163,7 +172,7 @@ function Dates({ dates, setDates, lenguaje, bodyfile }) {
 														<div className="col">
 															<div className="inputBox">
 																<form action="" id="file" onSubmit={enviarFile}>
-																	<input type="text" name="namedoc" required="required" autoComplete="off" ref={nameDoc} pattern="[A-Za-z0-9_-]{1,15}"/>
+																	<input type="text" name="namedoc" required="required" autoComplete="off" ref={nameDoc} pattern="[A-Za-z0-9_-]{1,15}" />
 																	<span className="line"></span>
 																</form>
 															</div>

@@ -114,6 +114,42 @@
     display: grid;
     overflow: auto;
 }
+.filesContainerSup {
+    overflow: auto;
+}
+.filesContainer.grid {
+    grid-template-columns: repeat(4,1fr);
+    grid-gap: 15px;
+    padding: 10px 20px 0;
+    /* padding-bottom: 20px; */
+}
+.filesContainer.grid .datesLeftMed {
+    height: 150px;
+    border: 1px solid #ccc;
+    flex-direction: column;
+    padding: 15px;
+    /* align-items: center; */
+}
+.filesContainer.grid .datesLeftMed:last-of-type {
+    margin-bottom: 20px;
+}
+.filesContainer.grid .datesLeftMed1 {
+    flex-direction: column;
+    position: relative;
+    height: 60px;
+    justify-content: center;
+}
+.filesContainer.grid .datesLeftMed > div {
+    width: 100%;
+}
+.filesContainer.grid .datesLeftMed .datesIcons {
+    justify-content: space-evenly;
+}
+.filesContainer.grid .datesLeftMed .datesLeftMed1 .datesIconS{
+    position: absolute;
+    top: 0;
+    left: 0;
+}
 .guardarContainer {
     display: grid;
     grid-template-columns: repeat(2,1fr);
@@ -345,4 +381,11 @@
 .focus {
     color: var(--verdeEditor);
     border-bottom: 1px solid  var(--verdeEditor);
+}
+.focusL{
+    color: var(--verdeEditor)!important;
+}
+
+.ps__rail-y {
+    cursor: pointer;
 }

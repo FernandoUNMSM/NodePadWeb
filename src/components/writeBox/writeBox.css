@@ -43,3 +43,16 @@
   height: 80%;
   width: 32%;
 }
+.leftTextarea {
+  display: flex;
+  /* width: 60px; */
+  justify-content: space-between;
+  align-items: center;
+}
+.leftTextarea p {
+  margin-right: 10px;
+}
+.leftTextarea .icon {
+  font-size: 0.7em;
+  cursor: pointer;
+}
