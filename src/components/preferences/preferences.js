@@ -1,5 +1,6 @@
 import React, { useRef, useState } from 'react'
 import './preferences.css'
+import Cuenta from './../cuenta/cuenta'
 
 function Preferences({preferences}){
   const preferencesContainer = useRef(null)
@@ -20,7 +21,9 @@ function Preferences({preferences}){
       case '4':
         return <div className="preference 4">4</div>
       case '5':
-        return <div className="preference 5">5</div>
+        return <div className="preference 5">
+          <Cuenta/>
+        </div>
       default:
         return null;
     }
