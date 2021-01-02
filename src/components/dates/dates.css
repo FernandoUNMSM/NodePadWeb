@@ -224,9 +224,6 @@
 }
 
 .datesH3{
-    /* margin-left: 12%; */
-    /* margin-bottom: 10%; */
-    /* padding-top: 10px; */
     font-size: 22px;
     background: var(--baseBackground);
     transition: .5s;
@@ -234,12 +231,10 @@
 }
 
 .datesP{
-    /* margin-left: 10px; */
     font-size: 18px;
     background: var(--baseBackground);
     transition: .5s;
     color: var(--baseColor);
-    /* padding-bottom: 15px; */
 }
 
 .datesField{
@@ -301,7 +296,6 @@
     height: inherit;
 }
 .spinner {
-    /* display: block; */
     width: 100px;
     height: 100px;
     border: 6px solid rgba(126, 126, 126, 0.4);

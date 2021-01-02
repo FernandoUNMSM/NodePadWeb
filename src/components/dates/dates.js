@@ -131,7 +131,7 @@ function Dates({ dates, setDates, lenguaje, bodyfile }) {
 												</div>
 												: <>
 													<div className="filesContainerSup">
-														<PerfectScrollbar>
+														<PerfectScrollbar className="scrollbar">
 															<div className={(layout) ? 'filesContainer' : ' filesContainer grid'}>
 																{list.map((value, index) => {
 																	return (

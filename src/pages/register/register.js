@@ -17,6 +17,7 @@ function Register() {
 		aadUser({formData: formData})
 			.then(response => {
 				setLoader(false)
+				localStorage.setItem("configActual",JSON.stringify({size: '16px', color: 'var(--cardTitle)'}))
 				if(response === 'user created'){
 					setLocation('/editor')
 				}

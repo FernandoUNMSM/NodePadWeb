@@ -6,7 +6,7 @@ import Preferences from './../../components/preferences/preferences'
 import Perfil from './../../components/perfil/perfil'
 // import {useEffect} from 'react'
 import Dates from './../../components/dates/dates'
-import {FileContextProvider} from './../../context/fileContext'
+import { FileContextProvider } from './../../context/fileContext'
 
 function EditorHome() {
 	const [layout, setLayout] = useState(false)
@@ -20,7 +20,7 @@ function EditorHome() {
 
 	return (
 		<>
-			<div className="editorContainer">
+			<div className="editorContainer" id="editorContainer">
 				<MenuEditor
 					setLayout={manejarLayout}
 					layout={layout}
@@ -29,16 +29,16 @@ function EditorHome() {
 					code={code}
 					setPerfil={setPerfil}
 					perfil={perfil}
-					/>
-				<Perfil state={perfil}/>
-				<Preferences preferences={preferences} />
+				/>
+				<Perfil state={perfil} />
+				<Preferences preferences={preferences} setPreferences={setPreferences} />
 				<FileContextProvider>
-					<Editor layout={layout} setCode={setCode} setDates={setDates} dates={dates} setLenguaje={setLenguaje} setBodyfile={setBodyfile}/>
+					<Editor layout={layout} setCode={setCode} setDates={setDates} dates={dates} setLenguaje={setLenguaje} setBodyfile={setBodyfile} />
 					{
 						(lenguaje !== "")
-						?
-						<Dates dates={dates} setDates={setDates} lenguaje={lenguaje} bodyfile={bodyfile}/>
-						: null
+							?
+							<Dates dates={dates} setDates={setDates} lenguaje={lenguaje} bodyfile={bodyfile} />
+							: null
 					}
 				</FileContextProvider>
 			</div>
