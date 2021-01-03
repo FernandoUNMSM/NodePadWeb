@@ -6,7 +6,9 @@ function Cuenta() {
 
   return (
     <>
-      <h1>nya</h1>
+      <div className="formatoContainer">
+        
+      </div>
     </>
   )
 }
