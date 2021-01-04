@@ -74,3 +74,9 @@
   right: 0;
   /* background-color: #ccc; */
 }
+.textareaName input{
+  text-align: center;
+  background-color: transparent;
+  border: none;
+  outline: none;
+}

@@ -21,45 +21,6 @@
     box-sizing: content-box;
 }
 
-/*Bloques izquierdos*/
-.datesLeft{
-    background: var(--baseBackground);
-    display: flex;
-    flex-direction: column;
-    justify-content: start;
-    overflow: auto;
-    width: 100%;
-    overflow: hidden;
-}
-
-.datesLeftSup{
-    width: 100%;
-    display: flex;
-    height: 50px;
-    padding: 10px 0 0;
-    justify-content: space-between;
-    box-sizing: content-box;
-}
-
-.datesLeftSup1{
-    display: flex;
-    background: var(--baseBackground);
-    transition: .5s;
-    justify-content: end;
-    align-items: center;
-}
-.datesIconS {
-    margin: 0 20px;
-    font-size: 2em;
-}
-.datesLeftSup2{
-    background: var(--baseBackground);
-    transition: .5s;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0 20px;
-}
 .datestabs {
     display: flex;
     border-bottom: 1px solid #ccc;
@@ -75,138 +36,17 @@
 }
 .datestabs > div p{
     padding: 20px 15px;
-    /* border: 1px solid transparent; */
 }
 .datestabs > div:hover {
-    /* border-bottom: 1px solid  var(--verdeEditor); */
     color: var(--verdeEditor);
 }
-.datesLeftMed{
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    padding: 10px 20px;
-    border-top: 1px solid #ccc;
-}
 
-.datesLeftMed1{
-    display: flex;
-    transition: .5s;
-    align-items: center;
-    cursor: pointer;
-}
-.datesLeftMed1 > .datesIconS {
-    font-size: 1.3em;
-    margin: 0 15px 0 0;
-}
-.datesLeftMed2{
-    transition: .5s;
-}
-.datesIcons {
-    display: flex;
-}
 .tabsContainer {
     height: calc(100% - 125px);
     flex-direction: column;
     display: flex;
 }
-.filesContainer {
-    display: grid;
-    overflow: auto;
-}
-.filesContainerSup {
-    overflow: auto;
-}
-.filesContainer.grid {
-    grid-template-columns: repeat(4,1fr);
-    grid-gap: 15px;
-    padding: 10px 20px 0;
-    /* padding-bottom: 20px; */
-}
-.filesContainer.grid .datesLeftMed {
-    height: 150px;
-    border: 1px solid #ccc;
-    flex-direction: column;
-    padding: 15px;
-    /* align-items: center; */
-}
-.filesContainer.grid .datesLeftMed:last-of-type {
-    margin-bottom: 20px;
-}
-.filesContainer.grid .datesLeftMed1 {
-    flex-direction: column;
-    position: relative;
-    height: 60px;
-    justify-content: center;
-}
-.filesContainer.grid .datesLeftMed > div {
-    width: 100%;
-}
-.filesContainer.grid .datesLeftMed .datesIcons {
-    justify-content: space-evenly;
-}
-.filesContainer.grid .datesLeftMed .datesLeftMed1 .datesIconS{
-    position: absolute;
-    top: 0;
-    left: 0;
-}
-.guardarContainer {
-    display: grid;
-    grid-template-columns: repeat(2,1fr);
-    height: 100%;
-    /* overflow: auto; */
-}
-.recienteSup {
-    margin: 5px 20px;
-    display: flex;
-    justify-content: space-between;
-}
-.recienteSup .recienteIcons .recienteLayout{
-    margin: 0 10px;
-    cursor: pointer;
-    transition: .3s;
-    color: var(--baseColor);
-}
-.recienteSup .recienteIcons .recienteLayout:hover {
-    color: var(--verdeEditor);
-}
-.recienteSup p {
-    color: rgb(146, 142, 142);
-}
-.datesPreview {
-    color: var(--baseColor);
-    padding: 10px;
-    overflow: auto;
-}
-.datesPreview p{
-    white-space: pre-wrap;
-}
 
-/*Bloques Derechos*/
-.datesRight{
-    justify-self: center;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    border-left: 1px solid #ccc;
-}
-.datesSave {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    width: inherit;
-}
-.datesRightS{
-    transition: .5s;
-}
-
-.datesRightI{
-    transition: .5s;
-}
-
-/*Clases de etiquetas*/
 .datesH1{
     background: var(--baseBackground);
     transition: .5s;
@@ -289,89 +129,8 @@
     transition: .5s;
     color: var(--baseColor);
 }
-.spinnerContainer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: inherit;
-}
-.spinner {
-    width: 100px;
-    height: 100px;
-    border: 6px solid rgba(126, 126, 126, 0.4);
-    border-radius: 50%;
-    border-left-color: rgb(78, 149, 242);
-    animation: spin 1s linear infinite;
-}
 
-@keyframes spin {
-    0%{
-        transform: rotate(0deg);
-    }
-    100%{
-        transform: rotate(360deg);
-    }
-}
-/* dddddddddddddddddddddddddd */
-.col {
-    position: relative;
-    width: 50%;
-    transition: .5s;
-}
-.inputBox {
-    position: relative;
-    width: 100%;
-    height: 40px;
-    color: var(--verdeEditor);
-    font-family: 'Poppins', sans-serif;
-    font-weight: bold;
-}
-.inputBox input{
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: transparent;
-    box-shadow: none;
-    border: none;
-    outline: none;
-    font-size: 18px;
-    padding: 0 10px;
-    z-index: 1;
-    color: #000;
-}
-.inputBox .text{
-    position: absolute;
-    top: 0;
-    left: 0;
-    line-height: 40px;
-    font-size: 18px;
-    padding: 0 10px;
-    display: block;
-    transition: .5s;
-    pointer-events: none;
-    font-family: 'Poppins', sans-serif;
-    white-space: pre-wrap;
-}
-.inputBox input:focus + .text,
-.inputBox input:valid + .text{
-    top: -35px;
-    left: -10px;
-}
-.inputBox .line{
-    position: absolute;
-    bottom: 0;
-    display: block;
-    width: 100%;
-    height: 2px;
-    background-color: var(--verdeEditor);
-    transition: .5s;
-    border-radius: 2px;
-    pointer-events: none;
-}
-.inputBox input:focus ~ .line,
-.inputBox input:valid ~ .line{
-    height: 100%;
-}
+
 .focus {
     color: var(--verdeEditor);
     border-bottom: 1px solid  var(--verdeEditor);

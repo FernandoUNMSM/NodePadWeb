@@ -1,28 +1,24 @@
-import React, { useEffect, useRef, useState, useContext } from 'react'
+import React, { useEffect, useState } from 'react'
 import './dates.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faTimes, faFileCode, faTrash, faGripLines, faTh } from '@fortawesome/free-solid-svg-icons'
+import { faTimes } from '@fortawesome/free-solid-svg-icons'
 import { faHtml5, faCss3Alt, faNodeJs } from '@fortawesome/free-brands-svg-icons'
-import sendFile from './../../services/sendFile'
 import listFiles from './../../services/listFiles'
-import FileContext from './../../context/fileContext'
-import PerfectScrollbar from 'react-perfect-scrollbar'
-import 'react-perfect-scrollbar/dist/css/styles.css';
+import Reciente from './../reciente/reciente'
+import Guardar from './../guardar/guardar'
 
 function Dates({ dates, setDates, lenguaje, bodyfile }) {
 	let leng = lenguaje.toLowerCase()
 	let iduser = JSON.parse(localStorage.getItem("usuarioActual")).id;
 
-	const { fileContent, setFileContent } = useContext(FileContext)
-
 	const [loader, setLoader] = useState(true)
 	const [list, setList] = useState([])
 
 	const [accion, setAccion] = useState("Reciente")
-	const [layout, setLayout] = useState(true)
-	//true = lines, false = grid
 
-	var nameDoc = useRef(null)
+	const [idfileHtml, setIdfileHtml] = useState(null)
+	const [idfileCss, setIdfileCss] = useState(null)
+	const [idfileJs, setIdfileJs] = useState(null)
 
 	var iconi
 	switch (lenguaje) {
@@ -43,19 +39,6 @@ function Dates({ dates, setDates, lenguaje, bodyfile }) {
 		setAccion("Reciente")
 	}
 
-	const enviarFile = (evt) => {
-		evt.preventDefault()
-		let nombre = nameDoc.current.value;
-		let jsonFile = {
-			nombre: nombre,
-			cuerpo: bodyfile,
-			iduser: iduser,
-			tipo: leng
-		}
-		sendFile({ jsonFile })
-		mostrarDatos();
-	}
-
 	const changeAccion = (evt) => {
 		const tabs = document.querySelectorAll('.tabs p');
 		tabs.forEach(tab => tab.classList.remove('focus'))
@@ -64,18 +47,11 @@ function Dates({ dates, setDates, lenguaje, bodyfile }) {
 		setAccion(accion);
 	}
 
-	const changeFileState = (evt) => {
-		const idfile = evt.target.parentNode.id;
-		mostrarDatos();
-		setFileContent({ file: list[idfile], len: leng })
-	}
-
 	useEffect(() => {
 		setLoader(true)
 		if (dates) {
 			listFiles({ leng: leng, id: iduser })
 				.then(res => {
-					// console.log(res)
 					setLoader(false)
 					setList(res.data)
 				})
@@ -83,13 +59,6 @@ function Dates({ dates, setDates, lenguaje, bodyfile }) {
 			setList([])
 		}
 	}, [dates]) //eslint-disable-line
-
-	const cambiarlayout1 = () => {
-		setLayout(true)
-	}
-	const cambiarlayout2 = () => {
-		setLayout(false)
-	}
 
 	return (
 		<>
@@ -117,73 +86,30 @@ function Dates({ dates, setDates, lenguaje, bodyfile }) {
 									(accion === "Reciente")
 										?
 										<>
-											<div className="recienteSup">
-												<p>Reciente</p>
-												<div className="recienteIcons">
-													<FontAwesomeIcon icon={faGripLines} className={(layout) ? 'recienteLayout focusL' : 'recienteLayout'} onClick={cambiarlayout1} />
-													<FontAwesomeIcon icon={faTh} className={(!layout) ? 'recienteLayout focusL' : 'recienteLayout'} onClick={cambiarlayout2} />
-												</div>
-											</div>
-											{(loader)
-												?
-												<div className="spinnerContainer">
-													<div className="spinner"></div>
-												</div>
-												: <>
-													<div className="filesContainerSup">
-														<PerfectScrollbar className="scrollbar">
-															<div className={(layout) ? 'filesContainer' : ' filesContainer grid'}>
-																{list.map((value, index) => {
-																	return (
-																		<div className="datesLeftMed" key={index}>
-																			<div className="datesLeftMed1" id={index} >
-																				<FontAwesomeIcon icon={iconi} className="datesIconS" />
-																				<h2 className="datesH2" id={index} onClick={changeFileState} >{value.nombre}</h2>
-																			</div>
-																			<div className="datesIcons">
-																				<div className="datesLeftMed2" id={index}>
-																					<FontAwesomeIcon icon={faFileCode} className="datesIconM" onClick={changeFileState} id={index} />
-																				</div>
-																				<div className="datesLeftMed2">
-																					<FontAwesomeIcon icon={faTrash} className="datesIconM" />
-																				</div>
-																			</div>
-																		</div>
-																	)
-																})}
-															</div>
-														</PerfectScrollbar>
-													</div>
-												</>
-											}
+											<Reciente
+												mostrarDatos={mostrarDatos}
+												leng={leng}
+												iconi={iconi}
+												list={list}
+												loader={loader}
+												setIdfileHtml={setIdfileHtml}
+												setIdfileCss={setIdfileCss}
+												setIdfileJs={setIdfileJs}
+											/>
 										</>
 										: null
 								}
 								{
 									(accion === "Guardar")
-										? <>
-											<div className="guardarContainer">
-												<div className="datesPreview">
-													<p>{fileContent.file.cuerpo}</p>
-												</div>
-												<div className="datesRight">
-													<div className="datesSave">
-														<p className="datesP">Nombre:</p>
-														<div className="col">
-															<div className="inputBox">
-																<form action="" id="file" onSubmit={enviarFile}>
-																	<input type="text" name="namedoc" required="required" autoComplete="off" ref={nameDoc} pattern="[A-Za-z0-9_-]{1,15}" />
-																	<span className="line"></span>
-																</form>
-															</div>
-														</div>
-													</div>
-													<button className="datesButton" form="file">
-														Guardar
-              						</button>
-												</div>
-											</div>
-										</>
+										?
+										<Guardar
+											mostrarDatos={mostrarDatos}
+											idfileJs={idfileJs}
+											idfileCss={idfileCss}
+											idfileHtml={idfileHtml}
+											leng={leng}
+											bodyfile={bodyfile}
+										/>
 										: null
 								}
 								{

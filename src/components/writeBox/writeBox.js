@@ -4,14 +4,16 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { saveAs } from 'file-saver';
 import './writeBox.css'
 import FileContext from './../../context/fileContext'
-// import PerfectScrollbar from 'perfect-scrollbar';
-import PerfectScrollbar from 'react-perfect-scrollbar'
-import 'react-perfect-scrollbar/dist/css/styles.css';
+import { file } from 'jszip';
 
 function WriteBox({ lan, setCode, setDates, dates, setLenguaje, setBodyfile }) {
   const { fileContent, setFileContent } = useContext(FileContext)
 
   const [show, setShow] = useState(true)
+
+  const [nameHtml, setNameHtml] = useState(null)
+  const [nameCss, setNameCss] = useState(null)
+  const [nameJs, setNameJs] = useState(null)
 
   const showPreview = (evt) => {
     let code = '';
@@ -69,8 +71,15 @@ function WriteBox({ lan, setCode, setDates, dates, setLenguaje, setBodyfile }) {
     setDates(!dates)
     var body = document.getElementById(lan).value
     setBodyfile(body)
-    // console.log(body)
-    setFileContent({ file: { cuerpo: body }, len: lan.toLowerCase() })
+
+    let newFile = fileContent
+    if(fileContent !== '{}') {
+      newFile.file.cuerpo = body
+    }else{
+      newFile = {file:{cuerpo:body}, len: lan.toLowerCase()}
+    }
+    console.log(newFile)
+    setFileContent(newFile)
   }
 
   const showTextarea = (evt) => {
@@ -85,9 +94,16 @@ function WriteBox({ lan, setCode, setDates, dates, setLenguaje, setBodyfile }) {
     if (fileContent.len === lan.toLowerCase()) {
       let textareaContent = document.querySelector(`#${lan}`);
       textareaContent.value = fileContent.file.cuerpo;
+
+      if(lan === 'HTML') {
+        setNameHtml(fileContent.file.nombre)
+      }else if(lan === 'CSS'){
+        setNameCss(fileContent.file.nombre)
+      }else if(lan === 'JS'){
+        setNameJs(fileContent.file.nombre)
+      }
     }
   }, [fileContent])//eslint-disable-line
-
 
   return (
     <>
@@ -96,10 +112,32 @@ function WriteBox({ lan, setCode, setDates, dates, setLenguaje, setBodyfile }) {
           <div className="leftTextarea">
             <p>{lan}</p>
             <div className="changeShow" >
-              <FontAwesomeIcon icon={(show) ? faChevronUp : faChevronDown} className="icon"/>
+              <FontAwesomeIcon icon={(show) ? faChevronUp : faChevronDown} className="icon" />
               <div className="press" onClick={showTextarea} ></div>
             </div>
           </div>
+          {
+            (fileContent !== '{}')
+              ?
+              <div className="textareaName">
+              {
+                (lan === 'HTML' )
+                ? <input type="text" name="" id="" defaultValue={nameHtml} disabled/>
+                : null
+              }
+              {
+                (lan === 'CSS')
+                ? <input type="text" name="" id="" defaultValue={nameCss} disabled/>
+                : null
+              }
+              {
+                (lan === 'JS')
+                ? <input type="text" name="" id="" defaultValue={nameJs} disabled/>
+                : null
+              }
+              </div>
+              : null
+          }
           <div className="iconsTextarea">
             <FontAwesomeIcon icon={faDownload} className="icon" onClick={download} />
             <FontAwesomeIcon icon={faUpload} className="icon" onClick={mostrarDatos} />

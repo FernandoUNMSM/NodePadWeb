@@ -1,0 +1,95 @@
+.guardarContainer {
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  height: 100%;
+}
+
+.datesPreview {
+  color: var(--baseColor);
+  padding: 10px;
+  overflow: auto;
+}
+.datesPreview p{
+  white-space: pre-wrap;
+}
+.datesRight{
+  justify-self: center;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  border-left: 1px solid #ccc;
+}
+.datesSave {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: inherit;
+}
+.datesRightS{
+  transition: .5s;
+}
+
+.datesRightI{
+  transition: .5s;
+}
+.col {
+  position: relative;
+  width: 50%;
+  transition: .5s;
+}
+.inputBox {
+  position: relative;
+  width: 100%;
+  height: 40px;
+  color: var(--verdeEditor);
+  font-family: 'Poppins', sans-serif;
+  font-weight: bold;
+}
+.inputBox input{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  box-shadow: none;
+  border: none;
+  outline: none;
+  font-size: 18px;
+  padding: 0 10px;
+  z-index: 1;
+  color: #000;
+}
+.inputBox .text{
+  position: absolute;
+  top: 0;
+  left: 0;
+  line-height: 40px;
+  font-size: 18px;
+  padding: 0 10px;
+  display: block;
+  transition: .5s;
+  pointer-events: none;
+  font-family: 'Poppins', sans-serif;
+  white-space: pre-wrap;
+}
+.inputBox input:focus + .text,
+.inputBox input:valid + .text{
+  top: -35px;
+  left: -10px;
+}
+.inputBox .line{
+  position: absolute;
+  bottom: 0;
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: var(--verdeEditor);
+  transition: .5s;
+  border-radius: 2px;
+  pointer-events: none;
+}
+.inputBox input:focus ~ .line,
+.inputBox input:valid ~ .line{
+  height: 100%;
+}
