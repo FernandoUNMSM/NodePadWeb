@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react'
 import './MenuHeader.css'
-import {Link} from 'wouter'
+import { Link } from 'wouter'
 import logo from './../../assets/img/logo-png.png'
 
 function MenuHeader() {
@@ -15,6 +15,10 @@ function MenuHeader() {
 		}
 	},[]) //eslint-disable-line
 
+  const cerrarSesion = () =>{
+    localStorage.setItem("usuarioActual", "{}")
+    setSesion(false)
+  }
 	return (
 		<>
 			<div className="menu-container">
@@ -27,7 +31,7 @@ function MenuHeader() {
 					?
 					<ul className="menu">
 						<li className="listItem">
-							<Link to={`/`}>Cerrar sesion</Link>
+							<Link to={`/`} onClick={cerrarSesion}>Cerrar sesion</Link>
 						</li>
 						<li className="listItem">
 							<Link to={`/editor`}>Ingresa al editor</Link>

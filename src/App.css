@@ -3,9 +3,11 @@
   padding: 0;
   box-sizing: border-box;
 }
+
 ::selection {
   background-color: rgb(172, 238, 164);
 }
+
 :root {
   --lime-green: hsl(163, 72%, 41%);
   --bright-red: hsl(356, 69%, 56%);
@@ -27,6 +29,8 @@
   --amarillo: rgb(237, 191, 107);
   --grayDark: rgb(46, 40, 40);
   --verdeEditor: rgb(75, 235, 147);
+  /* --fondoTransparent: rgba(0, 0, 0, .3); */
+  --fondoTransparent: rgba(255, 255, 255, 0.3);
 }
 .is-dark-mode {
   --cardGray: #252b43;

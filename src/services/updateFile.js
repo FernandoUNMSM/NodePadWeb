@@ -2,7 +2,7 @@ function updateUser({jsonFile, id}) {
   // const id = JSON.parse(localStorage.getItem("usuarioActual")).id
   const API = `https://api-login-heroku.herokuapp.com/links/edit/${id}`
   // const API = `http://localhost:4000/links/edit/${id}`
-  debugger
+  // debugger
   return fetch(API, {
     method: 'POST',
     headers: {

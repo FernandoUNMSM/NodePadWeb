@@ -1,10 +1,9 @@
 import React, { useContext, useEffect, useState } from 'react'
-import { faChevronDown, faDownload, faUpload, faChevronUp } from '@fortawesome/free-solid-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { saveAs } from 'file-saver';
 import './writeBox.css'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faChevronDown, faDownload, faUpload, faChevronUp, faTimes } from '@fortawesome/free-solid-svg-icons'
+import { saveAs } from 'file-saver';
 import FileContext from './../../context/fileContext'
-import { file } from 'jszip';
 
 function WriteBox({ lan, setCode, setDates, dates, setLenguaje, setBodyfile }) {
   const { fileContent, setFileContent } = useContext(FileContext)
@@ -73,14 +72,23 @@ function WriteBox({ lan, setCode, setDates, dates, setLenguaje, setBodyfile }) {
     setBodyfile(body)
 
     let newFile = fileContent
-    if(fileContent !== '{}') {
+    if (fileContent !== '{}') {
       newFile.file.cuerpo = body
-    }else{
-      newFile = {file:{cuerpo:body}, len: lan.toLowerCase()}
+    } else {
+      newFile = { file: { cuerpo: body }, len: lan.toLowerCase() }
     }
-    console.log(newFile)
+    //Actualizamos el nombre del archivo actual del context
+    if (lan === 'HTML') {
+      newFile.file.nombre = nameHtml
+    } else if (lan === 'CSS') {
+      newFile.file.nombre = nameCss
+    } else if (lan === 'JS') {
+      newFile.file.nombre = nameJs
+    }
+    console.log()
     setFileContent(newFile)
   }
+
 
   const showTextarea = (evt) => {
     let textarea = evt.target.parentNode.parentNode.parentNode.parentNode.lastChild;
@@ -90,16 +98,45 @@ function WriteBox({ lan, setCode, setDates, dates, setLenguaje, setBodyfile }) {
     setShow(!show)
   }
 
+  const quitarFile = () => {
+    var body = document.getElementById(lan).value
+    setBodyfile(body)
+    setFileContent({ file: { cuerpo: body }, len: lan.toLowerCase() })
+    console.log(fileContent)
+    if (lan === 'HTML') {
+      setNameHtml(null)
+    } else if (lan === 'CSS') {
+      setNameCss(null)
+    } else if (lan === 'JS') {
+      setNameJs(null)
+    }
+    // let newFile = fileContent
+    // if (fileContent !== '{}') {
+    //   newFile.file.cuerpo = body
+    // } else {
+    //   newFile = { file: { cuerpo: body }, len: lan.toLowerCase() }
+    // }
+    // //Actualizamos el nombre del archivo actual del context
+    // if (lan === 'HTML') {
+    //   newFile.file.nombre = nameHtml
+    // } else if (lan === 'CSS') {
+    //   newFile.file.nombre = nameCss
+    // } else if (lan === 'JS') {
+    //   newFile.file.nombre = nameJs
+    // }
+    // setFileContent(newFile)
+  }
+
   useEffect(() => {
     if (fileContent.len === lan.toLowerCase()) {
       let textareaContent = document.querySelector(`#${lan}`);
       textareaContent.value = fileContent.file.cuerpo;
 
-      if(lan === 'HTML') {
+      if (lan === 'HTML') {
         setNameHtml(fileContent.file.nombre)
-      }else if(lan === 'CSS'){
+      } else if (lan === 'CSS') {
         setNameCss(fileContent.file.nombre)
-      }else if(lan === 'JS'){
+      } else if (lan === 'JS') {
         setNameJs(fileContent.file.nombre)
       }
     }
@@ -120,21 +157,36 @@ function WriteBox({ lan, setCode, setDates, dates, setLenguaje, setBodyfile }) {
             (fileContent !== '{}')
               ?
               <div className="textareaName">
-              {
-                (lan === 'HTML' )
-                ? <input type="text" name="" id="" defaultValue={nameHtml} disabled/>
-                : null
-              }
-              {
-                (lan === 'CSS')
-                ? <input type="text" name="" id="" defaultValue={nameCss} disabled/>
-                : null
-              }
-              {
-                (lan === 'JS')
-                ? <input type="text" name="" id="" defaultValue={nameJs} disabled/>
-                : null
-              }
+                {
+                  (lan === 'HTML')
+                    ? <>
+                      <input type="text" name="" id="htmlT" defaultValue={nameHtml} disabled />
+                      {
+                        (nameHtml !== null && nameHtml !== undefined) ? <FontAwesomeIcon icon={faTimes} onClick={quitarFile}/> : null
+                      }
+                    </>
+                    : null
+                }
+                {
+                  (lan === 'CSS')
+                    ? <>
+                      <input type="text" name="" id="cssT" defaultValue={nameCss} disabled />
+                      {
+                        (nameCss !== null && nameCss !== undefined) ? <FontAwesomeIcon icon={faTimes} onClick={quitarFile}/> : null
+                      }
+                    </>
+                    : null
+                }
+                {
+                  (lan === 'JS')
+                    ? <>
+                      <input type="text" name="" id="jsT" defaultValue={nameJs} disabled />
+                      {
+                        (nameJs !== null && nameJs !== undefined) ? <FontAwesomeIcon icon={faTimes} onClick={quitarFile}/> : null
+                      }
+                    </>
+                    : null
+                }
               </div>
               : null
           }

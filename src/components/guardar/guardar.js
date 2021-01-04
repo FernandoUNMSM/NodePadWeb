@@ -39,6 +39,7 @@ export default function Guardar({ mostrarDatos, idfileHtml, idfileCss, idfileJs,
       iduser: iduser,
       tipo: leng
     }
+    // console.log(jsonFile);
     sendFile({ jsonFile })
     mostrarDatos();
   }
@@ -50,9 +51,11 @@ export default function Guardar({ mostrarDatos, idfileHtml, idfileCss, idfileJs,
       cuerpo: bodyfile,
       tipo: leng
     }
+    // console.log({ jsonFile: jsonFile, id: id })
     updateFile({ jsonFile: jsonFile, id: id })
     mostrarDatos();
   }
+
   return (
     <div className="guardarContainer">
       <div className="datesPreview">

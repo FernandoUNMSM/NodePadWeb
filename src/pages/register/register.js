@@ -1,47 +1,64 @@
-import { faEnvelope, faLock, faUser } from '@fortawesome/free-solid-svg-icons'
+import React, { useState, useRef } from 'react'
+import './register.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {Link, useLocation} from 'wouter'
-import React, {useState} from 'react'
+import { faEnvelope, faLock, faUser } from '@fortawesome/free-solid-svg-icons'
+import { Link, useLocation } from 'wouter'
 import Loader from './../../components/loader/loader'
 import aadUser from './../../services/addUser'
-import './register.css'
+import Errormodal from './../../components/errormodal/errormodal'
 
 function Register() {
 	const [location, setLocation] = useLocation(); //eslint-disable-line
 	const [loader, setLoader] = useState(false)
+	const [error, setError] = useState(false)
+	const password = useRef(null)
+	const password2 = useRef(null)
+	const [message, setMessage] = useState('')
 
 	const sumbitForm = (event) => {
+		event.preventDefault();
+		if (validatePassword()) {
+			setMessage('Las contraseñas no coinciden')
+			setError(true)
+			return
+		}
+
 		setLoader(true)
 		const formData = new FormData(event.target)
-		event.preventDefault();
-		aadUser({formData: formData})
+
+		aadUser({ formData: formData })
 			.then(response => {
+				setMessage(response)
 				setLoader(false)
-				localStorage.setItem("configActual",JSON.stringify({size: '16px', color: 'var(--cardTitle)'}))
-				if(response === 'user created'){
+
+				localStorage.setItem("configActual", JSON.stringify({ size: '16px', color: 'var(--cardTitle)' }))
+
+				if (response === 'user created') {
 					setLocation('/editor')
+				} else if (response === 'Usuario no valido' || response === 'Email no valido') {
+					setError(true)
 				}
 			})
-	}
-	// const validatePassword = (event) => {
-	// 	event.preventDefault()
-	// 	console.log(event.target)
-	// }
-	// 	useEffect(()=> {
-	// 		if(validateUser){
-	// 			setLocation("/editor");
-	// 		}
-	// },[validateUser])
 
+	}
+	const validatePassword = () => {
+		return (password.current.value !== password2.current.value) ? true : false
+	}
 
 	return (
 		<>
 			{
 				(loader)
-				? <Loader/>
-				: null
+					? <Loader />
+					: null
 			}
 			<div className="containerConvenience">
+				{
+					(error)
+						?
+						<Errormodal setError={setError} message={message} />
+						: null
+				}
 				<div className="registerContainer">
 					<div className="login">
 						<h1>Registrate</h1>
@@ -85,7 +102,7 @@ function Register() {
 								</div>
 								<div className="col">
 									<div className="inputBox">
-										<input type="password" name="password" required="required" autoComplete="off" />
+										<input type="password" name="password" required="required" autoComplete="off" ref={password} />
 										<span className="text">
 											<FontAwesomeIcon icon={faLock} /> Contraseña</span>
 										<span className="line"></span>
@@ -93,7 +110,7 @@ function Register() {
 								</div>
 								<div className="col">
 									<div className="inputBox">
-										<input type="password" required="required" autoComplete="off" />
+										<input type="password" required="required" autoComplete="off" ref={password2} />
 										<span className="text">
 											<FontAwesomeIcon icon={faLock} /> Confirmar Contraseña</span>
 										<span className="line"></span>

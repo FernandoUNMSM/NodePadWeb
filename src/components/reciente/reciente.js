@@ -1,4 +1,4 @@
-import React, {useState, useContext} from 'react';
+import React, {useState, useContext, useEffect} from 'react';
 import './reciente.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faFileCode, faTrash, faGripLines, faTh } from '@fortawesome/free-solid-svg-icons'
@@ -47,6 +47,19 @@ function Reciente({mostrarDatos, leng, iconi, list, loader, setIdfileHtml, setId
 		deleteFile({ leng: leng, id: idfile })
 			.then(res => console.log(res))
   }
+
+  useEffect(() => {
+    // console.log(fileContent)
+    if(fileContent.file.nombre === undefined){
+      if(leng === 'html'){
+        setIdfileHtml(null)
+      }else if(leng === 'css'){
+        setIdfileCss(null)
+      }else if(leng === 'js'){
+        setIdfileJs(null)
+      }
+    }
+  },[fileContent])
 
   return (
     <>
