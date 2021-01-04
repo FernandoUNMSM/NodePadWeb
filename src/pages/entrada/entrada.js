@@ -8,45 +8,45 @@ function Entrada() {
 					<h1>Editor de  Codigo Notepad</h1>
 				</div>
 			</header>		
-		<nav className="menuentrapri">
-				<ul className="menuentrada">
-					<li className="menuentra">
-						<a  href="#" className="menuentralink">Inicio</a>
+		<nav>
+				<ul className="menu menu-entrada">
+					<li className="menu_entra">
+						<a  href="#" className="menu_entralink">Inicio</a>
 					</li>
-					<li className="menuentra">
-						<a  href="#" className="menuentralink">Nosotros</a>
-						<ul>
-							<li className="menuentra">
-								<a target="_blank" href="http://localhost:3000/mision" className="menuentralink">Misión</a>
+					<li className="menu_entra">
+						<a  href="#" className="menu_entralink">Nosotros</a>
+						<ul className="menu">
+							<li className="menu_entra">
+								<a target="_blank" href="http://localhost:3000/mision" className="menu_entralink">Misión</a>
 							</li>
-							<li className="menuentra">
-								<a target="_blank" href="http://localhost:3000/vision" className="menuentralink">Visión</a>
+							<li className="menu_entra">
+								<a target="_blank" href="http://localhost:3000/vision" className="menu_entralink">Visión</a>
 							</li>
-							<li className="menuentra">
-								<a target="_blank" href="http://localhost:3000/proposito" className="menuentralink">Proposito</a>
+							<li className="menu_entra">
+								<a target="_blank" href="http://localhost:3000/proposito" className="menu_entralink">Proposito</a>
 							</li>
 						</ul>
 					</li>
-					<li className="menuentra">
-						<a href="#" className="menuentralink">HTML</a>
+					<li className="menu_entra">
+						<a href="#" className="menu_entralink">HTML</a>
 					</li>
-					<li className="menuentra">
-						<a href="#" className="menuentralink">CSS</a>
+					<li className="menu_entra">
+						<a href="#" className="menu_entralink">CSS</a>
 					</li>
-					<li className="menuentra">
-						<a href="#" className="menuentralink">JAVASCRIPT</a>
+					<li className="menu_entra">
+						<a href="#" className="menu_entralink">JAVASCRIPT</a>
 					</li>
-					<li className="menuentra">
-						<a href="#" className="menuentralink">otros</a>
-						<ul>
-							<li className="menuentra">
-								<a href="#" className="menuentralink">Python</a>
+					<li className="menu_entra">
+						<a href="#" className="menu_entralink">otros</a>
+						<ul className="menu">
+							<li className="menu_entra">
+								<a href="#" className="menu_entralink">Python</a>
 							</li>
-							<li className="menuentra">
+							<li className="menu_entra">
 								<a href="#" className="menuentralink">C#</a>
 							</li>
 							<li className="menuentra">
-								<a href="#" className="menuentralink">C++</a>
+								<a href="#" className="menu_entralink">C++</a>
 							</li>
 						</ul>
 					</li>
