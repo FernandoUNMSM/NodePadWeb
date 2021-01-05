@@ -9,13 +9,13 @@ function Entrada() {
 				</div>
 			</header>		
 		<nav>
-				<ul className="menu menu-entrada">
+				<ul className="emenu menu-entrada">
 					<li className="menu_entra">
 						<a  href="#" className="menu_entralink">Inicio</a>
 					</li>
 					<li className="menu_entra">
 						<a  href="#" className="menu_entralink">Nosotros</a>
-						<ul className="menu">
+						<ul className="emenu">
 							<li className="menu_entra">
 								<a target="_blank" href="http://localhost:3000/mision" className="menu_entralink">Misión</a>
 							</li>
@@ -38,7 +38,7 @@ function Entrada() {
 					</li>
 					<li className="menu_entra">
 						<a href="#" className="menu_entralink">otros</a>
-						<ul className="menu">
+						<ul className="emenu">
 							<li className="menu_entra">
 								<a href="#" className="menu_entralink">Python</a>
 							</li>

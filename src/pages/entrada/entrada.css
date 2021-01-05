@@ -7,7 +7,7 @@
 .menu-entrada {
     display: flex;
 }
-.menu {
+.emenu {
     margin: 0;
     padding: 0;
     list-style: none;
@@ -19,16 +19,16 @@
     white-space: nowrap;
     width: 100%;
   }
-  .menu_entra> .menu {
+  .menu_entra> .emenu {
     position: absolute;
     display: none;
     width: 100%;
   }
-  .menu_entra> .menu .menu {
+  .menu_entra> .emenu .emenu {
       left: 100%;
       top: 0;
   }
-  .menu_entra:hover > .menu {
+  .menu_entra:hover > .emenu {
       display: block;
   }
   .menu_entralink{
@@ -38,13 +38,13 @@
     text-decoration: none;
   }
   @media screen and (max-width: 700px) {
-    .menu_entra > .menu .menu  {
+    .menu_entra > .emenu .emenu  {
       width: auto;
     }
   }
   
   @media screen and (max-width: 550px) {
-    .menu_entra > .menu {
+    .menu_entra > .emenu {
       width: auto;
     }
   }
