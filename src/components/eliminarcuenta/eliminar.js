@@ -2,79 +2,60 @@ import { text } from '@fortawesome/fontawesome-svg-core';
 import React from 'react'
 import Swal from 'sweetalert2'
 import './eliminar.css'
-function Eliminar() {
-    Swal.fire({
-        title: "Opciones de Cuenta",
-        text: "Usted va a eliminar su cuenta",
-        icon: 'warning',
-		confirmButtonText:'Eliminar'
-		footer: '<span className="rojo">Su cuenta se eliminara permanente </span>',
-	// width:
-	// padding:
-	// background:
-	// grow:
-		backdrop: true,
-		timer: 5000,
-		timerProgressBar: true,
-	// toast:
-	// position:
-		allowOutsideClick:false,
-		allowEscapeKey:false,
-		allowEnterKey:false,
-		stopKeydownPropagation:false,
+const swalWithBootstrapButtons = Swal.mixin({ 
+	customClass: {
+		confirmButton: 'btn btn-success',
+		cancelButton: 'btn btn-danger'
+	},
+	buttonsStyling: false
+})
+swalWithBootstrapButtons.fire ({
+	title: 'Opciones de Cuenta',
+  	text: "Usted va a eliminar su cuenta",
+  	icon: 'warning',
+  	showCancelButton: true,
+  	confirmButtonText: 'Eliminar',
+	cancelButtonText: 'Cancelar',
+	footer: '<span className="rojo">Su cuenta se eliminara permanente </span>',
+	reverseButtons: true,
+	backdrop: true,
+	timer: 5000,
+	timerProgressBar: true,  
+	buttonsStyling: true,
+	showCloseButton: true, 
+	closeButtonAriaLabel: 'Cerrar alerta'
 
-		input: 'text',
-		inputPlaceholder: 'Connfirme contraseña',
-		// inputValue:
-		// inputOptions:
-	
-	//  customClass:
-	// 	container:
-	// 	popup:
-	// 	header:
-	// 	title:
-	// 	closeButton:
-	// 	icon:
-	// 	image:
-	// 	content:
-	// 	input:
-	// 	actions:
-	// 	confirmButton:
-	// 	cancelButton:
-	// 	footer:	
+}).then((result) => {
+	if (result.isConfirmed){
+		swalWithBootstrapButtons.fire(
+			'Eliminado',
+			'Se elimino exitoxamente',
+			'success'
+		)
+	} else if (
+		result.dismiss === Swal.DismissReason.cancel
+	){
+		swalWithBootstrapButtons.fire(
+			'Cancelado',
+			'Se cancelo el proceso',
+			'error'
+		)
+	}
+})
 
-		showConfirmButton: true,
-		confirmButtonColor: 'FF2D00',
-		confirmButtonAriaLabel:'eliminar',
-
-		showCancelButton: true,
-		cancelButtonText: 'Cancelar',
-		// cancelButtonColor:
-		cancelButtonAriaLabel: 'Cancelar',
-	
-		buttonsStyling: true,
-		showCloseButton: true, 
-		closeButtonAriaLabel: 'Cerrar alerta',
-
-
-	// imageUrl:
-	// imageWidth:
-	// imageHeight:
-	// imageAlt:
-
-    });
-
-    
     return (
         <>
-
-
-
-
-
+		<h1>Opciones de Cuenta</h1>
+		<h2>Eliminacion de cuenta</h2>
+		<div>
+			<h3>Confirmar contraseña</h3>
+			<input type="password"></input>	
+		</div>
+		
+		<input type= "botton" onClick="walWithBootstrapButtons.fire({})" value= "Eliminar" > </input>
         </>
 
     )
     
-}
+
   export default Eliminarcuenta
