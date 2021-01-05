@@ -5,7 +5,15 @@ import './eliminar.css'
 
 function Eliminarcuenta() {
 
+	
 	const eliminar = () => {
+		var contra=document.querySelector("#contraseña");
+		var contrados=document.querySelector("#confirmar");
+			if(contra.value != contrados.value ){
+				alert("Contraseñas diferentes");
+				return false;
+			}
+
 		const swalWithBootstrapButtons = Swal.mixin({
 			customClass: {
 				confirmButton: 'btn btn-success',
@@ -20,7 +28,7 @@ function Eliminarcuenta() {
 			showCancelButton: true,
 			confirmButtonText: 'Eliminar',
 			cancelButtonText: 'Cancelar',
-			footer: '<span className="rojo">Su cuenta se eliminara permanente </span>',
+			footer: '<span class="rojo">Su cuenta se eliminara permanente </span>',
 			reverseButtons: true,
 			backdrop: true,
 			timer: 5000,
@@ -52,10 +60,13 @@ function Eliminarcuenta() {
 			<h1>Opciones de Cuenta</h1>
 			<h2>Eliminacion de cuenta</h2>
 			<div>
-				<h3>Confirmar contraseña</h3>
-				<input type="password"></input>
+				<form>
+					<br></br>
+					<input type="password" placeholder="cotraseña" id="contraseña"></input>
+					<br></br>
+					<input type="password" placeholder="repetir contraseña" id="confirmar"></input>
+				</form>
 			</div>
-
 			<button onClick={eliminar}>Eliminar</button>
 		</>
 

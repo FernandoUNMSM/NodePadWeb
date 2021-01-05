@@ -43,7 +43,7 @@ function Preferences({preferences}){
               <p id="2" onClick={showPreferences}>Descargas</p>
               <p id="3" onClick={showPreferences}>Opcion 3</p>
               <p id="4" onClick={showPreferences}>Cuenta</p>
-              <p id="5" onClick={showPreferences}>Opcion 5</p>
+              <p id="5" onClick={showPreferences}>Eliminar cuenta</p>
             </div>
             <div className="preferences">
               {renderPreferences()}
