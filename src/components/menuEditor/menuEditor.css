@@ -23,8 +23,11 @@
     /* margin-left: 10px; */
     cursor: pointer;
     margin-bottom: 20px;
+    transition: .3s;
 }
-
+.menuEditor .icon:hover{
+    color: var(--verdeEditor)
+}
 .theme, .layout {
     position: relative;
     align-items: center;

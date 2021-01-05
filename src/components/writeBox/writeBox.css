@@ -74,9 +74,20 @@
   right: 0;
   /* background-color: #ccc; */
 }
+.textareaName {
+  display: flex;
+}
 .textareaName input{
   text-align: center;
   background-color: transparent;
   border: none;
   outline: none;
+  width: 120px;
+}
+.cerrarName {
+  cursor: pointer;
+  transition: .3s;
+}
+.cerrarName:hover {
+  color: var(--verdeEditor);
 }

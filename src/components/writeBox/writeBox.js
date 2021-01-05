@@ -110,21 +110,6 @@ function WriteBox({ lan, setCode, setDates, dates, setLenguaje, setBodyfile }) {
     } else if (lan === 'JS') {
       setNameJs(null)
     }
-    // let newFile = fileContent
-    // if (fileContent !== '{}') {
-    //   newFile.file.cuerpo = body
-    // } else {
-    //   newFile = { file: { cuerpo: body }, len: lan.toLowerCase() }
-    // }
-    // //Actualizamos el nombre del archivo actual del context
-    // if (lan === 'HTML') {
-    //   newFile.file.nombre = nameHtml
-    // } else if (lan === 'CSS') {
-    //   newFile.file.nombre = nameCss
-    // } else if (lan === 'JS') {
-    //   newFile.file.nombre = nameJs
-    // }
-    // setFileContent(newFile)
   }
 
   useEffect(() => {
@@ -162,7 +147,7 @@ function WriteBox({ lan, setCode, setDates, dates, setLenguaje, setBodyfile }) {
                     ? <>
                       <input type="text" name="" id="htmlT" defaultValue={nameHtml} disabled />
                       {
-                        (nameHtml !== null && nameHtml !== undefined) ? <FontAwesomeIcon icon={faTimes} onClick={quitarFile}/> : null
+                        (nameHtml !== null && nameHtml !== undefined) ? <FontAwesomeIcon icon={faTimes} className="cerrarName" onClick={quitarFile}/> : null
                       }
                     </>
                     : null
@@ -172,7 +157,7 @@ function WriteBox({ lan, setCode, setDates, dates, setLenguaje, setBodyfile }) {
                     ? <>
                       <input type="text" name="" id="cssT" defaultValue={nameCss} disabled />
                       {
-                        (nameCss !== null && nameCss !== undefined) ? <FontAwesomeIcon icon={faTimes} onClick={quitarFile}/> : null
+                        (nameCss !== null && nameCss !== undefined) ? <FontAwesomeIcon icon={faTimes} className="cerrarName" onClick={quitarFile}/> : null
                       }
                     </>
                     : null
@@ -182,7 +167,7 @@ function WriteBox({ lan, setCode, setDates, dates, setLenguaje, setBodyfile }) {
                     ? <>
                       <input type="text" name="" id="jsT" defaultValue={nameJs} disabled />
                       {
-                        (nameJs !== null && nameJs !== undefined) ? <FontAwesomeIcon icon={faTimes} onClick={quitarFile}/> : null
+                        (nameJs !== null && nameJs !== undefined) ? <FontAwesomeIcon icon={faTimes} className="cerrarName" onClick={quitarFile}/> : null
                       }
                     </>
                     : null
