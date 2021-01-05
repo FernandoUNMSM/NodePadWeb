@@ -3,14 +3,15 @@ import './proposito.css'
 function Proposito() {
 	return (
 		<>
-        <header>
+			<header>
 				<div className="Tprincipal">
 					<h1>Editor de  Codigo Notepad</h1>
 
 				</div>
-			</header>		
-		<nav>
+			</header>
+			<nav>
 				<ul className="menuentrada">
+					{/* eslint-disable */}
 					<li><a href="#">Inicio</a></li>
 					<li><a href="#">Nosotros</a>
 						<ul>
@@ -30,15 +31,15 @@ function Proposito() {
 						</ul>
 					</li>
 				</ul>
-			</nav>	
+			</nav>
 
-            <div>
-                <h2 className="h2entrada">Proposito</h2>
-                <p>
-                    La finalidad de este proyecto es obtener experiencia con respecto al desarrollo web y simular cómo se desenvuelven las metodologías ágiles dentro de su estructura, desarrollando los pasos específicos del plan SCRUM y logrando un resultado aceptable.
-                </p>
-            </div>
-        </>
+			<div>
+				<h2 className="h2entrada">Proposito</h2>
+				<p>
+					La finalidad de este proyecto es obtener experiencia con respecto al desarrollo web y simular cómo se desenvuelven las metodologías ágiles dentro de su estructura, desarrollando los pasos específicos del plan SCRUM y logrando un resultado aceptable.
+        </p>
+			</div>
+		</>
 	)
 }
 export default Proposito
