@@ -1,6 +1,7 @@
 import React, { useRef, useState } from 'react'
 import './preferences.css'
 import Cuenta from './../cuenta/cuenta'
+import Eliminar from './../eliminarcuenta/eliminar'
 
 function Preferences({preferences}){
   const preferencesContainer = useRef(null)
@@ -19,7 +20,9 @@ function Preferences({preferences}){
       case '3':
         return <div className="preference 3">3</div>
       case '4':
-        return <div className="preference 4">4</div>
+        return <div className="preference 4">
+          <Eliminar/>
+        </div>    
       case '5':
         return <div className="preference 5">
           <Cuenta/>
@@ -39,7 +42,7 @@ function Preferences({preferences}){
               <p id="1" onClick={showPreferences}>Editor</p>
               <p id="2" onClick={showPreferences}>Descargas</p>
               <p id="3" onClick={showPreferences}>Opcion 3</p>
-              <p id="4" onClick={showPreferences}>Opcion 4</p>
+              <p id="4" onClick={showPreferences}>Eliminar Cuenta</p>
               <p id="5" onClick={showPreferences}>Opcion 5</p>
             </div>
             <div className="preferences">
