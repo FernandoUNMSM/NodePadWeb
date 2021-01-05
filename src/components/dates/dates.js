@@ -12,15 +12,12 @@ function Dates({ dates, setDates, lenguaje }) {
 	switch (lenguaje) {
 		case "HTML":
 			iconi = faHtml5
-			// console.log(iconi)
 			break;
 		case "CSS":
 			iconi = faCss3Alt
-			// console.log(iconi)
 			break;
 		case "JS":
 			iconi = faNodeJs
-			// console.log(iconi)
 			break;
 	} 
 
