@@ -8,25 +8,28 @@ import Entrada from './pages/entrada/entrada'
 import Vision from './pages/vision/vision'
 import Mision from './pages/mision/mision'
 import Proposito from './pages/proposito/proposito'
+import { UserContextProvider } from './context/userContext'
 function App() {
   return (
     <>
-      <Route
-        component={EditorHome}
-        path="/editor"
-      />
-      <Route
-        component={Home}
-        path="/"
-      />
-      <Route
-        component={Login}
-        path="/login"
-      />
-      <Route
-        component={Register}
-        path="/register"
-      />
+      <UserContextProvider>
+        <Route
+          component={EditorHome}
+          path="/editor"
+        />
+        <Route
+          component={Home}
+          path="/"
+        />
+        <Route
+          component={Login}
+          path="/login"
+        />
+        <Route
+          component={Register}
+          path="/register"
+        />
+      </UserContextProvider>
       <Route
         component={Entrada}
         path="/entrada"

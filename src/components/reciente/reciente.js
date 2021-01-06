@@ -7,10 +7,12 @@ import 'react-perfect-scrollbar/dist/css/styles.css'
 import FileContext from './../../context/fileContext'
 import deleteFile from './../../services/deleteFile'
 
-function Reciente({mostrarDatos, leng, iconi, list, loader, setIdfileHtml, setIdfileCss, setIdfileJs}) {
+function Reciente({mostrarDatos, leng, iconi, list, setList, loader, setIdfileHtml, setIdfileCss, setIdfileJs}) {
   const [layout, setLayout] = useState(true)
-	//true = lines, false = grid
-	const { fileContent, setFileContent } = useContext(FileContext)
+  //true = lines, false = grid
+
+  const { fileContent, setFileContent } = useContext(FileContext)
+  const [change, setChange] = useState(true)
 
 	const cambiarlayout1 = () => {
 		setLayout(true)
@@ -45,11 +47,21 @@ function Reciente({mostrarDatos, leng, iconi, list, loader, setIdfileHtml, setId
 		}
 
 		deleteFile({ leng: leng, id: idfile })
-			.then(res => console.log(res))
+			.then(res => {
+        console.log(res)
+        actualizarList(list, idfile)
+      })
+  }
+
+  const actualizarList = (list, id)=>{
+    let itemFind = list.find((lists) => lists.idhtml === id)
+    let indexFind = list.indexOf(itemFind)
+    let itemRemove = list.splice(indexFind,1)
+    setList(list)
+    setChange(!change)
   }
 
   useEffect(() => {
-    // console.log(fileContent)
     if(fileContent.file.nombre === undefined){
       if(leng === 'html'){
         setIdfileHtml(null)

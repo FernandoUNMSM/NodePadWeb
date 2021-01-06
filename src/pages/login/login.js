@@ -1,26 +1,32 @@
-import React, { useEffect, useState } from 'react'
-import { Link, useLocation } from 'wouter'
+import React, { useEffect, useState, useContext } from 'react'
+import './login.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLock, faUser } from '@fortawesome/free-solid-svg-icons'
+import { Link, useLocation } from 'wouter'
 import Loader from './../../components/loader/loader'
 import sendUser from './../../services/getUsers'
-import './login.css'
+// import UserContext from './../../context/userContext'
 
 function Login() {
 	const [location, setLocation] = useLocation(); //eslint-disable-line
 	const [validateUser, setValidate] = useState(false)
 	const [loader, setLoader] = useState(false)
 
+	// const {usuario, setUsuario} = useContext(UserContext)
+
 	const sumbitForm = (event) => {
 		setLoader(true)
 		const formData = new FormData(event.target)
 		event.preventDefault();
-		// console.log(formData)
 		sendUser({ formData: formData, loader: loader })
-			.then(({ validate, loader }) => {
-				console.log(validate)
+			.then(({ validate, loader, user }) => {
+				// console.log(user)
 				setValidate(validate)
 				setLoader(loader)
+				localStorage.setItem("usuarioActual", JSON.stringify(user))
+				// setUsuario(user)
+				// debugger
+				// console.log(usuario)
 				localStorage.setItem("configActual",JSON.stringify({size: '16px', color: 'var(--cardTitle)'}))
 			})
 	}

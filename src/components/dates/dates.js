@@ -91,6 +91,7 @@ function Dates({ dates, setDates, lenguaje, bodyfile }) {
 												leng={leng}
 												iconi={iconi}
 												list={list}
+												setList={setList}
 												loader={loader}
 												setIdfileHtml={setIdfileHtml}
 												setIdfileCss={setIdfileCss}

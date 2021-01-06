@@ -1,8 +1,9 @@
 import React, { useRef, useState } from 'react'
 import './preferences.css'
-import Formato from './../formatoletra/formato'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTimes } from '@fortawesome/free-solid-svg-icons'
+import Formato from './../formatoletra/formato'
+import Fotoperfil from './../fotoPerfil/fotoperfil'
 
 function Preferences({ preferences, setPreferences }) {
   const preferencesContainer = useRef(null)
@@ -23,7 +24,9 @@ function Preferences({ preferences, setPreferences }) {
       case '3':
         return <div className="preference 3">3</div>
       case '4':
-        return <div className="preference 4">4</div>
+        return <div className="preference 4">
+          <Fotoperfil/>
+        </div>
       case '5':
         return <div className="preference 5">5</div>
       default:

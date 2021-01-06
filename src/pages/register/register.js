@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react'
+import React, { useState, useRef, useContext } from 'react'
 import './register.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEnvelope, faLock, faUser } from '@fortawesome/free-solid-svg-icons'
@@ -6,6 +6,7 @@ import { Link, useLocation } from 'wouter'
 import Loader from './../../components/loader/loader'
 import aadUser from './../../services/addUser'
 import Errormodal from './../../components/errormodal/errormodal'
+// import UserContext from './../../context/userContext'
 
 function Register() {
 	const [location, setLocation] = useLocation(); //eslint-disable-line
@@ -14,6 +15,8 @@ function Register() {
 	const password = useRef(null)
 	const password2 = useRef(null)
 	const [message, setMessage] = useState('')
+
+	// const {setUsuario} = useContext(UserContext)
 
 	const sumbitForm = (event) => {
 		event.preventDefault();
@@ -27,15 +30,18 @@ function Register() {
 		const formData = new FormData(event.target)
 
 		aadUser({ formData: formData })
-			.then(response => {
-				setMessage(response)
+			.then(({mensaje, user}) => {
+				setMessage(message)
 				setLoader(false)
 
+				// setUsuario(user)
+
+				localStorage.setItem("usuarioActual", JSON.stringify(user))
 				localStorage.setItem("configActual", JSON.stringify({ size: '16px', color: 'var(--cardTitle)' }))
 
-				if (response === 'user created') {
+				if (mensaje === 'user created') {
 					setLocation('/editor')
-				} else if (response === 'Usuario no valido' || response === 'Email no valido') {
+				} else if (mensaje === 'Usuario no valido' || mensaje === 'Email no valido') {
 					setError(true)
 				}
 			})
