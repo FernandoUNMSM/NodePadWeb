@@ -4,8 +4,6 @@ import Swal from 'sweetalert2'
 import './eliminar.css'
 
 function Eliminarcuenta() {
-
-	
 	const eliminar = () => {
 		var contra=document.querySelector("#contraseña");
 		var contrados=document.querySelector("#confirmar");
