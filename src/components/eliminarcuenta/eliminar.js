@@ -9,9 +9,11 @@ function Eliminarcuenta() {
 	const eliminar = () => {
 		var contra=document.querySelector("#contraseña");
 		var contrados=document.querySelector("#confirmar");
+		var mal=document.getElementById("mal");
 			if(contra.value != contrados.value ){
-				alert("Contraseñas diferentes");
-				return false;
+				mal.innerHTML= "contraseñas diferentes";
+
+				return;
 			}
 
 		const swalWithBootstrapButtons = Swal.mixin({
@@ -66,6 +68,9 @@ function Eliminarcuenta() {
 					<br></br>
 					<input type="password" placeholder="repetir contraseña" id="confirmar"></input>
 				</form>
+			</div>
+			<div className="malp"   id="mal">
+
 			</div>
 			<button onClick={eliminar}>Eliminar</button>
 		</>
