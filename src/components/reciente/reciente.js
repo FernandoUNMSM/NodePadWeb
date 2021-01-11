@@ -12,6 +12,7 @@ function Reciente({mostrarDatos, leng, iconi, list, setList, loader, setIdfileHt
   //true = lines, false = grid
 
   const { fileContent, setFileContent } = useContext(FileContext)
+  // setFileContent({file: {}, nombre: 'nombre', len:leng})
   const [change, setChange] = useState(true)
 
 	const cambiarlayout1 = () => {
@@ -24,7 +25,7 @@ function Reciente({mostrarDatos, leng, iconi, list, setList, loader, setIdfileHt
 		let indexFile = evt.target.parentNode.id
 		verifyLen(leng, indexFile);
 		mostrarDatos();
-		setFileContent({ file: list[indexFile], len: leng })
+		setFileContent({ file: list[indexFile], nombre: 'nombre', len: leng })
 	}
 
 	const verifyLen = (len, indexFile) =>{

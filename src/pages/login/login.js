@@ -51,7 +51,7 @@ function Login() {
 						<div className="row100">
 							<div className="col">
 								<div className="inputBox">
-									<input type="text" name="nombre" required="required" autoComplete="off" />
+									<input type="text" name="nombre" required="required" autoComplete="off" alt="nombreLogin"/>
 									<span className="text">
 										<FontAwesomeIcon icon={faUser} /> Usuario
 									</span>
@@ -60,7 +60,7 @@ function Login() {
 							</div>
 							<div className="col">
 								<div className="inputBox">
-									<input type="password" name="password" required="required" autoComplete="off" />
+									<input type="password" name="password" required="required" autoComplete="off" alt="passwordLogin"/>
 									<span className="text">
 										<FontAwesomeIcon icon={faLock} /> Contraseña
 									</span>
@@ -71,7 +71,7 @@ function Login() {
 						</div>
 						<div className="row100">
 							<div className="col">
-								<button className="sumbit">
+								<button className="sumbit" alt="botonLogin">
 									Iniciar Sesion
 							</button>
 							</div>

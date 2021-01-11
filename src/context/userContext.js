@@ -6,9 +6,9 @@ export function UserContextProvider ({children}) {
   const [usuario,setUsuario] = useState(null)
   const [config,setConfig] = useState(null)
 
-  useEffect(() =>{
-    console.log(usuario)
-  },[usuario])
+  // useEffect(() =>{
+  //   console.log(usuario)
+  // },[usuario])
   return <UserContext.Provider value={{usuario,setUsuario,config,setConfig}}>
     {children}
   </UserContext.Provider>

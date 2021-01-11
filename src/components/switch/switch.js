@@ -36,9 +36,9 @@ function Switch() {
 			Body.classList.remove('is-dark-mode')
 			Body.classList.add('is-light-mode')
 		}
-		const mq = window.matchMedia('(prefers-color-scheme: dark)')
-		mq.addListener(changeMedia)
-		setChecked(mq.matches)
+		// const mq = window.matchMedia('(prefers-color-scheme: dark)')
+		// mq.addListener(changeMedia)
+		// setChecked(mq.matches)
 	}, [])
 
 	return (

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 
 export default function useLazy({ distance = '100px', fromRef = ''} = {}) {
   // console.log(distance)

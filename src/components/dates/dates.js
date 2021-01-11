@@ -7,7 +7,7 @@ import listFiles from './../../services/listFiles'
 import Reciente from './../reciente/reciente'
 import Guardar from './../guardar/guardar'
 
-function Dates({ dates, setDates, lenguaje, bodyfile }) {
+function Dates({ dates = '', setDates = '', lenguaje = 'HTML', bodyfile =''}={}) {
 	let leng = lenguaje.toLowerCase()
 	let iduser = JSON.parse(localStorage.getItem("usuarioActual")).id;
 
@@ -65,7 +65,7 @@ function Dates({ dates, setDates, lenguaje, bodyfile }) {
 			{(dates)
 				?
 				<div className="grayContainer">
-					<div className="datesContainer">
+					<div className="datesContainer" title="datesContainer">
 						<div className="datesLeft">
 							<div className="datesLeftSup">
 								<div className="datesLeftSup1">

@@ -20,7 +20,8 @@ function EditorHome() {
 
 	return (
 		<>
-			<div className="editorContainer" id="editorContainer">
+			<div className="editorContainer" id="editorContainer" title="editorContainer">
+			{/* <h1>Editor culero</h1> */}
 				<MenuEditor
 					setLayout={manejarLayout}
 					layout={layout}
