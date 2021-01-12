@@ -18,7 +18,7 @@ describe('Button enviado', () => {
     const user = screen.getByAltText('nombreLogin')
     const password = screen.getByAltText('passwordLogin')
 
-    fireEvent.change(user, { target: { value: 'monad' } })
+    fireEvent.change(user, { target: { value: 'mona' } })
     fireEvent.change(password, { target: { value: '123' } })
     fireEvent.click(boton)
     localStorage.setItem("usuarioActual", JSON.stringify(

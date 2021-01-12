@@ -9,12 +9,14 @@ function sendUser({ formData = {}, loader = false } = {}) {
     .then(res => res.json())
     .then(response =>{
       const user = response.data;
+      const mensaje = response.message;
+      console.log(response)
       // console.log(response);
       // localStorage.setItem("usuarioActual", JSON.stringify(response.data));
       // console.log(response.data.validate);
       const validate = response.valid
       loader = false
-      return {validate, loader, user}
+      return {validate, loader, user, mensaje}
     })
 }
 

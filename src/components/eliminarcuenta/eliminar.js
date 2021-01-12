@@ -1,5 +1,5 @@
 import { text } from '@fortawesome/fontawesome-svg-core';
-import React from 'react'
+import React, {useRef} from 'react'
 import Swal from 'sweetalert2'
 import './eliminar.css'
 
@@ -10,9 +10,9 @@ import { Link, useLocation } from 'wouter'
 function Eliminarcuenta() {
 	const [location, setLocation] = useLocation(); //eslint-disable-line
 
-	var mal = document.getElementById("mal");
+	var mal = useRef(null);
+	const contra = useRef(null);
 	const eliminar = () => {
-	var contra = document.querySelector("#contraseña");
 		// var contrados = document.querySelector("#confirmar");
 		// if (contrados.value.length == 0 || contra.value.length == 0) {
 		// 	mal.innerHTML = "falta completar"
@@ -53,7 +53,7 @@ function Eliminarcuenta() {
 					'success'
 				).then(() => {
 					deleteUser()
-						.then((res) => {console.log(res);})
+						.then((res) => { console.log(res); })
 					localStorage.setItem("usuarioActual", "{}")
 					setLocation("/")
 				})
@@ -78,7 +78,7 @@ function Eliminarcuenta() {
 					eliminar()
 				} else {
 					console.log(result)
-					mal.innerHTML = `<p>${result}</p>`
+					mal.current.innerHTML = `<p>${result}</p>`
 				}
 			})
 	}
@@ -89,21 +89,15 @@ function Eliminarcuenta() {
 			<h2>Eliminacion de cuenta</h2>
 			<div>
 				<form encType="multipart/form-data" onSubmit={enviarPassword}>
-					{/* <br></br> */}
 					<input type="password" name="password" placeholder="contraseña" id="contraseña"></input>
 					<br></br>
-					{/* 
-					<input type="password" placeholder="repetir contraseña" id="confirmar"></input> */}
 					<button>Eliminar</button>
 				</form>
 			</div>
-			<div className="malp" id="mal">
+			<div className="malp" ref={mal}>
 
 			</div>
 			<br></br>
-			{/* <div >
-				<img className="imgeli" src="https://assets.stickpng.com/images/585e4beacb11b227491c3399.png" alt="usuario" />
-			</div> */}
 		</>
 
 	)
