@@ -21,7 +21,7 @@ function InfoHome2() {
 export default function LazyInfoHome2() {
   const fromRef = useRef()
 	const isIntersected = useLazy({distance: '0px', fromRef})
-	console.log(isIntersected)
+	// console.log(isIntersected)
 
 	return(
 		<div ref={fromRef} id="lazyInfo2">

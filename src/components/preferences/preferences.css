@@ -10,7 +10,7 @@
   height: 70%;
   background: var(--baseBackground);
   /* border-radius: 25px; */
-  border: 2px solid var(--gray);
+  /* border: 2px solid var(--gray); */
   transform: translate(50%, -50%);
   transition: .7s;
   overflow: hidden;
@@ -46,6 +46,19 @@
   width: 100%;
   height: 100%;
   background-color: transparent;
-  padding: 20px;
+  /* padding: 20px; */
   color: var(--baseColor);
+}
+.closePreferences {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 15px 20px;
+  font-size: 1.6em;
+  cursor: pointer;
+  transition: .3s;
+  color: var(--baseColor)
+}
+.closePreferences:hover {
+  color: var(--verdeEditor);
 }

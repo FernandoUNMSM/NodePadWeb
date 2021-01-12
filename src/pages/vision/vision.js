@@ -9,24 +9,46 @@ function Vision() {
 
 				</div>
 			</header>		
-		<nav>
-				<ul className="menuentrada">
-					<li><a href="#">Inicio</a></li>
-					<li><a href="#">Nosotros</a>
-						<ul>
-							<li><a target="_blank" href="http://localhost:3000/mision">Misión</a></li>
-							<li><a target="_blank" href="http://localhost:3000/vision">Visión</a></li>
-							<li><a target="_blank" href="http://localhost:3000/proposito">Proposito</a></li>
+			<nav>
+				<ul className="menu menu-entrada">
+					<li className="menu_entra">
+						<a  href="#" className="menu_entralink">Inicio</a>
+					</li>
+					<li className="menu_entra">
+						<a  href="#" className="menu_entralink">Nosotros</a>
+						<ul className="menu">
+							<li className="menu_entra">
+								<a target="_blank" href="http://localhost:3000/mision" className="menu_entralink">Misión</a>
+							</li>
+							<li className="menu_entra">
+								<a target="_blank" href="http://localhost:3000/vision" className="menu_entralink">Visión</a>
+							</li>
+							<li className="menu_entra">
+								<a target="_blank" href="http://localhost:3000/proposito" className="menu_entralink">Proposito</a>
+							</li>
 						</ul>
 					</li>
-					<li><a href="#">HTML</a></li>
-					<li><a href="#">CSS</a></li>
-					<li><a href="#">JAVASCRIPT</a></li>
-					<li><a href="#">otros</a>
-						<ul>
-							<li><a href="#">Python</a></li>
-							<li><a href="#">C#</a></li>
-							<li><a href="#">C++</a></li>
+					<li className="menu_entra">
+						<a href="#" className="menu_entralink">HTML</a>
+					</li>
+					<li className="menu_entra">
+						<a href="#" className="menu_entralink">CSS</a>
+					</li>
+					<li className="menu_entra">
+						<a href="#" className="menu_entralink">JAVASCRIPT</a>
+					</li>
+					<li className="menu_entra">
+						<a href="#" className="menu_entralink">otros</a>
+						<ul className="menu">
+							<li className="menu_entra">
+								<a href="#" className="menu_entralink">Python</a>
+							</li>
+							<li className="menu_entra">
+								<a href="#" className="menuentralink">C#</a>
+							</li>
+							<li className="menuentra">
+								<a href="#" className="menu_entralink">C++</a>
+							</li>
 						</ul>
 					</li>
 				</ul>

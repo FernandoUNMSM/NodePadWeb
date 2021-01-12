@@ -28,9 +28,17 @@ function Switch() {
 	}
 
 	useEffect(() => {
-		const mq = window.matchMedia('(prefers-color-scheme: dark)')
-		mq.addListener(changeMedia)
-		setChecked(mq.matches)
+		// Body.classList.add('is-light-mode')
+		if (ref.current.checked) {
+			Body.classList.remove('is-light-mode')
+			Body.classList.add('is-dark-mode')
+		} else {
+			Body.classList.remove('is-dark-mode')
+			Body.classList.add('is-light-mode')
+		}
+		// const mq = window.matchMedia('(prefers-color-scheme: dark)')
+		// mq.addListener(changeMedia)
+		// setChecked(mq.matches)
 	}, [])
 
 	return (

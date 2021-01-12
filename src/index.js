@@ -4,6 +4,10 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+
+
+document.getElementById('root').style.overflow = "auto"
+document.getElementById('root').style.height = "100vh"
 ReactDOM.render(
   <React.StrictMode>
     <App />

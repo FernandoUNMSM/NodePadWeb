@@ -1,6 +1,6 @@
 import { faAdjust, faBars, faBorderAll, faCog, faDownload, faHome, faUserCircle } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import React, { useRef, useEffect } from 'react'
+import React from 'react'
 import Switch from './../switch/switch'
 import SelectLayout from './../selectLayout/selectLayout'
 import './menuEditor.css'
@@ -30,7 +30,7 @@ function MenuEditor({ setLayout, layout, setPreferences, preferences, code, setP
 	zip.file("index.js", code.js)
 
 	const download = () => {
-		// console.log(code)
+		console.log(code)
 		zip.generateAsync({ type: "blob" })
 			.then(function (content) {
 				// see FileSaver.js

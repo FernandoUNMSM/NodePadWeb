@@ -1,10 +1,9 @@
-import React from 'react'
+import React, { useEffect, useRef, useState, useContext } from 'react'
 import './perfil.css'
-import { useEffect, useRef, useState } from 'react'
 import { faUserCircle } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import updateUser from './../../services/updateUser'
-import { Link, useLocation } from 'wouter'
+import { useLocation } from 'wouter'
 
 function Perfil({ state }) {
 	const [location, setLocation] = useLocation(); //eslint-disable-line
@@ -28,10 +27,11 @@ function Perfil({ state }) {
     const formData = new FormData(event.target)
     event.preventDefault();
     updateUser(formData)
-      .then(() => setUsuarioActual(JSON.parse(localStorage.getItem("usuarioActual"))))
+      .then(() => setUsuarioActual(usuarioActual))
   }
 
   const cerrarSesion = () =>{
+    // setUsuario(null)
     localStorage.setItem("usuarioActual", "{}")
     setLocation("/");
   }

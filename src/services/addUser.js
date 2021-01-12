@@ -10,8 +10,10 @@ function aadUser({ formData = {}, loader = false } = {}) {
     .then(res => res.json())
     .then(response => {
       console.log(response)
-      localStorage.setItem("usuarioActual", JSON.stringify(response.data));
-      return response.message
+      const mensaje = response.message
+      const user = response.data
+      // localStorage.setItem("usuarioActual", JSON.stringify(response.data));
+      return {mensaje, user}
     })
 }
 

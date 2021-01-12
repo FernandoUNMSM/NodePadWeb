@@ -3,30 +3,51 @@
     font-size: 30px;
     color: #ccc;
 }
-.menuentrada{
-    width: 100%;
-    background: #ccc;
-    list-style: none;
+
+.menu-entrada {
+    display: flex;
+}
+.menu {
     margin: 0;
     padding: 0;
-}
-.menuentrada li{
-    display: inline-block;
-    padding: 10px 20px;
-}
-.menuentrada li a{
-    display: inline-block;
-    color: #fff;
-}
-.menuentrada li a:hover{
-    background: #ccc;
-    color: #000;
-}
-
-
-.h2entrada{
-    font-size: 80px;
-}
+    list-style: none;
+    background-color: steelblue;
+  }
+  .menu_entra{
+    text-align: center;
+    position: relative;
+    white-space: nowrap;
+    width: 100%;
+  }
+  .menu_entra> .menu {
+    position: absolute;
+    display: none;
+    width: 100%;
+  }
+  .menu_entra> .menu .menu {
+      left: 100%;
+      top: 0;
+  }
+  .menu_entra:hover > .menu {
+      display: block;
+  }
+  .menu_entralink{
+    padding: 1em;
+    display: block;
+    color: white;
+    text-decoration: none;
+  }
+  @media screen and (max-width: 700px) {
+    .menu_entra > .menu .menu  {
+      width: auto;
+    }
+  }
+  
+  @media screen and (max-width: 550px) {
+    .menu_entra > .menu {
+      width: auto;
+    }
+  }
 
 
 .pentrada{

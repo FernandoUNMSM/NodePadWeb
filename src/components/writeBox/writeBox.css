@@ -36,10 +36,58 @@
 .editor.vertical .codeArea .textarea ,
 .editor.verticalInverso .codeArea .textarea  {
   width: 90%;
-  height: 30%;
+  height: 90%;
+  margin: 10px 0;
 }
 .editor.horizontal .codeArea .textarea ,
 .editor.horizontalInverso .codeArea .textarea  {
-  height: 80%;
+  height: 90%;
   width: 32%;
+}
+.leftTextarea {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.leftTextarea p {
+  margin-right: 10px;
+}
+.leftTextarea .icon {
+  font-size: 0.7em;
+}
+
+.closeTextarea {
+  display: none;
+}
+.closeTextareaContainer {
+  height: auto!important;
+}
+.changeShow {
+  position: relative;
+}
+.changeShow .press {
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  /* background-color: #ccc; */
+}
+.textareaName {
+  display: flex;
+}
+.textareaName input{
+  text-align: center;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  width: 120px;
+}
+.cerrarName {
+  cursor: pointer;
+  transition: .3s;
+}
+.cerrarName:hover {
+  color: var(--verdeEditor);
 }

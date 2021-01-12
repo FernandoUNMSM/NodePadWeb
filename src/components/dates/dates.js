@@ -1,129 +1,125 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import './dates.css'
-import { faGripHorizontal, faTimesCircle, faFileCode, faTrash, faFileDownload, faFileUpload, prefix } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faTimes } from '@fortawesome/free-solid-svg-icons'
 import { faHtml5, faCss3Alt, faNodeJs } from '@fortawesome/free-brands-svg-icons'
-import sendFile from './../../services/sendFile'
+import listFiles from './../../services/listFiles'
+import Reciente from './../reciente/reciente'
+import Guardar from './../guardar/guardar'
 
+function Dates({ dates = '', setDates = '', lenguaje = 'HTML', bodyfile =''}={}) {
+	let leng = lenguaje.toLowerCase()
+	let iduser = JSON.parse(localStorage.getItem("usuarioActual")).id;
 
-function Dates({ dates, setDates, lenguaje }) {
+	const [loader, setLoader] = useState(true)
+	const [list, setList] = useState([])
+
+	const [accion, setAccion] = useState("Reciente")
+
+	const [idfileHtml, setIdfileHtml] = useState(null)
+	const [idfileCss, setIdfileCss] = useState(null)
+	const [idfileJs, setIdfileJs] = useState(null)
+
 	var iconi
-
 	switch (lenguaje) {
 		case "HTML":
 			iconi = faHtml5
-			// console.log(iconi)
 			break;
 		case "CSS":
 			iconi = faCss3Alt
-			// console.log(iconi)
 			break;
 		case "JS":
 			iconi = faNodeJs
-			// console.log(iconi)
 			break;
-	} 
+		default: break;
+	}
 
 	const mostrarDatos = () => {
 		setDates(!dates)
+		setAccion("Reciente")
 	}
 
-	const enviarFile = () => {
-		let jsonFile = {
-			nombre: 'nyan-nyan-chan-chan',
-			cuerpo: 'gawr gura',
-			iduser: 191,
-			tipo: 'css'
-		}
-		sendFile({jsonFile})
+	const changeAccion = (evt) => {
+		const tabs = document.querySelectorAll('.tabs p');
+		tabs.forEach(tab => tab.classList.remove('focus'))
+		evt.target.classList.add('focus')
+		let accion = evt.target.textContent;
+		setAccion(accion);
 	}
+
+	useEffect(() => {
+		setLoader(true)
+		if (dates) {
+			listFiles({ leng: leng, id: iduser })
+				.then(res => {
+					setLoader(false)
+					setList(res.data)
+				})
+		} else {
+			setList([])
+		}
+	}, [dates]) //eslint-disable-line
 
 	return (
 		<>
 			{(dates)
 				?
-				<div className="datesContainer">
-					<div className="datesLeft">
-						<div className="datesLeftSup">
-							<div className="datesLeftSup1">
-								<FontAwesomeIcon icon={iconi} className="datesIconS" />
-								<h1 className="datesH1">Documentos {lenguaje}</h1>
+				<div className="grayContainer">
+					<div className="datesContainer" title="datesContainer">
+						<div className="datesLeft">
+							<div className="datesLeftSup">
+								<div className="datesLeftSup1">
+									<FontAwesomeIcon icon={iconi} className="datesIconS" />
+									<h1 className="datesH1">Documentos {lenguaje}</h1>
+								</div>
+								<div className="datesLeftSup2">
+									<FontAwesomeIcon icon={faTimes} className="datesIconS2" onClick={mostrarDatos} />
+								</div>
 							</div>
-							<div className="datesLeftSup2">
-								<FontAwesomeIcon icon={faTimesCircle} className="datesIconS2" onClick={mostrarDatos} />
+							<div className="datestabs">
+								<div className="tabs reciente" onClick={changeAccion}><p className="focus">Reciente</p></div>
+								<div className="tabs guardar" onClick={changeAccion}><p>Guardar</p></div>
+								<div className="tabs cargar" onClick={changeAccion}><p>Cargar</p></div>
 							</div>
-						</div>
-						<div className="datesLeftMed">
-							<div className="datesLeftMed1">
-								<h2 className="datesH2">Nombre del documento</h2>
+							<div className="tabsContainer">
+								{
+									(accion === "Reciente")
+										?
+										<>
+											<Reciente
+												mostrarDatos={mostrarDatos}
+												leng={leng}
+												iconi={iconi}
+												list={list}
+												setList={setList}
+												loader={loader}
+												setIdfileHtml={setIdfileHtml}
+												setIdfileCss={setIdfileCss}
+												setIdfileJs={setIdfileJs}
+											/>
+										</>
+										: null
+								}
+								{
+									(accion === "Guardar")
+										?
+										<Guardar
+											mostrarDatos={mostrarDatos}
+											idfileJs={idfileJs}
+											idfileCss={idfileCss}
+											idfileHtml={idfileHtml}
+											leng={leng}
+											bodyfile={bodyfile}
+										/>
+										: null
+								}
+								{
+									(accion === "Cargar")
+										?
+										<h1>Cargar</h1>
+										: null
+								}
 							</div>
-							<div className="datesLeftMed2">
-								<FontAwesomeIcon icon={faFileCode} className="datesIconM" />
-							</div>
-							<div className="datesLeftMed2">
-								<FontAwesomeIcon icon={faTrash} className="datesIconM" />
-							</div>
-						</div>
-						<div className="datesLeftMed">
-							<div className="datesLeftMed1">
-								<h2 className="datesH2">Nombre del documento</h2>
-							</div>
-							<div className="datesLeftMed2">
-								<FontAwesomeIcon icon={faFileCode} className="datesIconM" />
-							</div>
-							<div className="datesLeftMed2">
-								<FontAwesomeIcon icon={faTrash} className="datesIconM" />
-							</div>
-						</div>
-						<div className="datesLeftMed">
-							<div className="datesLeftMed1">
-								<h2 className="datesH2">Nombre del documento</h2>
-							</div>
-							<div className="datesLeftMed2">
-								<FontAwesomeIcon icon={faFileCode} className="datesIconM" />
-							</div>
-							<div className="datesLeftMed2">
-								<FontAwesomeIcon icon={faTrash} className="datesIconM" />
-							</div>
-						</div>
-						<div className="datesLeftMed">
-							<div className="datesLeftMed1">
-								<h2 className="datesH2">Nombre del documento</h2>
-							</div>
-							<div className="datesLeftMed2">
-								<FontAwesomeIcon icon={faFileCode} className="datesIconM" />
-							</div>
-							<div className="datesLeftMed2">
-								<FontAwesomeIcon icon={faTrash} className="datesIconM" />
-							</div>
-						</div>
-						<div className="datesLeftMed">
-							<div className="datesLeftMed1">
-								<h2 className="datesH2">Nombre del documento</h2>
-							</div>
-							<div className="datesLeftMed2">
-								<FontAwesomeIcon icon={faFileCode} className="datesIconM" />
-							</div>
-							<div className="datesLeftMed2">
-								<FontAwesomeIcon icon={faTrash} className="datesIconM" />
-							</div>
-						</div>
-					</div>
-					<div className="datesRight">
-						<div className="datesRightS">
-							<FontAwesomeIcon icon={iconi} className="datesIconR" />
-						</div>
-						<div className="datesRightI">
-							<h3 className="datesH3">Documento Actual</h3>
-							<p className="datesP">
-								Nombre:</p>
-							<input type="text" id="namedoc" className="datesField"></input>
-							<p className="datesP">
-								Tamaño: 0 KB
-              </p>
-							<button className="datesButton" onClick={enviarFile}>
-								Guardar
-              </button>
 						</div>
 					</div>
 				</div>
