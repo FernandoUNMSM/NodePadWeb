@@ -31,7 +31,7 @@ function Register() {
 
 		aadUser({ formData: formData })
 			.then(({mensaje, user}) => {
-				setMessage(message)
+				setMessage(mensaje)
 				setLoader(false)
 
 				// setUsuario(user)

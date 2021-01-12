@@ -30,7 +30,7 @@ function MenuEditor({ setLayout, layout, setPreferences, preferences, code, setP
 	zip.file("index.js", code.js)
 
 	const download = () => {
-		// console.log(code)
+		console.log(code)
 		zip.generateAsync({ type: "blob" })
 			.then(function (content) {
 				// see FileSaver.js

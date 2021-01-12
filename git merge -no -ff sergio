@@ -1,0 +1,37 @@
+* [33mb937f53[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m Cambios en caliente
+*   [33mc2883a5[m Merge branch 'master' of github.com:FernandoUNMSM/NodePadWeb
+[32m|[m[33m\[m  
+[32m|[m *   [33mf3ae4b6[m Cambios para fusionar
+[32m|[m [34m|[m[35m\[m  
+[32m|[m [34m|[m * [33mfa4863b[m[33m ([m[1;31morigin/sebastian[m[33m)[m Arreglado bug de los iconos y agregando boton
+[32m|[m [34m|[m * [33m59cac1d[m Agregando funciones adicionales
+[32m|[m [34m|[m * [33m50511ce[m Mejorando la Interfaz e Implementando Elementos
+[32m|[m [34m|[m * [33mffaa7d1[m Mejora en el css de los iconos y ventana
+[32m|[m [34m|[m * [33m8cf1c16[m Añadiendo Ventana
+* [34m|[m [35m|[m [33m2295f6b[m master desincrosiado
+[34m|[m[34m/[m [35m/[m  
+* [35m|[m   [33m3fa92f6[m Merge branch 'oscar'
+[36m|[m[1;31m\[m [35m\[m  
+[36m|[m * [35m|[m [33m0b8ccba[m[33m ([m[1;31morigin/oscar[m[33m)[m Arreglo en el login
+[36m|[m * [35m|[m [33m4bf73ae[m añadiendo hooks personalizados
+[36m|[m * [35m|[m [33m9312daf[m fix: arreglado bug en el home - mejora en el logout
+[36m|[m * [35m|[m [33me59e8d0[m Feat: Mejora en el perfil - modificicacion de datos
+[36m|[m * [35m|[m [33m02f33de[m updateUser created
+[36m|[m * [35m|[m [33m625b6f1[m Peril avanzado datos del usuario
+[36m|[m[36m/[m [35m/[m  
+* [35m|[m [33m2e9ab7b[m writeBox change
+[35m|[m[35m/[m  
+* [33m651d85c[m Añadi la descarga en zip e individual
+* [33m4d27d90[m sprint 1 frontend terminado
+* [33me998f1e[m Mejora en Home y preferencias
+* [33m9865f56[m Avance en el componente de preferencias
+* [33m7c75c2d[m second password eliminated
+* [33m4cd6748[m removing cache files
+* [33mc384605[m build
+* [33m82841fa[m login y registro conectado a api, loader en login
+* [33me932f43[m apiv1 y mejora en editor
+* [33mfe34502[m Home v2, editorMenu v1, editor v2, login y registro v1
+*   [33m31eec92[m Merge branch 'master' of github.com:FernandoUNMSM/NodePadWeb into master
+[1;32m|[m[1;33m\[m  
+[1;32m|[m * [33m1ea140e[m Initial commit
+* [33m248ab9d[m Home y editor v1

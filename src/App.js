@@ -46,6 +46,22 @@ function App() {
         component={Proposito}
         path="/proposito"
       />
+      <Route
+        component={Entrada}
+        path="/entrada"
+      />
+      <Route
+        component={Mision}
+        path="/mision"
+      />
+      <Route
+        component={Vision}
+        path="/vision"
+      />
+      <Route
+        component={Proposito}
+        path="/proposito"
+      />
     </>
   );
 }

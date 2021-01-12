@@ -29,7 +29,7 @@ function MenuHeader() {
 				{
 					(sesion)
 					?
-					<ul className="menu">
+					<ul className="menuH">
 						<li className="listItem">
 							<Link to={`/`} onClick={cerrarSesion}>Cerrar sesion</Link>
 						</li>
@@ -38,7 +38,7 @@ function MenuHeader() {
 						</li>
 					</ul>
 					:
-					<ul className="menu">
+					<ul className="menuH">
 						<li className="listItem">
 							<Link to={`/register`}>Registrate</Link>
 						</li>

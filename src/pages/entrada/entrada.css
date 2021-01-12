@@ -7,6 +7,58 @@
 .menuentrada{
     width: 100%;
     background:red;
+    color:white;
+}
+
+.menu-entrada {
+    display: flex;
+}
+.emenu {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    background-color: steelblue;
+  }
+  .menu_entra{
+    text-align: center;
+    position: relative;
+    white-space: nowrap;
+    width: 100%;
+  }
+  .menu_entra> .emenu {
+    position: absolute;
+    display: none;
+    width: 100%;
+  }
+  .menu_entra> .emenu .emenu {
+      left: 100%;
+      top: 0;
+  }
+  .menu_entra:hover > .emenu {
+      display: block;
+  }
+  .menu_entralink{
+    padding: 1em;
+    display: block;
+    color: white;
+    text-decoration: none;
+  }
+  @media screen and (max-width: 700px) {
+    .menu_entra > .emenu .emenu  {
+      width: auto;
+    }
+  }
+  
+  @media screen and (max-width: 550px) {
+    .menu_entra > .emenu {
+      width: auto;
+    }
+  }
+
+
+/* .menuentrada{
+    width: 100%;
+    background: lightblue;
     list-style: none;
     margin: 0;
     padding: 0;
@@ -23,7 +75,7 @@
 .menuentrada li a:hover{
     background: #ccc;
     color: #000;
-}
+} */
 
 .html{
     position: relative;
