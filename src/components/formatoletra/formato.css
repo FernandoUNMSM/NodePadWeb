@@ -22,7 +22,8 @@ input[type=number]::-webkit-outer-spin-button {
   background-color: rgba(237, 237, 237, 0.789);
 }
 .formatoContainer input[type=text],
-.formatoContainer input[type=number]{
+.formatoContainer input[type=number],
+.formatoContainer input[type=password]{
   outline: none;
   border: 1px solid #ccc;
   height: 25px;

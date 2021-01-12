@@ -10,3 +10,10 @@
     left: 300px;
     bottom: 150px;
 }
+.formDelete {
+    display: flex;
+    justify-content: space-between;
+}
+.btn-delete {
+    margin-right: 50px;
+}
