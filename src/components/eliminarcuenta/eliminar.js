@@ -10,12 +10,16 @@ function Eliminarcuenta() {
 		var contra=document.querySelector("#contraseña");
 		var contrados=document.querySelector("#confirmar");
 		var mal=document.getElementById("mal");
-			if(contra.value != contrados.value ){
-				mal.innerHTML= "contraseñas diferentes";
-
+			if(contrados.value.length == 0 || contra.value.length == 0 ){
+				mal.innerHTML= "falta completar"
 				return;
 			}
-
+			
+			if(contra.value != contrados.value ){
+				mal.innerHTML= "contraseñas diferentes";
+				return;
+			}	
+			
 		const swalWithBootstrapButtons = Swal.mixin({
 			customClass: {
 				confirmButton: 'btn btn-success',
@@ -61,18 +65,23 @@ function Eliminarcuenta() {
 		<>
 			<h1>Opciones de Cuenta</h1>
 			<h2>Eliminacion de cuenta</h2>
+			
 			<div>
 				<form>
 					<br></br>
 					<input type="password" placeholder="cotraseña" id="contraseña"></input>
-					<br></br>
+					<br></br>	
 					<input type="password" placeholder="repetir contraseña" id="confirmar"></input>
 				</form>
 			</div>
 			<div className="malp"   id="mal">
 
 			</div>
+			<br></br>
 			<button onClick={eliminar}>Eliminar</button>
+			<div >
+				<img className="imgeli" src="https://assets.stickpng.com/images/585e4beacb11b227491c3399.png" alt="usuario" />
+			</div>
 		</>
 
 	)
