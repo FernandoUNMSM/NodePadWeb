@@ -88,12 +88,12 @@ function Eliminarcuenta() {
 			<div className="formatoContainer">
 				<div className="containerRes">
 					<div className="formatoTitulo">
-						<h1>Opciones de Cuenta</h1>
+						<h1>Preferencias de Cuenta</h1>
 					</div>
 					<div className="formatoItem">
 						<p>Eliminacion de cuenta</p>
 						<form encType="multipart/form-data" onSubmit={enviarPassword} className="formDelete">
-							<input type="password" name="password" placeholder="contraseña" id="contraseña" defaultValue=""></input>
+							<input type="password" name="password" placeholder="Contraseña" id="contraseña" defaultValue=""></input>
 							<br></br>
 							<button className="btn-delete">Eliminar</button>
 						</form>

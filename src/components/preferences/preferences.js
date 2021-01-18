@@ -4,8 +4,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTimes } from '@fortawesome/free-solid-svg-icons'
 import Formato from './../formatoletra/formato'
 import Fotoperfil from './../fotoPerfil/fotoperfil'
-import Cuenta from './../cuenta/cuenta'
 import Eliminar from './../eliminarcuenta/eliminar'
+import Descarga from './../descarga/descarga'
 
 function Preferences({ preferences, setPreferences }) {
   const preferencesContainer = useRef(null)
@@ -22,7 +22,9 @@ function Preferences({ preferences, setPreferences }) {
           <Formato />
         </div>
       case '2':
-        return <div className="preference 2">kjhkjhjk</div>
+        return <div className="preference 2">
+          <Descarga/>
+        </div>
       case '3':
         return <div className="preference 3">3</div>
       case '4':
@@ -32,7 +34,6 @@ function Preferences({ preferences, setPreferences }) {
       case '5':
         return <div className="preference 5">
           <Eliminar/>
-          {/* <Cuenta/> */}
         </div>
       default:
         return null;
