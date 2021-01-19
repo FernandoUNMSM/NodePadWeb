@@ -74,7 +74,7 @@ function Eliminarcuenta() {
 		const formData = new FormData(evt.target);
 		validPassword({ formData })
 			.then(result => {
-				if (result === "password correcto") {
+				if (result === "password correct") {
 					eliminar()
 				} else {
 					console.log(result)
