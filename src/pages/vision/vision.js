@@ -39,9 +39,9 @@ function Vision() {
 					</li>
 					<li className="menu_entra">
 						<a href="#" className="menu_entralink">otros</a>
-						<ul className="menu">
-							<li className="menu_entra">
-								<a href="#" className="menu_entralink">Python</a>
+						<ul className="menu" >
+							<li className="menu_entra"> 
+								<a href="#" className="menu_entralink">PYTHON</a>
 							</li>
 							<li className="menu_entra">
 								<a href="#" className="menuentralink">C#</a>
