@@ -11,8 +11,8 @@ function InfoHome2() {
 				<div className="section2Box">
 				</div>
 				<div className="info infos2">
-					<h1>Lorem ipsum dolor sit amet.</h1>
-					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt facilis impedit earum? Repellendus accusantium quibusdam corrupti debitis eos officia quam minima. Velit possimus, repudiandae aut veniam maiores optio iusto vel sunt provident deserunt aperiam quis ad fuga cum magni est.</p>
+					<h1>Estilos preferenciales.</h1>
+					<p>Puedes editar libremente las lineas de codigo segun tu preferencia, tales como seleccionar un color, un tamaño definido o un estilo. Esto y muchas cosas mas con nuestro increible editor de codigo.</p>
 				</div>
 			</section>
 		</>
