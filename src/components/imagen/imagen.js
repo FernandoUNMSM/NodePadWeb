@@ -37,8 +37,11 @@ function Imagen({setImagen}) {
     evt.preventDefault()
     const formData = new FormData(evt.target.parentNode)
     // formData.set('id', id)
-    setFormDataFile(formData)
-    setFoto(true)
+    console.log(formData.get('file'));
+    if(formData.get('file').name !== ""){
+      setFormDataFile(formData)
+      setFoto(true)
+    }
     // sendPhoto({formData, id})
     // .then((response=> setUrl(response)))
   }

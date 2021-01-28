@@ -5,6 +5,7 @@
   border: 2px dashed rgb(100, 96, 96);
 }
 .drop-area {
+  z-index: 100;
   width: 100%;
   height: 100%;
   outline: none;

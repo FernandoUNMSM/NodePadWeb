@@ -4,6 +4,7 @@
   justify-content: center!important;
   background-color: rgb(100, 96, 96)!important;
   overflow: visible!important;
+  z-index: 1000;
 }
 
 .fotomenu {
