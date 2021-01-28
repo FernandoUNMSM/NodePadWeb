@@ -7,6 +7,7 @@ import UserContext from './../../context/userContext'
 
 
 export default function Fotoperfil({formData, setFoto, setImagen}) {
+  const user = JSON.parse(localStorage.getItem("usuarioActual"));
   const id = JSON.parse(localStorage.getItem("usuarioActual")).id
 
   const image = useRef(null)
@@ -29,6 +30,9 @@ export default function Fotoperfil({formData, setFoto, setImagen}) {
     sendPhoto({formData, id})
       .then(response => {
         setImageA(response)
+        // console.log(user)
+        // user.image = response
+        // localStorage.setItem('usuarioActual', user)
         setImagen(false)
       })
   }

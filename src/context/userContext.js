@@ -3,11 +3,15 @@ import React, {useState, useEffect} from 'react'
 const UserContext = React.createContext({})
 
 export function UserContextProvider ({children}) {
-  const [imageA,setImageA] = useState(JSON.parse(localStorage.getItem("usuarioActual")).image)
+  const user = JSON.parse(localStorage.getItem("usuarioActual"));
 
-  // useEffect(() =>{
-  //   console.log(imageA)
-  // },[imageA])
+  const [imageA,setImageA] = useState(null)
+
+  useEffect(() =>{
+    if(user !== '{}'){
+      setImageA(user.image)
+    }
+  },[])
   return <UserContext.Provider value={{imageA,setImageA}} >
     {children}
   </UserContext.Provider>
