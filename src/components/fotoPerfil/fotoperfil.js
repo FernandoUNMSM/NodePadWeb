@@ -1,32 +1,33 @@
 import React, {useRef, useEffect, useContext, useState} from 'react'
 import './fotoperfil.css'
-import sendPhoto from './../../services/sendPhoto'
-import UserContext from './../../context/userContext'
+import { faArrowLeft } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+export default function Fotoperfil({formData, setFoto}) {
+  const image = useRef(null)
 
-export default function Fotoperfil() {
-  // const {usuario} = useContext(UserContext)
-  const id = JSON.parse(localStorage.getItem("usuarioActual")).id
+  useEffect(() => {
+    console.log(formData)
+    renderImage()
+  },[formData])
 
-  const [url, setUrl] = useState(null)
+  const renderImage = () => {
+    const file = formData.get('file')
+    const imagen = URL.createObjectURL(file)
+    console.log(image.current)
+    image.current.setAttribute('src', imagen)
+  }
 
-  const imprimir = (evt) =>{
-    evt.preventDefault()
-    const formData = new FormData(evt.target)
-    // formData.set('id', id)
-    sendPhoto({formData, id})
-    .then((response=> setUrl(response)))
+  const cerrarPreview = () => {
+    setFoto(false)
   }
 
   return (
     <>
-      <div className="fotoContainer">
-        <form action="" onSubmit={imprimir}>
-          <div className="foto">
-            <input type="file" name="file" id=""/>
-          </div>
-          <button>Gura</button>
-        </form>
-        <img src={url} alt="" width="100%"/>
+      <div className="datesContainer fotoContainer">
+        <div className="fotomenu" onClick={cerrarPreview}>
+          <FontAwesomeIcon icon={faArrowLeft} className="arrowleftpreview"/>
+        </div>
+        <img src="" alt="" ref={image}/>
       </div>
     </>
   )

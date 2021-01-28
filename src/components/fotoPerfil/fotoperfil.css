@@ -1,0 +1,18 @@
+.fotoContainer {
+  position: absolute;
+  display: flex;
+  justify-content: center!important;
+  background-color: rgb(100, 96, 96)!important;
+}
+
+.fotomenu {
+  position: absolute;
+  left: 20px;
+  top: 15px;
+}
+
+.arrowleftpreview {
+  font-size: 2em;
+  color: #fff;
+  cursor: pointer;
+}

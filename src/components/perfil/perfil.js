@@ -1,12 +1,12 @@
 import React, { useEffect, useRef, useState, useContext } from 'react'
 import './perfil.css'
-import { faUserCircle } from '@fortawesome/free-solid-svg-icons'
+import { faUserCircle, faCamera } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import updateUser from './../../services/updateUser'
 import { useLocation } from 'wouter'
 
-function Perfil({ state }) {
-	const [location, setLocation] = useLocation(); //eslint-disable-line
+function Perfil({ state, setImagen }) {
+  const [location, setLocation] = useLocation(); //eslint-disable-line
   const [modificar, setModificar] = useState(true)
   const [usuarioActual, setUsuarioActual] = useState(JSON.parse(localStorage.getItem("usuarioActual")))
   const perfil = useRef(null)
@@ -30,17 +30,23 @@ function Perfil({ state }) {
       .then(() => setUsuarioActual(usuarioActual))
   }
 
-  const cerrarSesion = () =>{
+  const cerrarSesion = () => {
     // setUsuario(null)
     localStorage.setItem("usuarioActual", "{}")
     setLocation("/");
+  }
+  const mostrarInputFile = () => {
+    setImagen(true)
   }
 
   return (
     <>
       <div className="perfilContainer" ref={perfil}>
-        <div className="foto">
-          <FontAwesomeIcon icon={faUserCircle} className="userPhoto" />
+        <div className="fotoPerfilContainer">
+          <div className="foto" onClick={mostrarInputFile}>
+            <FontAwesomeIcon icon={faUserCircle} className="userPhoto" />
+            <FontAwesomeIcon icon={faCamera} className="camera" />
+          </div>
         </div>
         <div className="infoUser">
           {
