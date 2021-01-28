@@ -3,13 +3,12 @@ import React, {useState, useEffect} from 'react'
 const UserContext = React.createContext({})
 
 export function UserContextProvider ({children}) {
-  const [usuario,setUsuario] = useState(null)
-  const [config,setConfig] = useState(null)
+  const [imageA,setImageA] = useState(JSON.parse(localStorage.getItem("usuarioActual")).image)
 
   // useEffect(() =>{
-  //   console.log(usuario)
-  // },[usuario])
-  return <UserContext.Provider value={{usuario,setUsuario,config,setConfig}}>
+  //   console.log(imageA)
+  // },[imageA])
+  return <UserContext.Provider value={{imageA,setImageA}} >
     {children}
   </UserContext.Provider>
 }

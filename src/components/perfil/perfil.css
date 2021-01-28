@@ -16,15 +16,26 @@
   transform: translateX(0);
 }
 .perfilContainer .fotoPerfilContainer {
-  height: 200px;
+  height: 250px;
   display: flex;
   justify-content: center;
 }
 .perfilContainer .fotoPerfilContainer .foto {
   position: relative;
   height: 100%;
-  width: 50%;
+  width: 250px;
   cursor: pointer;
+  overflow: hidden;
+  /* display: flex;
+  justify-content: center; */
+}
+.perfilContainer .fotoPerfilContainer .foto .fotoPerfil {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  border-radius: 50%;
+  overflow: hidden;
 }
 .perfilContainer .fotoPerfilContainer .camera {
   position: absolute;
@@ -38,12 +49,14 @@
 .perfilContainer .fotoPerfilContainer .foto:hover .camera {
   opacity: 1;
 }
-.perfilContainer .fotoPerfilContainer .userPhoto {
+.perfilContainer .fotoPerfilContainer .userPhoto{
   height: 100%;
   width: 100%;
   color: rgb(100, 96, 96);
 }
-
+.perfilContainer .fotoPerfilContainer img {
+  height: inherit;
+}
 .perfilContainer .infoUser p {
   font-family: 'Poppins', sans-serif;
   margin-bottom: 20px;

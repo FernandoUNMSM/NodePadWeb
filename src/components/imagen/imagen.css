@@ -36,6 +36,8 @@
   justify-content: center;
   align-items: center;
   margin-bottom: 20px;
+  animation: scala .3s ease-in-out;
+  transform: scale(1) rotate(0);
 }
 .iconfile {
   font-size: 1.4em;
@@ -49,3 +51,11 @@
   cursor: pointer;
   color: var(--baseBackground);
 }
+@keyframes scala {
+  0% {
+    transform: scale(0.4) rotate(-45deg);
+  }100% {
+    transform: scale(1) rotate(0deg);
+  }
+}
+

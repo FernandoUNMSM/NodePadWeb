@@ -2,13 +2,10 @@ import React, { useRef, useState } from 'react'
 import './imagen.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlus, faTimes } from '@fortawesome/free-solid-svg-icons'
-import sendPhoto from './../../services/sendPhoto'
 import Fotoperfil from './../fotoPerfil/fotoperfil'
 
-
 function Imagen({setImagen}) {
-  const id = JSON.parse(localStorage.getItem("usuarioActual")).id
-  const [url, setUrl] = useState(null)
+  // const [url, setUrl] = useState(null)
 
   const [foto, setFoto] = useState(false)
 
@@ -63,14 +60,14 @@ function Imagen({setImagen}) {
                   <FontAwesomeIcon icon={faPlus} className="iconfile" />
                 </div>
                 <div className="fileInfo">
-                  <p>Arrastra la imagen</p>
+                  <p>Arrastra una imagen o haz click para selecciona una</p>
                 </div>
               </div>
             </form>
           </div>
         </div>
         {
-          (foto) ? <Fotoperfil formData={formDataFile} setFoto={setFoto}/> : null
+          (foto) ? <Fotoperfil formData={formDataFile} setFoto={setFoto} setImagen={setImagen}/> : null
         }
       </div>
     </>
