@@ -54,8 +54,8 @@ function Preferences({ preferences, setPreferences }) {
               <div className="menuPreferences">
                 <p id="1" onClick={showPreferences}>Editor</p>
                 <p id="2" onClick={showPreferences}>Descargas</p>
-                <p id="4" onClick={showPreferences}>Opcion 4</p>
                 <p id="5" onClick={showPreferences}>Cuenta</p>
+                <p id="4" onClick={showPreferences}>Información</p>
               </div>
               <div className="preferences">
                 {renderPreferences()}
