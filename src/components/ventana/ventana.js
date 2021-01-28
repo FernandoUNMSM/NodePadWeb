@@ -5,7 +5,6 @@ function Ventana() {
   return (
     <>
       <div className="ventanaContainer">
-        
       </div>
     </>
   )
