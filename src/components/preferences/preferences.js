@@ -29,7 +29,7 @@ function Preferences({ preferences, setPreferences }) {
         return <div className="preference 3">3</div>
       case '4':
         return <div className="preference 4">
-          <Fotoperfil/>
+          {/* <Fotoperfil/> */}
         </div>
       case '5':
         return <div className="preference 5">
