@@ -6,6 +6,7 @@ import { Link, useLocation } from 'wouter'
 import Loader from './../../components/loader/loader'
 import sendUser from './../../services/getUsers'
 import Errormodal from './../../components/errormodal/errormodal'
+import UserContext from './../../context/userContext'
 // import UserContext from './../../context/userContext'
 
 function Login() {
@@ -14,6 +15,7 @@ function Login() {
 	const [loader, setLoader] = useState(false)
 	const [error, setError] = useState(false)
 	const [message, setMessage] = useState('')
+  const { setImageA } = useContext(UserContext)
 
 	// const {usuario, setUsuario} = useContext(UserContext)
 
@@ -23,6 +25,7 @@ function Login() {
 		event.preventDefault();
 		sendUser({ formData: formData, loader: loader })
 			.then(({ validate, loader, user, mensaje }) => {
+				setImageA(user.image)
 				localStorage.setItem("usuarioActual", JSON.stringify(user))
 				setMessage(mensaje)
 				if (mensaje === 'Password incorrecto' || mensaje === 'Usuario no existe') {

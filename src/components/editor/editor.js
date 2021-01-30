@@ -1,6 +1,8 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useEffect, useRef, useState, useContext} from 'react'
 import './editor.css'
 import WriteBox from './../writeBox/writeBox'
+import FileContext from './../../context/fileContext'
+
 
 function Editor({ layout, setCode, setDates, dates, setLenguaje, setBodyfile }) {
 	const frame = useRef(null)
@@ -9,6 +11,9 @@ function Editor({ layout, setCode, setDates, dates, setLenguaje, setBodyfile }) 
 	const [html, setHTML] = useState('')
 	const [css, setCSS] = useState('')
 	const [js, setJS] = useState('')
+
+  const { fileContent } = useContext(FileContext)
+
 
 	useEffect(() => {
 		if(layout === 'vertical'){
@@ -23,6 +28,7 @@ function Editor({ layout, setCode, setDates, dates, setLenguaje, setBodyfile }) 
 	}, [layout])
 
 	useEffect(() => {
+		console.log('jj')
 		setCode({
 			'html': html,
 			'css': css,

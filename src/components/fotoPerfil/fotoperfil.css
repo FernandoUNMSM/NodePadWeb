@@ -1,0 +1,39 @@
+.fotoContainer {
+  position: absolute;
+  display: flex;
+  justify-content: center!important;
+  background-color: rgb(100, 96, 96)!important;
+  overflow: visible!important;
+  z-index: 1000;
+}
+
+.fotomenu {
+  position: absolute;
+  left: 20px;
+  top: 15px;
+}
+
+.arrowleftpreview {
+  font-size: 2em;
+  color: #fff;
+  cursor: pointer;
+}
+.enviarFoto {
+  position: absolute;
+  bottom: -20px;
+  transform: translateY(100%);
+  outline: none;
+  background-color: rgb(100, 96, 96);
+  color: #fff;
+  padding: 10px 50px;
+  border: none;
+  cursor: pointer;
+  font-family: 'Poppins',sans-serif;
+  font-size: 1em;
+  transition: .5s;
+}
+.enviarFoto:hover {
+  color: rgb(100, 96, 96);
+  background-color: #fff;
+
+}

@@ -6,6 +6,7 @@ import { faHtml5, faCss3Alt, faNodeJs } from '@fortawesome/free-brands-svg-icons
 import listFiles from './../../services/listFiles'
 import Reciente from './../reciente/reciente'
 import Guardar from './../guardar/guardar'
+import Cargar from './../cargar/cargar'
 
 function Dates({ dates = '', setDates = '', lenguaje = 'HTML', bodyfile =''}={}) {
 	let leng = lenguaje.toLowerCase()
@@ -116,7 +117,7 @@ function Dates({ dates = '', setDates = '', lenguaje = 'HTML', bodyfile =''}={})
 								{
 									(accion === "Cargar")
 										?
-										<h1>Cargar</h1>
+										<Cargar/>
 										: null
 								}
 							</div>

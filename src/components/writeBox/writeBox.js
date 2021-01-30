@@ -113,16 +113,20 @@ function WriteBox({ lan, setCode, setDates, dates, setLenguaje, setBodyfile }) {
   }
 
   useEffect(() => {
+    console.log(fileContent)
     if (fileContent.len === lan.toLowerCase()) {
       let textareaContent = document.querySelector(`#${lan}`);
       textareaContent.value = fileContent.file.cuerpo;
 
       if (lan === 'HTML') {
         setNameHtml(fileContent.file.nombre)
+        setCode(fileContent.file.cuerpo)
       } else if (lan === 'CSS') {
         setNameCss(fileContent.file.nombre)
+        setCode(fileContent.file.cuerpo)
       } else if (lan === 'JS') {
         setNameJs(fileContent.file.nombre)
+        setCode(fileContent.file.cuerpo)
       }
     }
   }, [fileContent])//eslint-disable-line

@@ -1,15 +1,17 @@
 import React, { useEffect, useRef, useState, useContext } from 'react'
 import './perfil.css'
-import { faUserCircle } from '@fortawesome/free-solid-svg-icons'
+import { faUserCircle, faCamera } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import updateUser from './../../services/updateUser'
 import { useLocation } from 'wouter'
+import UserContext from './../../context/userContext'
 
-function Perfil({ state }) {
-	const [location, setLocation] = useLocation(); //eslint-disable-line
+function Perfil({ state, setImagen }) {
+  const [location, setLocation] = useLocation(); //eslint-disable-line
   const [modificar, setModificar] = useState(true)
   const [usuarioActual, setUsuarioActual] = useState(JSON.parse(localStorage.getItem("usuarioActual")))
   const perfil = useRef(null)
+  const { imageA, setImageA } = useContext(UserContext)
 
   useEffect(() => {
     (state)
@@ -30,16 +32,35 @@ function Perfil({ state }) {
       .then(res => setUsuarioActual(res))
   }
 
+<<<<<<< HEAD
   const cerrarSesion = () =>{
+=======
+  const cerrarSesion = () => {
+    // setUsuario(null)
+>>>>>>> b6184f44bc975434c8ef04836d82ffd770054666
     localStorage.setItem("usuarioActual", "{}")
     setLocation("/");
   }
-
+  const mostrarInputFile = () => {
+    setImagen(true)
+  }
+  useEffect(() =>{
+    console.log(imageA)
+  },[imageA])
   return (
     <>
       <div className="perfilContainer" ref={perfil}>
-        <div className="foto">
-          <FontAwesomeIcon icon={faUserCircle} className="userPhoto" />
+        <div className="fotoPerfilContainer">
+          <div className="foto" onClick={mostrarInputFile}>
+            <div className="fotoPerfil">
+              {
+                (imageA !== null)
+                  ? <img src={imageA} alt="" />
+                  : <FontAwesomeIcon icon={faUserCircle} className="userPhoto" />
+              }
+            </div>
+            <FontAwesomeIcon icon={faCamera} className="camera" />
+          </div>
         </div>
         <div className="infoUser">
           {
