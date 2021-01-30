@@ -3,7 +3,8 @@
     width: 100%;
     /* background-image: url(./../../assets/img/header-background2.jpg);
     background-position: center;
-    background-size: cover; */
-    background-color: var(--baseBlack);;
+    background-size: cover; 
+    background-size: 200px;*/
+    background-color: var(--baseBlack);
     /* padding-bottom: 20px; */
 }
