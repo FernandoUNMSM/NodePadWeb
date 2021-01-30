@@ -32,12 +32,8 @@ function Perfil({ state, setImagen }) {
       .then(res => setUsuarioActual(res))
   }
 
-<<<<<<< HEAD
-  const cerrarSesion = () =>{
-=======
   const cerrarSesion = () => {
     // setUsuario(null)
->>>>>>> b6184f44bc975434c8ef04836d82ffd770054666
     localStorage.setItem("usuarioActual", "{}")
     setLocation("/");
   }
