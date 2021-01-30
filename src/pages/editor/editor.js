@@ -7,6 +7,7 @@ import Perfil from './../../components/perfil/perfil'
 // import {useEffect} from 'react'
 import Dates from './../../components/dates/dates'
 import { FileContextProvider } from './../../context/fileContext'
+import Comentario from './../../components/comentario/comentario'
 
 function EditorHome() {
 	const [layout, setLayout] = useState(false)
@@ -17,6 +18,7 @@ function EditorHome() {
 	const [dates, setDates] = useState(false)
 	const [lenguaje, setLenguaje] = useState("")
 	const [bodyfile, setBodyfile] = useState("")
+	const [comentario, setComentario]= useState(false)
 
 	return (
 		<>
@@ -30,9 +32,19 @@ function EditorHome() {
 					code={code}
 					setPerfil={setPerfil}
 					perfil={perfil}
+					setComentario={setComentario}
+					comentario={comentario}
+
 				/>
 				<Perfil state={perfil} />
-				<Preferences preferences={preferences} setPreferences={setPreferences} />
+				<Preferences preferences={preferences} setPreferences={setPreferences}  />
+				{
+						(comentario === true)
+							?
+							<Comentario comentario={comentario} setComentario={setComentario}  />
+							: null
+					}
+				 
 				<FileContextProvider>
 					<Editor layout={layout} setCode={setCode} setDates={setDates} dates={dates} setLenguaje={setLenguaje} setBodyfile={setBodyfile} />
 					{
