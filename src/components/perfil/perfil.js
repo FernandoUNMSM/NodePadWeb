@@ -27,11 +27,10 @@ function Perfil({ state }) {
     const formData = new FormData(event.target)
     event.preventDefault();
     updateUser(formData)
-      .then(() => setUsuarioActual(usuarioActual))
+      .then(res => setUsuarioActual(res))
   }
 
   const cerrarSesion = () =>{
-    // setUsuario(null)
     localStorage.setItem("usuarioActual", "{}")
     setLocation("/");
   }
@@ -54,22 +53,22 @@ function Perfil({ state }) {
               </>
               :
               <>
-                <form id="update" action="POST" onSubmit={enviarUpdate} encType="multipart/form-data">
+                <form id="update" onSubmit={enviarUpdate} encType="multipart/form-data">
                   <p>
                     <span>Nombre: </span>
-                    <input type="text" name="nombre" defaultValue={usuarioActual.nombre} />
+                    <input type="text" name="nombre" defaultValue={usuarioActual.nombre} required="required"/>
                   </p>
                   <p>
                     <span>Apellido: </span>
-                    <input type="text" name="apellido" defaultValue={usuarioActual.apellido} />
+                    <input type="text" name="apellido" defaultValue={usuarioActual.apellido} required="required"/>
                   </p>
                   <p>
                     <span>Nombre de usuario: </span>
-                    <input type="text" name="usuario" defaultValue={usuarioActual.usuario} />
+                    <input type="text" name="usuario" defaultValue={usuarioActual.usuario} required="required"/>
                   </p>
                   <p>
                     <span>E-mail: </span>
-                    <input type="text" name="email" defaultValue={usuarioActual.email} />
+                    <input type="text" name="email" defaultValue={usuarioActual.email} required="required"/>
                   </p>
                 </form>
               </>

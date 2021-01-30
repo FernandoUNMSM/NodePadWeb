@@ -8,7 +8,7 @@ function MenuHeader() {
 	const [sesion, setSesion] = useState(false)
 
 	useEffect(() => {
-		if(usuarioA !== "{}") {
+		if(usuarioA !== "{}" && usuarioA !== null) {
 			setSesion(true)
 		}else{
 			setSesion(false)

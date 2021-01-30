@@ -10,7 +10,8 @@ function sendUser({ formData = {}, loader = false } = {}) {
     .then(response =>{
       const user = response.data;
       const mensaje = response.message;
-      console.log(response)
+      const preferences = response.preferences
+      console.log(preferences);
       // console.log(response);
       // localStorage.setItem("usuarioActual", JSON.stringify(response.data));
       // console.log(response.data.validate);

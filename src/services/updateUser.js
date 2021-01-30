@@ -12,7 +12,7 @@ function updateUser( formData = {}) {
     .then(response =>{
       console.log(response)
       localStorage.setItem("usuarioActual", JSON.stringify(response.data));
-      return response
+      return response.data
     })
 }
 
