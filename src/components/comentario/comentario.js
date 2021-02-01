@@ -30,7 +30,7 @@ function Comentario({comentario, setComentario}) {
 
     }
     function Mensaje (){
-        alert("Enviado"+contador+"Estrellas y su comentario");
+        alert("Enviado: " +contador+  "   Estrellas y su comentario");
     }
     const closeComentario = () => {
         setComentario(!comentario)
@@ -40,34 +40,35 @@ function Comentario({comentario, setComentario}) {
         {
             (comentario)
                 ?
-            <div className="grayContainer">
-            <div className="contenedor-comentario">
-            <div className="contener-caja"> <br></br>
-                <div>
-                    <div className="card-header">
-                        <h2>Calificacion</h2>
-                    </div>
-                    <div className="card-body">
-                        <h5 className="card-title">Dejanos tu Calificacion</h5><br></br>
+             
+                <div className="grayContainer">
+                <div className="contenedor-comentario">
+                <div className="contener-caja"> <br></br>
+                    <div className="contenedor-general">
+                        <div className="card-header">
+                            <h2>Calificacion</h2>
+                        </div>
+                        <div className="card-body">
+                            <h5 className="card-title">Dejanos tu Calificacion</h5><br></br>
 
-                        <FontAwesomeIcon icon={faStar} className="iconstar" onClick={calificar} id="1estrella" />
-                        <FontAwesomeIcon icon={faStar} className="iconstar" onClick={calificar} id="2estrella" />
-                        <FontAwesomeIcon icon={faStar} className="iconstar" onClick={calificar} id="3estrella" />
-                        <FontAwesomeIcon icon={faStar} className="iconstar" onClick={calificar} id="4estrella" />
-                        <FontAwesomeIcon icon={faStar} className="iconstar" onClick={calificar} id="5estrella" />
-                        <br></br><br></br>
-                        <textarea className="txtvaloracion"placeholder="Escribe una opinion" id="txtvaloracion"></textarea>
-                        <button className="btn btn-primary" onClick={Mensaje}>calificar</button>
+                            <FontAwesomeIcon icon={faStar} className="iconstar" onClick={calificar} id="1estrella" />
+                            <FontAwesomeIcon icon={faStar} className="iconstar" onClick={calificar} id="2estrella" />
+                            <FontAwesomeIcon icon={faStar} className="iconstar" onClick={calificar} id="3estrella" />
+                            <FontAwesomeIcon icon={faStar} className="iconstar" onClick={calificar} id="4estrella" />
+                            <FontAwesomeIcon icon={faStar} className="iconstar" onClick={calificar} id="5estrella" />
+                            <br></br><br></br>
+                            <textarea className="txtvaloracion"placeholder="Escribe una opinion" id="txtvaloracion"></textarea>
+                            <button className="btn-gen" onClick={Mensaje}>calificar</button>
+                        </div>
+                        <FontAwesomeIcon icon={faTimes} className="closeComentario" onClick={closeComentario} />
                     </div>
-                    <FontAwesomeIcon icon={faTimes} className="closeComentario" onClick={closeComentario} />
+
                 </div>
-
             </div>
-        </div>
-        </div>
-        : null   
-        }
-
+            </div>
+            : null   
+            }
+    
     </>
 )
 

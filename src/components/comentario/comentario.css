@@ -40,3 +40,12 @@ span.fa{
       height: 150px;
       width: 500px;
   }
+.contenedor-general{
+    margin: 30px 70px;
+}
+.btn-gen{
+    border-radius: 20%;
+    background:skyblue;
+    width: 70px;
+    height: 25px;
+}
