@@ -1,6 +1,6 @@
-import { faAdjust, faBars, faBorderAll, faCog, faDownload, faHome, faUserCircle } from '@fortawesome/free-solid-svg-icons'
+import { faAdjust, faBars, faBorderAll, faCog, faDownload, faHome, faUserCircle, faCommentDots } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import React from 'react'
+import React, { useEffect } from 'react'
 import Switch from './../switch/switch'
 import SelectLayout from './../selectLayout/selectLayout'
 import './menuEditor.css'
@@ -8,7 +8,7 @@ import { Link } from 'wouter'
 import JSZip from 'jszip'
 import { saveAs } from 'file-saver';
 
-function MenuEditor({ setLayout, layout, setPreferences, preferences, code, setPerfil, perfil }) {
+function MenuEditor({ setLayout, layout, setPreferences, preferences, code, setPerfil, perfil, setComentario, comentario }) {
 	let down = `
 		<!DOCTYPE html>
 		<html lang="es">
@@ -43,6 +43,10 @@ function MenuEditor({ setLayout, layout, setPreferences, preferences, code, setP
 	const mostrarPerfil = () => {
 		setPerfil(!perfil)
 	}
+	const mostrarComentario = () => {
+		setComentario(!comentario)
+	}
+	useEffect(() => {console.log(comentario)} , [comentario])
 	return (
 		<>
 			<div className="menuEditor" title="menuEditorContainer">
@@ -88,6 +92,11 @@ function MenuEditor({ setLayout, layout, setPreferences, preferences, code, setP
 					<div className="download">
 						<div className="menuIcon" >
 							<FontAwesomeIcon icon={faDownload} className="icon" onClick={download}/>
+						</div>
+					</div>
+					<div className="download">
+						<div className="menuIcon">
+							<FontAwesomeIcon icon={faCommentDots} className="icon" onClick={mostrarComentario}/>
 						</div>
 					</div>
 				</div>
