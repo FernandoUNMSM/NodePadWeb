@@ -32,7 +32,15 @@ function Comentario({comentario, setComentario}) {
 
     }
     function Mensaje (){
+        let formData = new FormData();
         alert("Enviado: " +contador+  "   Estrellas y su comentario");
+        var txtvaloracion =document.querySelector('#txtvaloracion').value
+        console.log(txtvaloracion)
+        formData.set('comentario', txtvaloracion)
+        formData.set('puntuacion', 4)
+
+        qualifiCation({formData})
+
     }
     const closeComentario = () => {
         setComentario(!comentario)
