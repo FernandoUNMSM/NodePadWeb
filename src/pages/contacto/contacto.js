@@ -1,8 +1,22 @@
 import React, { useState, useRef, useContext } from 'react'
 import './contacto.css'
-function Contacto(){
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faEnvelope, faLock, faUser } from '@fortawesome/free-solid-svg-icons'
+import { Link, useLocation } from 'wouter'
+import Loader from './../../components/loader/loader'
+import Errormodal from './../../components/errormodal/errormodal'
+// import UserContext from './../../context/userContext'
 
-return (
+function Register() {
+	const [location, setLocation] = useLocation(); //eslint-disable-line
+	const [loader, setLoader] = useState(false)
+	const [error, setError] = useState(false)
+	const [message, setMessage] = useState('')
+
+	// const {setUsuario} = useContext(UserContext)
+
+	
+	return (
 		<>
 			{
 				(loader)
@@ -18,14 +32,15 @@ return (
 				}
 				<div className="registerContainer">
 					<div className="login">
-						<h1>Registrate</h1>
-						<form id="form" action="" onSubmit={sumbitForm} encType="multipart/form-data">
+						<h1>Contacto NodePadWeb</h1>
+						<h1>Trabajemos Juntos!</h1>
+						<form id="form" action="" encType="multipart/form-data">
 							<div className="row100">
 								<div className="col">
 									<div className="inputBox">
 										<input type="text" name="nombre" required="required" autoComplete="off" />
 										<span className="text">
-											<FontAwesomeIcon icon={faUser} /> Nombre
+											<FontAwesomeIcon icon={faUser} /> Nombres y Apellidos
 										</span>
 										<span className="line"></span>
 									</div>
@@ -34,7 +49,7 @@ return (
 									<div className="inputBox">
 										<input type="text" name="apellido" required="required" autoComplete="off" />
 										<span className="text">
-											<FontAwesomeIcon icon={faUser} /> Apellido
+											<FontAwesomeIcon icon={faUser} /> Grado de Instruccion
 										</span>
 										<span className="line"></span>
 									</div>
@@ -43,7 +58,7 @@ return (
 									<div className="inputBox">
 										<input type="text" name="usuario" required="required" autoComplete="off" />
 										<span className="text">
-											<FontAwesomeIcon icon={faUser} /> Nombre de usuario
+											<FontAwesomeIcon icon={faUser} /> Empresa a la que pertenece
 										</span>
 										<span className="line"></span>
 									</div>
@@ -52,43 +67,31 @@ return (
 									<div className="inputBox">
 										<input type="text" name="email" required="required" autoComplete="off" />
 										<span className="text">
-											<FontAwesomeIcon icon={faEnvelope} /> E-mail
+											<FontAwesomeIcon icon={faEnvelope} /> E-mail empresarial
 										</span>
 										<span className="line"></span>
 									</div>
 								</div>
-								<div className="col">
-									<div className="inputBox">
-										<input type="password" name="password" required="required" autoComplete="off" ref={password} />
-										<span className="text">
-											<FontAwesomeIcon icon={faLock} /> Contraseña</span>
-										<span className="line"></span>
-									</div>
+								
+									<p className="register"><Link to='/login'>¿Desea iniciar sesion?</Link></p>
 								</div>
-								<div className="col">
-									<div className="inputBox">
-										<input type="password" required="required" autoComplete="off" ref={password2} />
-										<span className="text">
-											<FontAwesomeIcon icon={faLock} /> Confirmar Contraseña</span>
-										<span className="line"></span>
-									</div>
-									<p className="register"><Link to='/login'>¿Ya tienes cuenta?</Link></p>
-								</div>
-							</div>
+							
 							<div className="row100">
 								<div className="col">
 									<button className="sumbit">
-										Registrarme
+										Enviar informacion
 									</button>
 								</div>
 							</div>
 						</form>
-						<p className="link"><Link to='/'>Regresar al Home</Link></p>
+						<p className="link"><Link to='/'>Home</Link></p>
 					</div>
 				</div>
 			</div>
-	
-</>
-)
+		
+			</>
+	)
+	 
 }
-export default Contacto
+
+export default Register

@@ -8,6 +8,7 @@ import Entrada from './pages/entrada/entrada'
 import Vision from './pages/vision/vision'
 import Mision from './pages/mision/mision'
 import Proposito from './pages/proposito/proposito'
+import Contacto from './pages/contacto/contacto'
 import { UserContextProvider } from './context/userContext'
 function App() {
   return (
@@ -61,6 +62,10 @@ function App() {
       <Route
         component={Proposito}
         path="/proposito"
+      />
+      <Route
+        component={Contacto}
+        path="/contacto"
       />
     </>
   );
