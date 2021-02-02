@@ -1,15 +1,18 @@
-import React, {useState, useEffect} from 'react'
+import React, { useState, useEffect } from 'react'
 
 const UserContext = React.createContext({})
 
-export function UserContextProvider ({children}) {
-  const [usuario,setUsuario] = useState(null)
-  const [config,setConfig] = useState(null)
+export function UserContextProvider({ children }) {
+  const user = JSON.parse(localStorage.getItem("usuarioActual"));
 
-  // useEffect(() =>{
-  //   console.log(usuario)
-  // },[usuario])
-  return <UserContext.Provider value={{usuario,setUsuario,config,setConfig}}>
+  const [imageA, setImageA] = useState(null)
+
+  useEffect(() => {
+    if (user !== '{}' && user !== null) {
+      setImageA(user.image)
+    }
+  }, [])
+  return <UserContext.Provider value={{ imageA, setImageA }} >
     {children}
   </UserContext.Provider>
 }

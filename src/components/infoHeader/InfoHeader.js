@@ -168,8 +168,8 @@ function InfoHeader() {
 					</div>
 				</div>
 				<div className="info">
-					<h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius, a!</h1>
-					<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolores vero quo error laborum possimus eaque sint, fugiat, consectetur sequi adipisci eum aliquid, tempore facilis sunt minus blanditiis commodi mollitia quis recusandae repellat accusantium. Quis odio sunt hic excepturi quidem reiciendis temporibus quod fugit nostrum? Placeat soluta libero dolor est sint.</p>
+					<h1>El mejor editor de codigo para el desarrollo de paginas web.</h1>
+					<p>NotepadWeb es un editor de codigo enfocado al desarrollo de paginas web. Tenemos incluidas las mejores herramientas para que puedas gozar de un correcto desarrollo sin tener que descargar nada, pudiendo inmediatamente empezar a implementar tus proyectos.</p>
 				</div>
 			</div>
 		</>

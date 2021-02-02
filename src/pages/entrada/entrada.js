@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react'
 import './entrada.css'
 function Entrada() {
@@ -17,13 +18,13 @@ function Entrada() {
 						<a  href="#" className="menu_entralink">Nosotros</a>
 						<ul className="emenu">
 							<li className="menu_entra">
-								<a target="_blank" href="http://localhost:3000/mision" className="menu_entralink">Misión</a>
+								<a target="_blank" href="http://localhost:3000/mision" className="menu_entralink" rel="noreferrer">Misión</a>
 							</li>
 							<li className="menu_entra">
-								<a target="_blank" href="http://localhost:3000/vision" className="menu_entralink">Visión</a>
+								<a target="_blank" href="http://localhost:3000/vision" className="menu_entralink" rel="noreferrer">Visión</a>
 							</li>
 							<li className="menu_entra">
-								<a target="_blank" href="http://localhost:3000/proposito" className="menu_entralink">Proposito</a>
+								<a target="_blank" href="http://localhost:3000/proposito" className="menu_entralink" rel="noreferrer">Proposito</a>
 							</li>
 						</ul>
 					</li>

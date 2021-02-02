@@ -8,6 +8,35 @@ test('Renderizado completo', () => {
   expect(linkElement).toBeInTheDocument();
 });
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 export function setupIntersectionObserverMock({
   root = null,
   rootMargin = '',

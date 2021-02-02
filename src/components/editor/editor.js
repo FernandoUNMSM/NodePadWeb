@@ -1,6 +1,8 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useEffect, useRef, useState, useContext} from 'react'
 import './editor.css'
 import WriteBox from './../writeBox/writeBox'
+import FileContext from './../../context/fileContext'
+
 
 function Editor({ layout, setCode, setDates, dates, setLenguaje, setBodyfile }) {
 	const frame = useRef(null)
@@ -9,6 +11,10 @@ function Editor({ layout, setCode, setDates, dates, setLenguaje, setBodyfile }) 
 	const [html, setHTML] = useState('')
 	const [css, setCSS] = useState('')
 	const [js, setJS] = useState('')
+	const config = JSON.parse(localStorage.getItem("configActual"))
+
+  const { fileContent } = useContext(FileContext)
+
 
 	useEffect(() => {
 		if(layout === 'vertical'){
@@ -21,6 +27,30 @@ function Editor({ layout, setCode, setDates, dates, setLenguaje, setBodyfile }) 
 			editor.current.className = "editor horizontalInverso"
 		}
 	}, [layout])
+	useEffect(() => {
+    const zise = config.zise
+		const color = config.color
+		const font = config.font
+    var container = document.querySelectorAll('.textarea textarea');
+    container.forEach(textarea => {
+      textarea.style.fontSize = `${zise}px`;
+			textarea.style.color = color;
+			textarea.style.fontFamily = font
+		})
+
+		const buttondesccomp = document.querySelector('.download')
+		const buttondescunit = document.querySelectorAll('.download-icon-mini')
+		if(config.descargaunit === 1){
+			buttondescunit.forEach((bu)=> bu.style.display = 'inline-block')
+		}else{
+			buttondescunit.forEach((bu)=> bu.style.display = 'none')
+		}
+		if(config.descargacomp === 1){
+			buttondesccomp.style.display = 'block'
+		}else{
+			buttondesccomp.style.display = 'none'
+		}
+	},[])
 
 	useEffect(() => {
 		setCode({

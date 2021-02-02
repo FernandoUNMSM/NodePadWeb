@@ -76,7 +76,7 @@ function Reciente({mostrarDatos, leng, iconi, list, setList, loader, setIdfileHt
 
   return (
     <>
-      <div className="recienteSup">
+      <div className="recienteSup" title="recienteContainer" >
         <p>Reciente</p>
         <div className="recienteIcons">
           <FontAwesomeIcon icon={faGripLines} className={(layout) ? 'recienteLayout focusL' : 'recienteLayout'} onClick={cambiarlayout1} />

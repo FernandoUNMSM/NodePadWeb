@@ -10,9 +10,9 @@ function updateUser( formData = {}) {
   })
     .then(res => res.json())
     .then(response =>{
-      console.log(response)
+      // console.log(response)
       localStorage.setItem("usuarioActual", JSON.stringify(response.data));
-      return response
+      return response.data
     })
 }
 

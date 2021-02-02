@@ -11,6 +11,7 @@ test('Login renderizado', () => {
   expect(linkElement).toBeInTheDocument();
 });
 
+
 describe('Button enviado', () => {
   it('nyan', () => {
     const { getByText, rerender } = render(<Login />);
@@ -32,6 +33,8 @@ describe('Button enviado', () => {
         "image": null
       }
     ))
+    localStorage.setItem("configActual",JSON.stringify({tema: 'jj'}))
+
     rerender(<Editor />)
     const title = screen.getByTitle(/editorContainer/)
     // console.log(title)

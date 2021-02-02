@@ -37,7 +37,7 @@ function Register() {
 				// setUsuario(user)
 
 				localStorage.setItem("usuarioActual", JSON.stringify(user))
-				localStorage.setItem("configActual", JSON.stringify({ size: '16px', color: 'var(--cardTitle)' }))
+				// localStorage.setItem("configActual", JSON.stringify({ size: '16px', color: 'var(--cardTitle)' }))
 
 				if (mensaje === 'user created') {
 					setLocation('/editor')
@@ -99,9 +99,9 @@ function Register() {
 								</div>
 								<div className="col">
 									<div className="inputBox">
-										<input type="text" name="email" required="required" autoComplete="off" />
+										<input type="email" name="email" required="required" autoComplete="off" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"/>
 										<span className="text">
-											<FontAwesomeIcon icon={faEnvelope} /> E-mail
+											<FontAwesomeIcon icon={faEnvelope} /> E-mail (xxxxx@xxxx.xxx)
 										</span>
 										<span className="line"></span>
 									</div>

@@ -15,19 +15,54 @@
 .perfilOn {
   transform: translateX(0);
 }
-.perfilContainer .foto {
-  height: 200px;
+.perfilContainer .fotoPerfilContainer {
+  height: 250px;
+  display: flex;
+  justify-content: center;
 }
-.perfilContainer .foto .userPhoto {
+.perfilContainer .fotoPerfilContainer .foto {
+  position: relative;
+  height: 100%;
+  width: 250px;
+  cursor: pointer;
+  overflow: hidden;
+  /* display: flex;
+  justify-content: center; */
+}
+.perfilContainer .fotoPerfilContainer .foto .fotoPerfil {
   height: 100%;
   width: 100%;
+  display: flex;
+  justify-content: center;
+  border-radius: 50%;
+  overflow: hidden;
 }
-
+.perfilContainer .fotoPerfilContainer .camera {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  font-size: 30px;
+  opacity: 0;
+  transition: .4s;
+  color: rgb(100, 96, 96);
+}
+.perfilContainer .fotoPerfilContainer .foto:hover .camera {
+  opacity: 1;
+}
+.perfilContainer .fotoPerfilContainer .userPhoto{
+  height: 100%;
+  width: 100%;
+  color: rgb(100, 96, 96);
+}
+.perfilContainer .fotoPerfilContainer img {
+  height: inherit;
+}
 .perfilContainer .infoUser p {
   font-family: 'Poppins', sans-serif;
   margin-bottom: 20px;
   color: var(--baseColor);
   display: flex;
+  align-items: center;
 }
 .perfilContainer .infoUser p input {
   width: -webkit-fill-available;

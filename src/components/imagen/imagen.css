@@ -1,0 +1,62 @@
+.drop-areaContainer{
+  width: 100%;
+  height: 100%;
+  position: relative;
+  border: 2px dashed rgb(100, 96, 96);
+}
+.drop-area {
+  z-index: 100;
+  width: 100%;
+  height: 100%;
+  outline: none;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.fileContain, .fileform {
+  /* background-color: #AFA; */
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: rgb(100, 96, 96);
+}
+.fileIcon {
+  border-radius: 50%;
+  border: 2px dashed rgb(100, 96, 96);
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  animation: scala .3s ease-in-out;
+  transform: scale(1) rotate(0);
+}
+.iconfile {
+  font-size: 1.4em;
+  color: rgb(100, 96, 96);
+}
+.cerrarInput {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  font-size: 40px;
+  cursor: pointer;
+  color: var(--baseBackground);
+}
+@keyframes scala {
+  0% {
+    transform: scale(0.4) rotate(-45deg);
+  }100% {
+    transform: scale(1) rotate(0deg);
+  }
+}
+

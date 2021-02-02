@@ -1,4 +1,8 @@
 .infoContainer {
+    /* background-image: url(./../../assets/img/header_background_extra.jpg); */
+    background-position: center 0;
+    background-size: cover;
+    background-attachment: fixed;
     display: flex;
     align-items: center;
     height: calc( 100vh - 78px);
@@ -69,6 +73,8 @@
     transform: translateX(0);
     animation: aaa 2s ease;
     opacity: 1;
+    background-color: rgb(37, 33, 33);
+    border-radius: 15px;
 }
 .info h1 {
     font-size: 1.5em;

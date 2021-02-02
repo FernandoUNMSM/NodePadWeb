@@ -1,28 +1,20 @@
-import { text } from '@fortawesome/fontawesome-svg-core';
 import React, { useRef } from 'react'
-import Swal from 'sweetalert2'
 import './eliminar.css'
+import Swal from 'sweetalert2'
+import { Link, useLocation } from 'wouter'
 
 import validPassword from './../../services/validPassword'
 import deleteUser from './../../services/deleteUser'
-import { Link, useLocation } from 'wouter'
+import updatePassword from './../../services/updatePassword'
 
 function Eliminarcuenta() {
 	const [location, setLocation] = useLocation(); //eslint-disable-line
 
 	var mal = useRef(null);
+	var mal2 = useRef(null);
 	const contra = useRef(null);
-	const eliminar = () => {
-		// var contrados = document.querySelector("#confirmar");
-		// if (contrados.value.length == 0 || contra.value.length == 0) {
-		// 	mal.innerHTML = "falta completar"
-		// 	return;
-		// }
-		// if (contra.value != contrados.value) {
-		// 	mal.innerHTML = "contraseñas diferentes";
-		// 	return;
-		// }
 
+	const eliminar = () => {
 		const swalWithBootstrapButtons = Swal.mixin({
 			customClass: {
 				confirmButton: 'btn btn-success',
@@ -69,18 +61,44 @@ function Eliminarcuenta() {
 		})
 	}
 
-	const enviarPassword = (evt) => {
+	const enviarPassword = async (evt) => {
 		evt.preventDefault()
+		let nyan = await valid(evt)
+		if(nyan.value){
+			eliminar()
+		}else{
+			mal.current.innerHTML = `<p>${nyan.result}</p>`
+		}
+	}
+
+	const changePassword = async (evt) => {
+		evt.preventDefault();
+		let nyan2 = await valid(evt)
+		if(nyan2.value){
+			updatear(evt)
+		}else{
+			mal2.current.innerHTML = `<p>${nyan2.result}</p>`
+		}
+	}
+
+	const valid = async (evt) => {
+		let katia = {}
 		const formData = new FormData(evt.target);
-		validPassword({ formData })
+		await validPassword({ formData })
 			.then(result => {
 				if (result === "password correcto") {
-					eliminar()
+					katia =  {value: true}
 				} else {
-					console.log(result)
-					mal.current.innerHTML = `<p>${result}</p>`
+					katia =  {value: false, result:result}
 				}
 			})
+		return katia
+	}
+
+	const updatear = (evt) => {
+		const formData = new FormData(evt.target);
+		updatePassword({formData})
+			.then(res => console.log(res))
 	}
 
 	return (
@@ -88,20 +106,29 @@ function Eliminarcuenta() {
 			<div className="formatoContainer">
 				<div className="containerRes">
 					<div className="formatoTitulo">
-						<h1>Opciones de Cuenta</h1>
+						<h1>Preferencias de Cuenta</h1>
 					</div>
 					<div className="formatoItem">
 						<p>Eliminacion de cuenta</p>
+						<p className="formatoP">Escribe tu contraseña para poder acceder a la opcion</p>
 						<form encType="multipart/form-data" onSubmit={enviarPassword} className="formDelete">
-							<input type="password" name="password" placeholder="contraseña" id="contraseña" defaultValue=""></input>
-							<br></br>
+							<input type="password" name="password" placeholder="Contraseña" id="contraseña" defaultValue=""></input>
 							<button className="btn-delete">Eliminar</button>
 						</form>
+						<div className="malp" ref={mal}></div>
 					</div>
-					<div className="malp" ref={mal}>
-
+					<div className="formatoItem">
+						<p>Cambiar contraseña</p>
+						<p className="formatoP">Escribe tu contraseña para poder acceder a la opcion</p>
+						<form encType="multipart/form-data" onSubmit={changePassword} className="formDelete">
+							<div className="changeContainer">
+								<input type="password" name="password" placeholder="Contraseña" id="newcontraseña" defaultValue=""></input>
+								<div className="malp" ref={mal2}></div>
+								<input type="password" name="newpassword" placeholder="Nueva contraseña" id="newcontraseña" defaultValue=""></input>
+							</div>
+							<button className="btn-delete">Cambiar</button>
+						</form>
 					</div>
-					<br></br>
 				</div>
 			</div>
 		</>

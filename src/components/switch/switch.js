@@ -1,6 +1,7 @@
 import React from 'react'
-import './switch.css'
 import { useState, useRef, useEffect } from 'react'
+import './switch.css'
+import updateLocalstorage from './../../services/updatelocalstorage'
 
 const Body = document.body
 
@@ -9,17 +10,22 @@ function Switch() {
 	//true oscuro false blanco
 	const ref = useRef(null)
 
+	const thema = JSON.parse(localStorage.getItem("configActual")).tema
+
+	let tema
+
 	function handleThemeChange() {
-		// console.log(event.target.checked)
 		setChecked(!checked)
 		if (ref.current.checked) {
 			Body.classList.remove('is-light-mode')
 			Body.classList.add('is-dark-mode')
+			tema = 1
 		} else {
 			Body.classList.remove('is-dark-mode')
 			Body.classList.add('is-light-mode')
+			tema = 0
 		}
-		// console.log(checked)
+		updateLocalstorage({tema})
 	}
 
 	function changeMedia(mq) {
@@ -28,21 +34,19 @@ function Switch() {
 	}
 
 	useEffect(() => {
-		// Body.classList.add('is-light-mode')
-		if (ref.current.checked) {
+		if (thema === 1) {
+			setChecked(true)
 			Body.classList.remove('is-light-mode')
 			Body.classList.add('is-dark-mode')
 		} else {
+			setChecked(false)
 			Body.classList.remove('is-dark-mode')
 			Body.classList.add('is-light-mode')
 		}
-		// const mq = window.matchMedia('(prefers-color-scheme: dark)')
-		// mq.addListener(changeMedia)
-		// setChecked(mq.matches)
 	}, [])
 
 	return (
-		<div className="dark-mode">
+		<div className="dark-mode" title="switch">
 			<p className="dark-mode-title">
 				{
 					checked

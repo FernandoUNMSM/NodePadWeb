@@ -8,7 +8,7 @@ function MenuHeader() {
 	const [sesion, setSesion] = useState(false)
 
 	useEffect(() => {
-		if(usuarioA !== "{}") {
+		if(usuarioA !== "{}" && usuarioA !== null) {
 			setSesion(true)
 		}else{
 			setSesion(false)
@@ -21,7 +21,7 @@ function MenuHeader() {
   }
 	return (
 		<>
-			<div className="menu-container">
+			<div className="menu-container" title="menu-headerContainer">
 				<div className="logo">
 					<img src={logo} alt="logo" width='50px'/>
 					<h1>NodePad Web</h1>

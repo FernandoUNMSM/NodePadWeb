@@ -3,7 +3,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-top: 30px;
+    height: 100px;
 }
 .menu-container .logo {
     margin: 0 40px;
@@ -36,7 +36,7 @@
     background-color: var(--verde);
 }
 .menu-container .menuH .listItem a{
-    color: #fff;
+    color: rgb(237, 236, 236);
     text-decoration: none;
     font-family: 'Poppins', sans-serif;
     font-weight: bold;

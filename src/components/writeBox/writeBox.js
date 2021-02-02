@@ -85,7 +85,7 @@ function WriteBox({ lan, setCode, setDates, dates, setLenguaje, setBodyfile }) {
     } else if (lan === 'JS') {
       newFile.file.nombre = nameJs
     }
-    console.log()
+    // console.log()
     setFileContent(newFile)
   }
 
@@ -102,7 +102,7 @@ function WriteBox({ lan, setCode, setDates, dates, setLenguaje, setBodyfile }) {
     var body = document.getElementById(lan).value
     setBodyfile(body)
     setFileContent({ file: { cuerpo: body }, len: lan.toLowerCase() })
-    console.log(fileContent)
+    // console.log(fileContent)
     if (lan === 'HTML') {
       setNameHtml(null)
     } else if (lan === 'CSS') {
@@ -113,23 +113,28 @@ function WriteBox({ lan, setCode, setDates, dates, setLenguaje, setBodyfile }) {
   }
 
   useEffect(() => {
+    // console.log(fileContent)
     if (fileContent.len === lan.toLowerCase()) {
+      console.log(fileContent.len)
       let textareaContent = document.querySelector(`#${lan}`);
       textareaContent.value = fileContent.file.cuerpo;
 
       if (lan === 'HTML') {
         setNameHtml(fileContent.file.nombre)
+        setCode(fileContent.file.cuerpo)
       } else if (lan === 'CSS') {
         setNameCss(fileContent.file.nombre)
+        setCode(fileContent.file.cuerpo)
       } else if (lan === 'JS') {
         setNameJs(fileContent.file.nombre)
+        setCode(fileContent.file.cuerpo)
       }
     }
   }, [fileContent])//eslint-disable-line
 
   return (
     <>
-      <div className="textarea">
+      <div className="textarea" title="textarea">
         <div className="menuTextarea">
           <div className="leftTextarea">
             <p>{lan}</p>
@@ -176,7 +181,7 @@ function WriteBox({ lan, setCode, setDates, dates, setLenguaje, setBodyfile }) {
               : null
           }
           <div className="iconsTextarea">
-            <FontAwesomeIcon icon={faDownload} className="icon" onClick={download} />
+            <FontAwesomeIcon icon={faDownload} className="icon download-icon-mini" onClick={download} />
             <FontAwesomeIcon icon={faUpload} className="icon" onClick={mostrarDatos} />
           </div>
         </div>

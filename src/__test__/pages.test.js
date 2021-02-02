@@ -9,6 +9,7 @@ import Mision from '../pages/mision/mision'
 import Proposito from '../pages/proposito/proposito'
 
 
+
 test('Home renderizado', ()=>{
   render(<Home />);
   // const linkElement = screen.getByText(/NodePad Web/i);
@@ -16,12 +17,18 @@ test('Home renderizado', ()=>{
   expect(linkElement).toBeInTheDocument();
 })
 
+
+
 test('Editor renderizado', ()=>{
+  localStorage.setItem("configActual",JSON.stringify({tema: 'jj'}))
+
   render(<EditorHome />);
   // const linkElement = screen.getByText(/NodePad Web/i);
   const linkElement = screen.getByTitle(/editorContainer/)
   expect(linkElement).toBeInTheDocument();
 })
+
+
 
 test('Login renderizado', () => {
   render(<Login />);
@@ -30,12 +37,16 @@ test('Login renderizado', () => {
   expect(linkElement).toBeInTheDocument();
 });
 
+
+
 test('Register renderizado', ()=>{
   render(<Register />);
   // const linkElement = screen.getByText(/NodePad Web/i);
   const linkElement = screen.getByText(/Registrate/,{selector: 'h1'})
   expect(linkElement).toBeInTheDocument();
 })
+
+
 
 test('Entrada renderizado', ()=>{
   render(<Entrada />);
@@ -44,6 +55,8 @@ test('Entrada renderizado', ()=>{
   expect(linkElement).toBeInTheDocument();
 })
 
+
+
 test('Vision renderizado', ()=>{
   render(<Vision />);
   // const linkElement = screen.getByText(/NodePad Web/i);
@@ -51,12 +64,16 @@ test('Vision renderizado', ()=>{
   expect(linkElement).toBeInTheDocument();
 })
 
+
+
 test('Mision renderizado', ()=>{
   render(<Mision />);
   // const linkElement = screen.getByText(/NodePad Web/i);
   const linkElement = screen.getByText(/Mision/,{selector: 'h2'})
   expect(linkElement).toBeInTheDocument();
 })
+
+
 
 test('Proposito renderizado', ()=>{
   render(<Proposito />);

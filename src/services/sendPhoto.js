@@ -8,8 +8,8 @@ function sendPhoto({ formData, id }) {
     body: formData
   })
     .then(res => res.json())
-    .then(response => {
-      console.log(response)
+    .then(async response => {
+      // console.log(response)
       const url = response.url
       nuan(url, id)
       return url
@@ -30,5 +30,7 @@ async function nuan(url,id ) {
     body: JSON.stringify({ url: url })
   })
     .then(res => res.json())
-    .then(response => console.log(response))
+    .then(response => {
+      localStorage.setItem("usuarioActual", JSON.stringify(response.data))
+    })
 }

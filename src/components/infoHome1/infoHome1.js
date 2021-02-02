@@ -11,8 +11,8 @@ function InfoHome1() {
 			<section className="section1">
 				<div className="section1InfoContainer">
 					<div className="infoContent">
-						<h1>Lorem ipsum dolor sit amet.</h1>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem, nam.</p>
+						<h1>Disfruta de un correcto desarrollo.</h1>
+						<p>Nuestro sistema tiene implementado los principales pilares del desarrollo web.</p>
 					</div>
 					<div className="iconsContainer">
 						<div className="icons">

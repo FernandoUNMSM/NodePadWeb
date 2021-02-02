@@ -1,32 +1,50 @@
 import React, {useRef, useEffect, useContext, useState} from 'react'
 import './fotoperfil.css'
+import { faArrowLeft } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import sendPhoto from './../../services/sendPhoto'
 import UserContext from './../../context/userContext'
 
-export default function Fotoperfil() {
-  // const {usuario} = useContext(UserContext)
+
+export default function Fotoperfil({formData, setFoto, setImagen}) {
+  const user = JSON.parse(localStorage.getItem("usuarioActual"));
   const id = JSON.parse(localStorage.getItem("usuarioActual")).id
 
-  const [url, setUrl] = useState(null)
+  const image = useRef(null)
+  const { imageA, setImageA } = useContext(UserContext)
 
-  const imprimir = (evt) =>{
-    evt.preventDefault()
-    const formData = new FormData(evt.target)
-    // formData.set('id', id)
+  useEffect(() => {
+    renderImage()
+  },[formData])
+
+  const renderImage = () => {
+    const file = formData.get('file')
+    const imagen = URL.createObjectURL(file)
+    image.current.setAttribute('src', imagen)
+  }
+
+  const cerrarPreview = () => {
+    setFoto(false)
+  }
+  const enviarFoto = () => {
     sendPhoto({formData, id})
-    .then((response=> setUrl(response)))
+      .then(response => {
+        setImageA(response)
+        // console.log(user)
+        // user.image = response
+        // localStorage.setItem('usuarioActual', user)
+        setImagen(false)
+      })
   }
 
   return (
     <>
-      <div className="fotoContainer">
-        <form action="" onSubmit={imprimir}>
-          <div className="foto">
-            <input type="file" name="file" id=""/>
-          </div>
-          <button>Gura</button>
-        </form>
-        <img src={url} alt="" width="100%"/>
+      <div className="datesContainer fotoContainer" title="fotoPerfilContainer">
+        <div className="fotomenu" onClick={cerrarPreview}>
+          <FontAwesomeIcon icon={faArrowLeft} className="arrowleftpreview"/>
+        </div>
+        <img src="" alt="" ref={image}/>
+        <button className="enviarFoto" onClick={enviarFoto}>Aceptar</button>
       </div>
     </>
   )
