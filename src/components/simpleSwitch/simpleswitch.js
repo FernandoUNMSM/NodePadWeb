@@ -10,7 +10,7 @@ function SimpleSwitch({ number }) {
 
 
   const buttondesccomp = document.querySelector('.download')
-  const buttondescunit = document.querySelector('.download-icon-mini')
+  const buttondescunit = document.querySelectorAll('.download-icon-mini')
 
 
   const [che, setChe] = useState((bool) => {
@@ -31,10 +31,12 @@ function SimpleSwitch({ number }) {
     if (evt.target.id === 'checkbox1') {
       if (evt.target.checked) {
         updateLocalstorage({ descargaunit: 1 })
-        buttondescunit.style.display = 'inline-block'
+        // buttondescunit.style.display = 'inline-block'
+        buttondescunit.forEach((bu)=> bu.style.display = 'inline-block')
       } else {
         updateLocalstorage({ descargaunit: 0 })
-        buttondescunit.style.display = 'none'
+        // buttondescunit.style.display = 'none'
+        buttondescunit.forEach((bu)=> bu.style.display = 'none')
       }
     } else {
       if (evt.target.checked) {

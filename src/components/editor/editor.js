@@ -39,11 +39,11 @@ function Editor({ layout, setCode, setDates, dates, setLenguaje, setBodyfile }) 
 		})
 
 		const buttondesccomp = document.querySelector('.download')
-		const buttondescunit = document.querySelector('.download-icon-mini')
+		const buttondescunit = document.querySelectorAll('.download-icon-mini')
 		if(config.descargaunit === 1){
-			buttondescunit.style.display = 'inline-block'
+			buttondescunit.forEach((bu)=> bu.style.display = 'inline-block')
 		}else{
-			buttondescunit.style.display = 'none'
+			buttondescunit.forEach((bu)=> bu.style.display = 'none')
 		}
 		if(config.descargacomp === 1){
 			buttondesccomp.style.display = 'block'
