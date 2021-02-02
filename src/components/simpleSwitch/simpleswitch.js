@@ -22,7 +22,7 @@ function SimpleSwitch({ number }) {
     } else {
       return (descargacomp === 1) ? true : false
     }
-  })gir a
+  })
   const [checked, setChecked] = useState(che)
 
   function handleCheck(evt) {
