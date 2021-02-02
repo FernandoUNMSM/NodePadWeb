@@ -5,6 +5,7 @@ import { faStar } from '@fortawesome/free-solid-svg-icons'
 import { faTimes } from '@fortawesome/free-solid-svg-icons'
 // import "bootstrap/dist/css/bootstrap.min.css";
 
+import qualifiCation from './../../services/qualifiCation'
 function Comentario({comentario, setComentario}) {  
 
     var contador;
