@@ -1,0 +1,45 @@
+.section2 {
+    background-image: url(./../../assets/img/header-background2.jpg);
+    background-position: center 0;
+    background-size: cover;
+    height: 400px;
+    background-attachment: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    color: #fff;
+    background-color:  var(--baseBlack);
+}
+.section2Box {
+    width: 400px;
+    height: 250px;
+    /*background-color: rgb(37, 33, 33);*/
+    background-color: none;
+    border-radius: 15px;
+}
+.infos2 {
+    text-align: right;
+    margin-right: 30px;
+    width: 650px;
+    animation: aaa 3s ease;
+    background-color: rgb(37, 33, 33);
+    border-radius: 15px;
+}
+.infos2 h1 {
+    font-size: 2.2em;
+}
+.infos2 p {
+    font-size: 1.3em;
+}
+#lazyInfo2 {
+    height: 400px;
+    background-color:  var(--baseBlack);
+    /*background-image: url(./../../assets/img/header-background2.jpg);*/
+    background-position: center 0;
+    background-size: cover;
+}
+.infoHome2img { 
+    width: 400px;
+    height: 250px;
+    border-radius: 15px;
+}
