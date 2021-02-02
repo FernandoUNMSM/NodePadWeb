@@ -18,7 +18,7 @@ function Perfil({ state, setImagen }) {
       ? perfil.current.classList.add('perfilOn')
       : perfil.current.classList.remove('perfilOn')
   }, [state])
-
+ 
   const modoCambiar = () => {
     setTimeout(() => {
       setModificar(!modificar)
@@ -35,6 +35,7 @@ function Perfil({ state, setImagen }) {
   const cerrarSesion = () => {
     // setUsuario(null)
     localStorage.setItem("usuarioActual", "{}")
+    localStorage.setItem("configActual", "{}")
     setLocation("/");
   }
   const mostrarInputFile = () => {

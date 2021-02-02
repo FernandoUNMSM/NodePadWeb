@@ -16,11 +16,19 @@ const Informacion = () => {
           </div>
           <div className="formatoItem">
             <p>Gutierrez Albujar, Sergio</p>
-            <p className="formatoP">Correo: oscar.cabellos@unmsm.edu.pe</p>
+            <p className="formatoP">Correo: sergio.gutierrez@unmsm.edu.pe</p>
           </div>
           <div className="formatoItem">
             <p>Rodriguez Mirano, Sebastian</p>
-            <p className="formatoP">Correo: oscar.cabellos@unmsm.edu.pe</p>
+            <p className="formatoP">Correo: sebastian.rodriguez1@unmsm.edu.pe</p>
+          </div>
+          <div className="formatoItem">
+            <p>Muñoz Silva, Brayan</p>
+            <p className="formatoP">Correo: brayan.munoz1@unmsm.edu.pe</p>
+          </div>
+          <div className="formatoItem">
+            <p>Alvarez Levano, Jose</p>
+            <p className="formatoP">Correo: jose.alvarez11@unmsm.edu.pe</p>
           </div>
           <div className="formatoItem">
             <p>Repositorio GitHub</p>

@@ -101,7 +101,7 @@ function Register() {
 									<div className="inputBox">
 										<input type="email" name="email" required="required" autoComplete="off" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"/>
 										<span className="text">
-											<FontAwesomeIcon icon={faEnvelope} /> E-mail
+											<FontAwesomeIcon icon={faEnvelope} /> E-mail (xxxxx@xxxx.xxx)
 										</span>
 										<span className="line"></span>
 									</div>
