@@ -22,7 +22,7 @@ function SimpleSwitch({ number }) {
     } else {
       return (descargacomp === 1) ? true : false
     }
-  })
+  })gir a
   const [checked, setChecked] = useState(che)
 
   function handleCheck(evt) {
@@ -53,7 +53,6 @@ function SimpleSwitch({ number }) {
     let check = document.querySelector("#checkbox".concat(number))
     if (check.checked) {
       check.checked = false
-      console.log('jj')
     } else {
       check.checked = true
     }
