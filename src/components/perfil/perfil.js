@@ -40,9 +40,9 @@ function Perfil({ state, setImagen }) {
   const mostrarInputFile = () => {
     setImagen(true)
   }
-  useEffect(() =>{
-    console.log(imageA)
-  },[imageA])
+  // useEffect(() =>{
+  //   console.log(imageA)
+  // },[imageA])
   return (
     <>
       <div className="perfilContainer" ref={perfil}>

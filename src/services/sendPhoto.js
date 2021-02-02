@@ -9,7 +9,7 @@ function sendPhoto({ formData, id }) {
   })
     .then(res => res.json())
     .then(async response => {
-      console.log(response)
+      // console.log(response)
       const url = response.url
       nuan(url, id)
       return url

@@ -13,7 +13,7 @@ function updateUser({jsonFile, id}) {
   })
     .then(res => res.json())
     .then(response =>{
-      console.log(response)
+      // console.log(response)
       return response
     })
 }

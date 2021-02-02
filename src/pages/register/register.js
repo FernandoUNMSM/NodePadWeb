@@ -37,7 +37,7 @@ function Register() {
 				// setUsuario(user)
 
 				localStorage.setItem("usuarioActual", JSON.stringify(user))
-				localStorage.setItem("configActual", JSON.stringify({ size: '16px', color: 'var(--cardTitle)' }))
+				// localStorage.setItem("configActual", JSON.stringify({ size: '16px', color: 'var(--cardTitle)' }))
 
 				if (mensaje === 'user created') {
 					setLocation('/editor')

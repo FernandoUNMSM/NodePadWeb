@@ -11,6 +11,7 @@ function Editor({ layout, setCode, setDates, dates, setLenguaje, setBodyfile }) 
 	const [html, setHTML] = useState('')
 	const [css, setCSS] = useState('')
 	const [js, setJS] = useState('')
+	const config = JSON.parse(localStorage.getItem("configActual"))
 
   const { fileContent } = useContext(FileContext)
 
@@ -26,9 +27,30 @@ function Editor({ layout, setCode, setDates, dates, setLenguaje, setBodyfile }) 
 			editor.current.className = "editor horizontalInverso"
 		}
 	}, [layout])
+	useEffect(() => {
+    const zise = config.zise
+    const color = config.color
+    var container = document.querySelectorAll('.textarea textarea');
+    container.forEach(textarea => {
+      textarea.style.fontSize = `${zise}px`;
+      textarea.style.color = color
+		})
+
+		const buttondesccomp = document.querySelector('.download')
+		const buttondescunit = document.querySelector('.download-icon-mini')
+		if(config.descargaunit === 1){
+			buttondescunit.style.display = 'inline-block'
+		}else{
+			buttondescunit.style.display = 'none'
+		}
+		if(config.descargacomp === 1){
+			buttondesccomp.style.display = 'block'
+		}else{
+			buttondesccomp.style.display = 'none'
+		}
+	},[])
 
 	useEffect(() => {
-		console.log('jj')
 		setCode({
 			'html': html,
 			'css': css,

@@ -85,7 +85,7 @@ function WriteBox({ lan, setCode, setDates, dates, setLenguaje, setBodyfile }) {
     } else if (lan === 'JS') {
       newFile.file.nombre = nameJs
     }
-    console.log()
+    // console.log()
     setFileContent(newFile)
   }
 
@@ -102,7 +102,7 @@ function WriteBox({ lan, setCode, setDates, dates, setLenguaje, setBodyfile }) {
     var body = document.getElementById(lan).value
     setBodyfile(body)
     setFileContent({ file: { cuerpo: body }, len: lan.toLowerCase() })
-    console.log(fileContent)
+    // console.log(fileContent)
     if (lan === 'HTML') {
       setNameHtml(null)
     } else if (lan === 'CSS') {
@@ -113,7 +113,7 @@ function WriteBox({ lan, setCode, setDates, dates, setLenguaje, setBodyfile }) {
   }
 
   useEffect(() => {
-    console.log(fileContent)
+    // console.log(fileContent)
     if (fileContent.len === lan.toLowerCase()) {
       let textareaContent = document.querySelector(`#${lan}`);
       textareaContent.value = fileContent.file.cuerpo;
@@ -180,7 +180,7 @@ function WriteBox({ lan, setCode, setDates, dates, setLenguaje, setBodyfile }) {
               : null
           }
           <div className="iconsTextarea">
-            <FontAwesomeIcon icon={faDownload} className="icon" onClick={download} />
+            <FontAwesomeIcon icon={faDownload} className="icon download-icon-mini" onClick={download} />
             <FontAwesomeIcon icon={faUpload} className="icon" onClick={mostrarDatos} />
           </div>
         </div>

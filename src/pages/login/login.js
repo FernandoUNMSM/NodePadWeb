@@ -33,7 +33,7 @@ function Login() {
 				}
 				setValidate(validate)
 				setLoader(loader)
-				localStorage.setItem("configActual",JSON.stringify({size: '16px', color: 'var(--cardTitle)'}))
+				// localStorage.setItem("configActual",JSON.stringify({size: '16px', color: 'var(--cardTitle)'}))
 			})
 	}
 
