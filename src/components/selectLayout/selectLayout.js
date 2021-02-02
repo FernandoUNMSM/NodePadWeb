@@ -20,7 +20,7 @@ function SelectLayout({setLayout, layout}) {
 	}
 	return (
 		<>
-			<div className="layoutOptions">
+			<div className="layoutOptions" title="layout">
 				<img src="https://www.flaticon.es/svg/static/icons/svg/43/43801.svg" alt="" onClick={layoutVerticalInverso}/>
 				<img src="https://www.flaticon.es/svg/static/icons/svg/43/43420.svg" alt="" onClick={layoutVertical}/>
 				<img src="https://www.flaticon.es/svg/static/icons/svg/43/43447.svg" alt="" onClick={layoutHorizontalInverso}/>

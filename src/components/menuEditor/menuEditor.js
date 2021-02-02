@@ -45,7 +45,7 @@ function MenuEditor({ setLayout, layout, setPreferences, preferences, code, setP
 	}
 	return (
 		<>
-			<div className="menuEditor">
+			<div className="menuEditor" title="menuEditorContainer">
 				<div className="menuContent">
 					<div className="burguerMenu">
 						<FontAwesomeIcon icon={faBars} className="icon" />

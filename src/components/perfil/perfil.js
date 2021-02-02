@@ -40,12 +40,12 @@ function Perfil({ state, setImagen }) {
   const mostrarInputFile = () => {
     setImagen(true)
   }
-  // useEffect(() =>{
-  //   console.log(imageA)
-  // },[imageA])
+  useEffect(() =>{
+    console.log(imageA)
+  },[])
   return (
     <>
-      <div className="perfilContainer" ref={perfil}>
+      <div className="perfilContainer" ref={perfil} title="perfilContainer">
         <div className="fotoPerfilContainer">
           <div className="foto" onClick={mostrarInputFile}>
             <div className="fotoPerfil">
@@ -81,11 +81,11 @@ function Perfil({ state, setImagen }) {
                   </p>
                   <p>
                     <span>Nombre de usuario: </span>
-                    <input type="text" name="usuario" defaultValue={usuarioActual.usuario} required="required"/>
+                    <input type="text" name="usuario" defaultValue={usuarioActual.usuario} required="required" />
                   </p>
                   <p>
                     <span>E-mail: </span>
-                    <input type="text" name="email" defaultValue={usuarioActual.email} required="required"/>
+                    <input type="email" name="email" defaultValue={usuarioActual.email} required="required" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"/>
                   </p>
                 </form>
               </>

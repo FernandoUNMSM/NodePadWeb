@@ -6,6 +6,7 @@ import Formato from './../formatoletra/formato'
 import Fotoperfil from './../fotoPerfil/fotoperfil'
 import Eliminar from './../eliminarcuenta/eliminar'
 import Descarga from './../descarga/descarga'
+import Informacion from './../informacion/informacion'
 
 function Preferences({ preferences, setPreferences }) {
   const preferencesContainer = useRef(null)
@@ -29,7 +30,7 @@ function Preferences({ preferences, setPreferences }) {
         return <div className="preference 3">3</div>
       case '4':
         return <div className="preference 4">
-          {/* <Fotoperfil/> */}
+          <Informacion/>
         </div>
       case '5':
         return <div className="preference 5">
@@ -49,7 +50,7 @@ function Preferences({ preferences, setPreferences }) {
       {
         (preferences)
           ?
-          <div className="grayContainer">
+          <div className="grayContainer" title="PreferencesContainer" >
             <div className="preferencesContainer" ref={preferencesContainer}>
               <div className="menuPreferences">
                 <p id="1" onClick={showPreferences}>Editor</p>

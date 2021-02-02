@@ -8,7 +8,7 @@ export default function Errormodal({ setError, message }) {
 
   return (
     <>
-      <div className="grayContainer error">
+      <div className="grayContainer error" title="errormodalContainer">
         <div className="errorContainer">
           <div className="equiserror">
             <div className="equis">

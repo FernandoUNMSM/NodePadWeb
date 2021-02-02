@@ -65,8 +65,8 @@ function Dates({ dates = '', setDates = '', lenguaje = 'HTML', bodyfile =''}={})
 		<>
 			{(dates)
 				?
-				<div className="grayContainer">
-					<div className="datesContainer" title="datesContainer">
+				<div className="grayContainer" title="datesContainer">
+					<div className="datesContainer">
 						<div className="datesLeft">
 							<div className="datesLeftSup">
 								<div className="datesLeftSup1">

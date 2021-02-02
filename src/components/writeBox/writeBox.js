@@ -133,7 +133,7 @@ function WriteBox({ lan, setCode, setDates, dates, setLenguaje, setBodyfile }) {
 
   return (
     <>
-      <div className="textarea">
+      <div className="textarea" title="textarea">
         <div className="menuTextarea">
           <div className="leftTextarea">
             <p>{lan}</p>

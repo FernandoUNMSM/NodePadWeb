@@ -46,7 +46,7 @@ function Switch() {
 	}, [])
 
 	return (
-		<div className="dark-mode">
+		<div className="dark-mode" title="switch">
 			<p className="dark-mode-title">
 				{
 					checked

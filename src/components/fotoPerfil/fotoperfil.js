@@ -39,7 +39,7 @@ export default function Fotoperfil({formData, setFoto, setImagen}) {
 
   return (
     <>
-      <div className="datesContainer fotoContainer">
+      <div className="datesContainer fotoContainer" title="fotoPerfilContainer">
         <div className="fotomenu" onClick={cerrarPreview}>
           <FontAwesomeIcon icon={faArrowLeft} className="arrowleftpreview"/>
         </div>

@@ -59,7 +59,7 @@ function SimpleSwitch({ number }) {
   }
 
   return (
-    <div className="dark-mode">
+    <div className="dark-mode" title="simpleSwitch">
       <p className="dark-mode-title">
       </p>
       <input type="checkbox" onClick={handleCheck} defaultChecked={checked} className="checkbox" id={"checkbox".concat(number)} />
