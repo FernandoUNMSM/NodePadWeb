@@ -1,9 +1,9 @@
 import React, {useRef} from 'react'
 import useLazy from './../../hooks/useLazy'
 
-import './contact.css'
+import './InfoHome3.css'
 
-function Contact_us() {
+function InfoHome3() {
 
 	return (
 		<>
@@ -12,23 +12,23 @@ function Contact_us() {
 				</div>
 				<div className="info infos2">
 					<h1>Contactanos.</h1>
-					<p>Trabaja con nosotros en proyectos de desarrollo empresariales</p>
+					<p>Desarrolla con nosotros paginas web empresariales.</p>
 				</div>
 			</section>
 		</>
 	)
 }
-export default function LazyContact_us() {
+export default function LazyInfoHome3() {
   const fromRef = useRef()
 	const isIntersected = useLazy({distance: '0px', fromRef})
 	// console.log(isIntersected)
 	// consoloe.log(isIntersected)2
 
 	return(
-		<div ref={fromRef} id="lazyInfo2">
+		<div ref={fromRef} id="lazyInfo3">
 			{
 				isIntersected
-				? <Contact_us/>
+				? <InfoHome3/>
 				: null
 			}
 		</div>
