@@ -3,7 +3,7 @@ import useLazy from './../../hooks/useLazy'
 
 import './contact.css'
 
-function InfoHome2() {
+function Contact_us() {
 
 	return (
 		<>
@@ -18,7 +18,7 @@ function InfoHome2() {
 		</>
 	)
 }
-export default function LazyInfoHome2() {
+export default function LazyContact_us() {
   const fromRef = useRef()
 	const isIntersected = useLazy({distance: '0px', fromRef})
 	// console.log(isIntersected)
@@ -28,7 +28,7 @@ export default function LazyInfoHome2() {
 		<div ref={fromRef} id="lazyInfo2">
 			{
 				isIntersected
-				? <InfoHome2/>
+				? <Contact_us/>
 				: null
 			}
 		</div>

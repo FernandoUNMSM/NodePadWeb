@@ -9,6 +9,7 @@ function InfoHome(){
         <>
             <InfoHome1/>
             <InfoHome2/>
+            
         </>
     )
 }

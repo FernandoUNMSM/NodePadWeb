@@ -12,6 +12,7 @@ function Home() {
 				<PerfectScrollbar>
 					<Header />
 					<InfoHome />
+				 
 				</PerfectScrollbar>
 			{/* </div> */}
 		</>
