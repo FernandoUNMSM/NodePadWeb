@@ -115,6 +115,7 @@ function WriteBox({ lan, setCode, setDates, dates, setLenguaje, setBodyfile }) {
   useEffect(() => {
     // console.log(fileContent)
     if (fileContent.len === lan.toLowerCase()) {
+      console.log(fileContent.len)
       let textareaContent = document.querySelector(`#${lan}`);
       textareaContent.value = fileContent.file.cuerpo;
 

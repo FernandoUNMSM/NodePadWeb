@@ -34,12 +34,13 @@ function Cargar() {
     evt.preventDefault()
     const formData = new FormData(evt.target.parentNode)
     const archivo = formData.get('file');
-
+    const lan = archivo.name.split('.')[1]
     if (archivo.name !== "") {
       var lector = new FileReader();
       lector.onload = function (e) {
         var contenido = e.target.result;
-        var file = { file: { cuerpo: contenido }, len: 'html' }
+        console.log(contenido)
+        var file = { file: { cuerpo: contenido }, len: lan }
         setFileContent(file);
         // console.log(contenido);
       };

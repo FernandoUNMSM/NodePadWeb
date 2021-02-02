@@ -29,11 +29,13 @@ function Editor({ layout, setCode, setDates, dates, setLenguaje, setBodyfile }) 
 	}, [layout])
 	useEffect(() => {
     const zise = config.zise
-    const color = config.color
+		const color = config.color
+		const font = config.font
     var container = document.querySelectorAll('.textarea textarea');
     container.forEach(textarea => {
       textarea.style.fontSize = `${zise}px`;
-      textarea.style.color = color
+			textarea.style.color = color;
+			textarea.style.fontFamily = font
 		})
 
 		const buttondesccomp = document.querySelector('.download')

@@ -5,6 +5,7 @@ import updateLocalstorage from './../../services/updatelocalstorage'
 const Formato = () => {
   const fontSize = useRef(null)
   const fontColor = useRef(null)
+  const fontFamily = useRef(null)
   // const color = document.getElementById('color').value;
   const [config,setConfig] = useState(JSON.parse(localStorage.getItem("configActual")))
   // const [color,setSize] = useState(null)
@@ -18,11 +19,13 @@ const Formato = () => {
     var container = document.querySelectorAll('.textarea textarea');
     const zise = fontSize.current.value
     const color = fontColor.current.value
+    const font = fontFamily.current.value
     container.forEach(textarea => {
       textarea.style.fontSize = `${zise}px`
       textarea.style.color = color
+      textarea.style.fontFamily = font
     })
-    updateLocalstorage({zise, color});
+    updateLocalstorage({zise, color, font});
 
   }
 
@@ -48,7 +51,7 @@ const Formato = () => {
             <div className="formatoItem formato3">
               <p>Font Family</p>
               <p className="formatoP">Tipo de fuente del editor</p>
-              <input type="text" name="" id="" />
+              <input type="text" name="font" id="" ref={fontFamily} defaultValue={config.font}/>
             </div>
           </form>
         </div>
