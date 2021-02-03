@@ -25,10 +25,10 @@ describe('Button enviado', () => {
     localStorage.setItem("usuarioActual", JSON.stringify(
       {
         "id": 761,
-        "nombre": "mona",
-        "apellido": "mona",
-        "usuario": "mona",
-        "email": "mona",
+        "nombre": "oscar",
+        "apellido": "oscar",
+        "usuario": "oscar",
+        "email": "oscar",
         "password": "$2a$10$4a1MA1q0.7RUg7RpBFJvqeUwivC4CUH1eEgOURwLHe6XRie1ESM6q",
         "image": null
       }
