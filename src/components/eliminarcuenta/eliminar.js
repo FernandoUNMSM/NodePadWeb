@@ -98,7 +98,7 @@ function Eliminarcuenta() {
 	const updatear = (evt) => {
 		const formData = new FormData(evt.target);
 		updatePassword({formData})
-			.then(res => {mal2.current.innerHTML = `<p>Password cambiado</p>`})
+			.then(res => console.log(res))
 	}
 
 	return (
